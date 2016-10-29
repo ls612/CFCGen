@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c2ffdf181433405da106214092d78da6" Name="Diagram1">
+        <EntityTypeShape EntityType="DebugGameplayModel.Adjacency_YieldChanges" Width="1.5" PointX="3" PointY="101.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Agenda" Width="1.5" PointX="10.5" PointY="103.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiBuildSpecialization" Width="1.5" PointX="3" PointY="111" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiEvent" Width="1.5" PointX="3.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiFavoredItem" Width="1.5" PointX="11.25" PointY="91.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiList" Width="1.5" PointX="14.25" PointY="91.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiListType" Width="1.5" PointX="1.5" PointY="89.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiOperationDef" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiOperationLimit" Width="1.5" PointX="6" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiOperationList" Width="1.5" PointX="3.75" PointY="115.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiOperationTeam" Width="1.5" PointX="8.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiOperationType" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AiTeam" Width="1.5" PointX="6" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AllowedMove" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AllowedOperation" Width="1.5" PointX="6" PointY="62.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.AppealHousingChanx" Width="1.5" PointX="18.75" PointY="102.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BarbarianTribeName" Width="1.5" PointX="57" PointY="103.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BarbarianTribe" Width="1.5" PointX="54.75" PointY="102.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BehaviorTreeNode" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BehaviorTree" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BeliefClass" Width="1.5" PointX="13.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BeliefModifier" Width="1.5" PointX="18.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Belief" Width="1.5" PointX="16" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BonusMinorStartingUnit" Width="1.5" PointX="36" PointY="100.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BoostHandler" Width="1.5" PointX="21.75" PointY="49.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BoostName" Width="1.5" PointX="19.5" PointY="91.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Boost" Width="1.5" PointX="21.75" PointY="101.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Building_GreatPersonPoints" Width="1.5" PointX="18.75" PointY="105.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Building_GreatWorks" Width="1.5" PointX="18.75" PointY="97.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Building_YieldChanges" Width="1.5" PointX="18.75" PointY="108.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Building_YieldDistrictCopies" Width="1.5" PointX="21.75" PointY="97.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.BuildingModifier" Width="1.5" PointX="15.75" PointY="124.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Building" Width="1.5" PointX="13.5" PointY="97.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CityEvent" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CityName" Width="1.5" PointX="11.25" PointY="107.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivicModifier" Width="1.5" PointX="48.75" PointY="111.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivicQuote" Width="1.5" PointX="48.75" PointY="114" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Civic" Width="1.5" PointX="46.5" PointY="109.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilizationCitizenName" Width="1.5" PointX="8.25" PointY="97.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilizationInfo" Width="1.5" PointX="8.25" PointY="94" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilizationLeader" Width="1.5" PointX="8.25" PointY="111.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilizationLevel" Width="1.5" PointX="3.75" PointY="95.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Civilization" Width="1.5" PointX="6" PointY="95.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilopediaPageGroupQuery" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilopediaPageGroup" Width="1.5" PointX="17.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilopediaPageLayoutChapter" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilopediaPageLayout" Width="1.5" PointX="17.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilopediaPageQuery" Width="1.5" PointX="10.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilopediaPage" Width="1.5" PointX="18.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.CivilopediaSection" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Color" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Continent" Width="1.5" PointX="9" PointY="100.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.DataType" Width="1.5" PointX="12.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.DealItem" Width="1.5" PointX="19.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Defeat" Width="1.5" PointX="46.5" PointY="124.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Difficulty" Width="1.5" PointX="6" PointY="107.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.District_CitizenGreatPersonPoints" Width="1.5" PointX="24.75" PointY="109.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.District_CitizenYieldChanges" Width="1.5" PointX="18.75" PointY="94.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.District_GreatPersonPoints" Width="1.5" PointX="21.75" PointY="94.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.District_TradeRouteYields" Width="1.5" PointX="24.75" PointY="112.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.DistrictModifier" Width="1.5" PointX="18.75" PointY="116.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.District" Width="1.5" PointX="16.5" PointY="97.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.DynamicModifier" Width="1.5" PointX="46.5" PointY="127.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Era" Width="1.5" PointX="41.25" PointY="102.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.FavoredReligion" Width="1.5" PointX="11.25" PointY="100.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Feature_AdjacentYields" Width="1.5" PointX="46.5" PointY="103.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Feature_Removes" Width="1.5" PointX="46.5" PointY="100.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Feature_YieldChanges" Width="1.5" PointX="46.5" PointY="106.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Feature" Width="1.5" PointX="44.25" PointY="99" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Flavor" Width="1.5" PointX="28.5" PointY="92.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GameModifier" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GameSpeed_Turns" Width="1.5" PointX="20" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GameSpeed" Width="1.5" PointX="17.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GlobalParameter" Width="1.5" PointX="5.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GoodyHut" Width="1.5" PointX="51.75" PointY="97.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GoodyHutSubType" Width="1.5" PointX="54" PointY="96.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Gossip" Width="1.5" PointX="20.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Government_SlotCounts" Width="1.5" PointX="57" PointY="114.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GovernmentBonusName" Width="1.5" PointX="49.5" PointY="121.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GovernmentModifier" Width="1.5" PointX="54" PointY="117.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Government" Width="1.5" PointX="51.75" PointY="113.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GovernmentSlot" Width="1.5" PointX="19.5" PointY="119.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GreatPersonClass" Width="1.5" PointX="27.75" PointY="102.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GreatPersonIndividualActionModifier" Width="1.5" PointX="27" PointY="94.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GreatPersonIndividualBirthModifier" Width="1.5" PointX="27" PointY="114.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GreatPersonIndividual" Width="1.5" PointX="24.75" PointY="100.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GreatWork_YieldChanges" Width="1.5" PointX="35.25" PointY="106.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GreatWorkObjectType" Width="1.5" PointX="22.5" PointY="90.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GreatWork" Width="1.5" PointX="33" PointY="103" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.GreatWorkSlotType" Width="1.5" PointX="16.5" PointY="94.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Happiness" Width="1.5" PointX="20.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.HistoricRanking" Width="1.5" PointX="7.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Improvement_BonusYieldChanges" Width="1.5" PointX="51.75" PointY="109.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Improvement_Tourism" Width="1.5" PointX="54.75" PointY="108.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Improvement_ValidResources" Width="1.5" PointX="57.75" PointY="99.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Improvement_ValidTerrains" Width="1.5" PointX="54.75" PointY="112.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Improvement_YieldChanges" Width="1.5" PointX="57.75" PointY="107.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ImprovementModifier" Width="1.5" PointX="51.75" PointY="121.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Improvement" Width="1.5" PointX="49.5" PointY="99.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.InterfaceMode" Width="1.5" PointX="21.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Kind" Width="1.5" PointX="42" PointY="126.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.LeaderAnimation" Width="1.5" PointX="14.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.LeaderInfo" Width="1.5" PointX="8.25" PointY="114.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.LeaderQuote" Width="1.5" PointX="8.25" PointY="117.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Leader" Width="1.5" PointX="6" PointY="114.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.MajorStartingUnit" Width="1.5" PointX="27.75" PointY="98" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Map_GreatPersonClasses" Width="1.5" PointX="33" PointY="99.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Map" Width="1.5" PointX="30.75" PointY="89.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ModifierArgument" Width="1.5" PointX="15.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Modifier" Width="1.5" PointX="13" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ModifierString" Width="1.5" PointX="15.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Month" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.NavigationProperty" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.NodeDataDefinition" Width="1.5" PointX="6" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.NodeDefinition" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Notification" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ObsoletePolicy" Width="1.5" PointX="36" PointY="103.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.OpTeamRequirement" Width="1.5" PointX="30.75" PointY="48.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.PlayerColor" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.PlotEvalCondition" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Policy" Width="1.5" PointX="48.75" PointY="117.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.PolicyModifier" Width="1.5" PointX="51" PointY="118.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Project_GreatPersonPoints" Width="1.5" PointX="33" PointY="108" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Project_YieldConversions" Width="1.5" PointX="30" PointY="114.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ProjectCompletionModifier" Width="1.5" PointX="24" PointY="116.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ProjectPrereq" Width="1.5" PointX="24" PointY="118.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Project" Width="1.5" PointX="21.75" PointY="109.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.PseudoYield" Width="1.5" PointX="28.5" PointY="88.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Quest" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.RandomAgenda" Width="1.5" PointX="12.75" PointY="94.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Religion" Width="1.5" PointX="9" PointY="90" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.RequirementArgument" Width="1.5" PointX="15.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Requirement" Width="1.5" PointX="13" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.RequirementSet" Width="1.5" PointX="10.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.RequirementString" Width="1.5" PointX="15.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Resource_Distribution" Width="1.5" PointX="9.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Resource_Harvests" Width="1.5" PointX="59.75" PointY="103.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Resource_TradeRouteYields" Width="1.5" PointX="60.75" PointY="100.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Resource_YieldChanges" Width="1.5" PointX="60.75" PointY="106.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Resource" Width="1.5" PointX="52.5" PointY="101.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Route" Width="1.5" PointX="43.5" PointY="95.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.SavingType" Width="1.5" PointX="21.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ScoringCategory" Width="1.5" PointX="17.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ScoringLineItem" Width="1.5" PointX="20" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Season" Width="1.5" PointX="11.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.SettlementPreference" Width="1.5" PointX="22.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.ShapeDefinition" Width="1.5" PointX="1.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.StartBiasFeature" Width="1.5" PointX="46.5" PointY="97.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.StartBiasResource" Width="1.5" PointX="60.75" PointY="97.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.StartBiasRiver" Width="1.5" PointX="8.25" PointY="108.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.StartBiasTerrain" Width="1.5" PointX="63" PointY="111.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.StartEra" Width="1.5" PointX="43.5" PointY="115" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.StartingBuilding" Width="1.5" PointX="24.75" PointY="96.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.StartingGovernment" Width="1.5" PointX="57" PointY="111" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Strategy" Width="1.5" PointX="3.75" PointY="90.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Strategy_YieldPriorities" Width="1.5" PointX="6" PointY="103.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.StrategyCondition" Width="1.5" PointX="6" PointY="90.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Tag" Width="1.5" PointX="42" PointY="129" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TargetType" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Technology" Width="1.5" PointX="39" PointY="100.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TechnologyModifier" Width="1.5" PointX="41.25" PointY="120.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TechnologyQuote" Width="1.5" PointX="41.25" PointY="123.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Terrain_YieldChanges" Width="1.5" PointX="63" PointY="114.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Terrain" Width="1.5" PointX="60.75" PointY="109.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TraitModifier" Width="1.5" PointX="10.5" PointY="136.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Trait" Width="1.5" PointX="8.25" PointY="102.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TreeData" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TriggeredBehaviorTree" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TurnPhas" Width="1.5" PointX="11" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TurnSegment" Width="1.5" PointX="8.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TurnTimer" Width="1.5" PointX="16.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.TypeProperty" Width="1.5" PointX="46.5" PointY="130.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Type" Width="1.5" PointX="44.25" PointY="126" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Unit_BuildingPrereqs" Width="1.5" PointX="18.75" PointY="111.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Unit_RebellionTags" Width="1.5" PointX="22.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.UnitAbility" Width="1.5" PointX="15.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.UnitAiType" Width="1.5" PointX="28.5" PointY="85.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.UnitCommand" Width="1.5" PointX="41.25" PointY="96.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.UnitFormationClass" Width="1.5" PointX="22.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.UnitName" Width="1.5" PointX="4.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.UnitOperation" Width="1.5" PointX="27.75" PointY="108.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Unit" Width="1.5" PointX="30.75" PointY="95.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Victory" Width="1.5" PointX="1.5" PointY="91.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Visibility" Width="1.5" PointX="23.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Vocabulary" Width="1.5" PointX="39.75" PointY="129.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.WMD" Width="1.5" PointX="18.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DebugGameplayModel.Yield" Width="1.5" PointX="0.75" PointY="101.625" IsExpanded="true" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_4_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_5_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_6_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_7_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Adjacency_YieldChanges_8_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Agendas_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_RandomAgendas_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiBuildSpecializations_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiBuildSpecializations_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TriggeredBehaviorTrees_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiFavoredItems_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiFavoredItems_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiFavoredItems_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiLists_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiLists_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiLists_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiOperationDefs_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiOperationDefs_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiOperationDefs_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiOperationTeams_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AllowedOperations_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BoostHandlers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiOperationLimits_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiOperationLimits_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiOperationLists_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AllowedOperations_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Leaders_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AiOperationTeams_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_OpTeamRequirements_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_AppealHousingChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BarbarianTribeNames_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BarbarianTribes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BehaviorTreeNodes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BehaviorTreeNodes_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BoostHandlers_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TreeData_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TriggeredBehaviorTrees_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Beliefs_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BeliefModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BonusMinorStartingUnits_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BonusMinorStartingUnits_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BoostHandlers_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_8_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_10_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_11_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_4_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_5_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_6_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_7_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Boosts_9_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_GreatPersonPoints_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_GreatPersonPoints_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_GreatWorks_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_GreatWorks_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_YieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_YieldChanges_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_YieldDistrictCopies_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_YieldDistrictCopies_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Building_YieldDistrictCopies_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_BuildingModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Buildings_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Buildings_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Buildings_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Buildings_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Buildings_4_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Buildings_5_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Buildings_6_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Buildings_7_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonIndividuals_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Projects_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartingBuildings_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Unit_BuildingPrereqs_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CityNames_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CityNames_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CityNames_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CivicModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CivicQuotes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Civics_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Civics_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Districts_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Features_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Governments_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_BonusYieldChanges_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_Tourism_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_ValidTerrains_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvements_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Policies_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Projects_4_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resources_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_UnitCommands_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_UnitOperations_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_13_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_6_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CivilizationCitizenNames_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CivilizationInfo_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CivilizationLeaders_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_CivilizationLeaders_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Civilizations_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Civilizations_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_FavoredReligions_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartBiasFeatures_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartBiasResources_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartBiasRivers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartBiasTerrains_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_PlayerColors_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_PlayerColors_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_PlayerColors_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Defeats_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_MajorStartingUnits_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_District_CitizenGreatPersonPoints_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_District_CitizenGreatPersonPoints_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_District_CitizenYieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_District_CitizenYieldChanges_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_District_GreatPersonPoints_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_District_GreatPersonPoints_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_District_TradeRouteYields_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_District_TradeRouteYields_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_DistrictModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Districts_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Districts_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Districts_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonClasses_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonIndividuals_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_MajorStartingUnits_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Projects_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartingBuildings_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_UnitOperations_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_9_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_DynamicModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_DynamicModifiers_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_DynamicModifiers_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonIndividuals_4_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatWorks_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_MajorStartingUnits_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Routes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartEras_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartingBuildings_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartingGovernments_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Technologies_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_FavoredReligions_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_FavoredReligions_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Feature_AdjacentYields_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Feature_AdjacentYields_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Feature_Removes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Feature_Removes_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Feature_YieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Feature_YieldChanges_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Features_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonIndividuals_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartBiasFeatures_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_15_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GameSpeed_Turns_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GoodyHuts_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GoodyHutSubTypes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Government_SlotCounts_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Government_SlotCounts_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Governments_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GovernmentModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Governments_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartingGovernments_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Policies_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonClasses_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonClasses_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonIndividuals_5_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Map_GreatPersonClasses_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ObsoletePolicies_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Project_GreatPersonPoints_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonIndividualActionModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonIndividualBirthModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatPersonIndividuals_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatWorks_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatWork_YieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatWork_YieldChanges_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatWorkObjectTypes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_GreatWorks_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_BonusYieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_BonusYieldChanges_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_BonusYieldChanges_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_Tourism_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_Tourism_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_ValidResources_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_ValidResources_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_ValidTerrains_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_ValidTerrains_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_ValidTerrains_3_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_YieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvement_YieldChanges_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ImprovementModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvements_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvements_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvements_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Improvements_4_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Types_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_LeaderInfo_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_LeaderQuotes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Leaders_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Leaders_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_MajorStartingUnits_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Map_GreatPersonClasses_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ModifierArguments_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Modifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Modifiers_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ModifierStrings_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_NodeDataDefinitions_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_NodeDefinitions_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ObsoletePolicies_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ObsoletePolicies_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_OpTeamRequirements_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Policies_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_PolicyModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Project_GreatPersonPoints_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Project_YieldConversions_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Project_YieldConversions_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ProjectCompletionModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ProjectPrereqs_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ProjectPrereqs_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Projects_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Projects_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Projects_5_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Strategy_YieldPriorities_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_7_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_RequirementArguments_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_RequirementStrings_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resource_Harvests_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resource_Harvests_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resource_Harvests_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resource_TradeRouteYields_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resource_TradeRouteYields_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resource_YieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resource_YieldChanges_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Resources_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartBiasResources_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_11_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_ScoringLineItems_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StartBiasTerrains_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Strategies_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Strategy_YieldPriorities_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_StrategyConditions_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Strategy_YieldPriorities_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Tags_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Technologies_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Technologies_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TechnologyModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TechnologyQuotes_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_UnitCommands_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_UnitOperations_2_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_14_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Terrain_YieldChanges_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TraitModifiers_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Traits_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_12_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TurnPhases_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TurnPhases_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_TypeProperties_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_5_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Victories_0_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Unit_BuildingPrereqs_1_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_10_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.FK_Units_4_0" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.AgendaPreferredLeaders" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.AgendaTraits" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Building_RequiredFeatures" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Building_ValidFeatures" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Building_ValidTerrains" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.BuildingPrereqs" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.BuildingReplaces" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.CivicPrereqs" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.CivilizationTraits" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.DifficultyTraits" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.District_Adjacencies" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.District_RequiredFeatures" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.District_ValidTerrains" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.DistrictReplaces" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.ExcludedAdjacencies" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.ExcludedDistricts" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.ExcludedGreatPersonClasses" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.ExclusiveAgendas" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Feature_AdjacentFeatures" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Feature_AdjacentTerrains" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Feature_NotAdjacentTerrains" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Feature_NotNearFeatures" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Feature_ValidTerrains" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.GreatWork_ValidSubTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.HistoricalAgendas" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Improvement_Adjacencies" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Improvement_ValidBuildUnits" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Improvement_ValidFeatures" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.LeaderTraits" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.MutuallyExclusiveBuildings" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.RequirementSetRequirements" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Resource_ValidFeatures" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Resource_ValidTerrains" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Route_ValidBuildUnits" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.StartingBoostedCivics" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.StartingBoostedTechnologies" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.StartingCivics" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.Strategy_Priorities" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.TechnologyPrereqs" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.TypeTags" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.UnitAbilityModifiers" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.UnitAiInfos" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.UnitCaptures" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.UnitReplaces" ManuallyRouted="false" />
+        <AssociationConnector Association="DebugGameplayModel.UnitUpgrades" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93E9B323-1CE7-432F-91F0-F29E7D77C00A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CivGen</RootNamespace>
+    <AssemblyName>CivGen</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Core.1.0.103\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.103\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.103\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adjacency_YieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiBuildSpecialization.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiEvent.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiFavoredItem.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiList.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiListType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiOperationDef.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiOperationLimit.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiOperationList.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiOperationTeam.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiOperationType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AiTeam.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllowedMove.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllowedOperation.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppealHousingChanx.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BarbarianTribe.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BarbarianTribeName.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BehaviorTree.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BehaviorTreeNode.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Belief.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BeliefClass.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BeliefModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BonusMinorStartingUnit.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Boost.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BoostHandler.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BoostName.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Building.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuildingModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Building_GreatPersonPoints.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Building_GreatWorks.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Building_YieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Building_YieldDistrictCopies.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CityEvent.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CityName.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Civ6DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Civ6DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Civ6DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Civ6DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Civ6DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Civic.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivicModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivicQuote.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Civilization.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilizationCitizenName.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilizationInfo.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilizationLeader.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilizationLevel.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilopediaPage.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilopediaPageGroup.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilopediaPageGroupQuery.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilopediaPageLayout.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilopediaPageLayoutChapter.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilopediaPageQuery.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CivilopediaSection.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Color.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Continent.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DealItem.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Defeat.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Difficulty.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="District.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistrictModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="District_CitizenGreatPersonPoints.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="District_CitizenYieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="District_GreatPersonPoints.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="District_TradeRouteYields.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Era.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FavoredReligion.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feature.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feature_AdjacentYields.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feature_Removes.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Feature_YieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Flavor.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameSpeed.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameSpeed_Turns.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalParameter.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodyHut.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodyHutSubType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gossip.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Government.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GovernmentBonusName.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GovernmentModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GovernmentSlot.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Government_SlotCounts.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GreatPersonClass.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GreatPersonIndividual.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GreatPersonIndividualActionModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GreatPersonIndividualBirthModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GreatWork.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GreatWorkObjectType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GreatWorkSlotType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GreatWork_YieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Happiness.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistoricRanking.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Improvement.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImprovementModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Improvement_BonusYieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Improvement_Tourism.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Improvement_ValidResources.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Improvement_ValidTerrains.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Improvement_YieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceMode.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kind.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Leader.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeaderAnimation.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeaderInfo.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeaderQuote.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MajorStartingUnit.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Map.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Map_GreatPersonClasses.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierArgument.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierString.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Month.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationProperty.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NodeDataDefinition.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NodeDefinition.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObsoletePolicy.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpTeamRequirement.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerColor.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlotEvalCondition.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Policy.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Project.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectCompletionModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectPrereq.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_GreatPersonPoints.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_YieldConversions.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PseudoYield.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Quest.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RandomAgenda.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Religion.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Requirement.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequirementArgument.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequirementSet.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequirementString.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_Distribution.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_Harvests.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_TradeRouteYields.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_YieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Route.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SavingType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScoringCategory.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScoringLineItem.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Season.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SettlementPreference.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShapeDefinition.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StartBiasFeature.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StartBiasResource.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StartBiasRiver.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StartBiasTerrain.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StartEra.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StartingBuilding.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StartingGovernment.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Strategy.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StrategyCondition.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Strategy_YieldPriorities.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TargetType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Technology.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechnologyModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TechnologyQuote.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Terrain.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Terrain_YieldChanges.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trait.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraitModifier.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TreeData.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TriggeredBehaviorTree.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TurnPhas.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TurnSegment.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TurnTimer.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeProperty.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unit.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitAbility.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitAiType.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitCommand.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitFormationClass.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitName.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitOperation.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unit_BuildingPrereqs.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unit_RebellionTags.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Victory.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Visibility.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vocabulary.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WMD.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Yield.cs">
+      <DependentUpon>Civ6DB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Civ6DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Civ6DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Civ6DB.edmx.diagram">
+      <DependentUpon>Civ6DB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Civ6DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Civ6DB.edmx</DependentUpon>
+      <LastGenOutput>Civ6DB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Civ6DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Civ6DB.edmx</DependentUpon>
+      <LastGenOutput>Civ6DB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\System.Data.SQLite.Core.1.0.103\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.103\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.103\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.103\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
