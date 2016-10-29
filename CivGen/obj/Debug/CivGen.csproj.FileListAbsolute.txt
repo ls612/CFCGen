@@ -1,1 +1,14 @@
 C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\CivGen.exe.config
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\CivGen.exe
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\CivGen.pdb
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\EntityFramework.dll
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\System.Data.SQLite.dll
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\EntityFramework.xml
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\bin\Debug\System.Data.SQLite.xml
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\obj\Debug\CivGen.csprojResolveAssemblyReference.cache
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\obj\Debug\CivGen.exe
+C:\Users\lstan\Documents\Visual Studio 2015\Projects\CivGen\CFCGen\CivGen\obj\Debug\CivGen.pdb

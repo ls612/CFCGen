@@ -1,0 +1,2644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DebugGameplayModelStoreContainer" CdmEntityContainer="GameplayEntities">
+    <EntitySetMapping Name="Adjacency_YieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Adjacency_YieldChanges">
+        <MappingFragment StoreEntitySet="Adjacency_YieldChanges">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+          <ScalarProperty Name="TilesRequired" ColumnName="TilesRequired" />
+          <ScalarProperty Name="OtherDistrictAdjacent" ColumnName="OtherDistrictAdjacent" />
+          <ScalarProperty Name="AdjacentSeaResource" ColumnName="AdjacentSeaResource" />
+          <ScalarProperty Name="AdjacentTerrain" ColumnName="AdjacentTerrain" />
+          <ScalarProperty Name="AdjacentFeature" ColumnName="AdjacentFeature" />
+          <ScalarProperty Name="AdjacentRiver" ColumnName="AdjacentRiver" />
+          <ScalarProperty Name="AdjacentWonder" ColumnName="AdjacentWonder" />
+          <ScalarProperty Name="AdjacentNaturalWonder" ColumnName="AdjacentNaturalWonder" />
+          <ScalarProperty Name="AdjacentImprovement" ColumnName="AdjacentImprovement" />
+          <ScalarProperty Name="AdjacentDistrict" ColumnName="AdjacentDistrict" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="ObsoleteCivic" ColumnName="ObsoleteCivic" />
+          <ScalarProperty Name="ObsoleteTech" ColumnName="ObsoleteTech" />
+          <ScalarProperty Name="AdjacentResource" ColumnName="AdjacentResource" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agendas">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Agenda">
+        <MappingFragment StoreEntitySet="Agendas">
+          <ScalarProperty Name="AgendaType" ColumnName="AgendaType" />
+          <ScalarProperty Name="OperationList" ColumnName="OperationList" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiBuildSpecializations">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiBuildSpecialization">
+        <MappingFragment StoreEntitySet="AiBuildSpecializations">
+          <ScalarProperty Name="SpecializationType" ColumnName="SpecializationType" />
+          <ScalarProperty Name="BuildingYield" ColumnName="BuildingYield" />
+          <ScalarProperty Name="IncludePopulation" ColumnName="IncludePopulation" />
+          <ScalarProperty Name="IncludeDefense" ColumnName="IncludeDefense" />
+          <ScalarProperty Name="IncludeMilitaryUnits" ColumnName="IncludeMilitaryUnits" />
+          <ScalarProperty Name="IncludeTradeUnits" ColumnName="IncludeTradeUnits" />
+          <ScalarProperty Name="PrioritizationYield" ColumnName="PrioritizationYield" />
+          <ScalarProperty Name="PriorityOffset" ColumnName="PriorityOffset" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiEvents">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiEvent">
+        <MappingFragment StoreEntitySet="AiEvents">
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiFavoredItems">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiFavoredItem">
+        <MappingFragment StoreEntitySet="AiFavoredItems">
+          <ScalarProperty Name="ListType" ColumnName="ListType" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Favored" ColumnName="Favored" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="StringVal" ColumnName="StringVal" />
+          <ScalarProperty Name="MinDifficulty" ColumnName="MinDifficulty" />
+          <ScalarProperty Name="MaxDifficulty" ColumnName="MaxDifficulty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiLists">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiList">
+        <MappingFragment StoreEntitySet="AiLists">
+          <ScalarProperty Name="ListType" ColumnName="ListType" />
+          <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+          <ScalarProperty Name="AgendaType" ColumnName="AgendaType" />
+          <ScalarProperty Name="System" ColumnName="System" />
+          <ScalarProperty Name="MinDifficulty" ColumnName="MinDifficulty" />
+          <ScalarProperty Name="MaxDifficulty" ColumnName="MaxDifficulty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiListTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiListType">
+        <MappingFragment StoreEntitySet="AiListTypes">
+          <ScalarProperty Name="ListType" ColumnName="ListType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiOperationDefs">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiOperationDef">
+        <MappingFragment StoreEntitySet="AiOperationDefs">
+          <ScalarProperty Name="OperationName" ColumnName="OperationName" />
+          <ScalarProperty Name="TargetType" ColumnName="TargetType" />
+          <ScalarProperty Name="TargetParameter" ColumnName="TargetParameter" />
+          <ScalarProperty Name="BehaviorTree" ColumnName="BehaviorTree" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="MaxTargetDistInRegion" ColumnName="MaxTargetDistInRegion" />
+          <ScalarProperty Name="MaxTargetDistInArea" ColumnName="MaxTargetDistInArea" />
+          <ScalarProperty Name="MaxTargetDistInWorld" ColumnName="MaxTargetDistInWorld" />
+          <ScalarProperty Name="MaxTargetStrength" ColumnName="MaxTargetStrength" />
+          <ScalarProperty Name="MaxTargetDefense" ColumnName="MaxTargetDefense" />
+          <ScalarProperty Name="MinOddsOfSuccess" ColumnName="MinOddsOfSuccess" />
+          <ScalarProperty Name="SelfStart" ColumnName="SelfStart" />
+          <ScalarProperty Name="MustBeAtWar" ColumnName="MustBeAtWar" />
+          <ScalarProperty Name="MustHaveNukes" ColumnName="MustHaveNukes" />
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="AllowTargetUpdate" ColumnName="AllowTargetUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiOperationLimits">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiOperationLimit">
+        <MappingFragment StoreEntitySet="AiOperationLimits">
+          <ScalarProperty Name="ListType" ColumnName="ListType" />
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="BaseValue" ColumnName="BaseValue" />
+          <ScalarProperty Name="DeltaValue" ColumnName="DeltaValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiOperationLists">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiOperationList">
+        <MappingFragment StoreEntitySet="AiOperationLists">
+          <ScalarProperty Name="ListType" ColumnName="ListType" />
+          <ScalarProperty Name="BaseList" ColumnName="BaseList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiOperationTeams">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiOperationTeam">
+        <MappingFragment StoreEntitySet="AiOperationTeams">
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="OperationName" ColumnName="OperationName" />
+          <ScalarProperty Name="MinUnits" ColumnName="MinUnits" />
+          <ScalarProperty Name="MaxUnits" ColumnName="MaxUnits" />
+          <ScalarProperty Name="InitialStrengthAdvantage" ColumnName="InitialStrengthAdvantage" />
+          <ScalarProperty Name="OngoingStrengthAdvantage" ColumnName="OngoingStrengthAdvantage" />
+          <ScalarProperty Name="SafeRallyPoint" ColumnName="SafeRallyPoint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiOperationTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiOperationType">
+        <MappingFragment StoreEntitySet="AiOperationTypes">
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AiTeams">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AiTeam">
+        <MappingFragment StoreEntitySet="AiTeams">
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowedMoves">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AllowedMove">
+        <MappingFragment StoreEntitySet="AllowedMoves">
+          <ScalarProperty Name="AllowedMoveType" ColumnName="AllowedMoveType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="IsHomeland" ColumnName="IsHomeland" />
+          <ScalarProperty Name="IsTactical" ColumnName="IsTactical" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllowedOperations">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AllowedOperation">
+        <MappingFragment StoreEntitySet="AllowedOperations">
+          <ScalarProperty Name="ListType" ColumnName="ListType" />
+          <ScalarProperty Name="OperationDef" ColumnName="OperationDef" />
+          <ScalarProperty Name="RemoveRef" ColumnName="RemoveRef" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppealHousingChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.AppealHousingChanx">
+        <MappingFragment StoreEntitySet="AppealHousingChanges">
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="MinimumValue" ColumnName="MinimumValue" />
+          <ScalarProperty Name="AppealChange" ColumnName="AppealChange" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BarbarianTribeNames">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BarbarianTribeName">
+        <MappingFragment StoreEntitySet="BarbarianTribeNames">
+          <ScalarProperty Name="TribeNameType" ColumnName="TribeNameType" />
+          <ScalarProperty Name="TribeType" ColumnName="TribeType" />
+          <ScalarProperty Name="NumMilitary" ColumnName="NumMilitary" />
+          <ScalarProperty Name="NumScouts" ColumnName="NumScouts" />
+          <ScalarProperty Name="PercentRangedUnits" ColumnName="PercentRangedUnits" />
+          <ScalarProperty Name="TurnsToWarriorSpawn" ColumnName="TurnsToWarriorSpawn" />
+          <ScalarProperty Name="TribeDisplayName" ColumnName="TribeDisplayName" />
+          <ScalarProperty Name="ScoutingBehaviorTree" ColumnName="ScoutingBehaviorTree" />
+          <ScalarProperty Name="RaidingBehaviorTree" ColumnName="RaidingBehaviorTree" />
+          <ScalarProperty Name="RaidingBoldness" ColumnName="RaidingBoldness" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BarbarianTribes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BarbarianTribe">
+        <MappingFragment StoreEntitySet="BarbarianTribes">
+          <ScalarProperty Name="TribeType" ColumnName="TribeType" />
+          <ScalarProperty Name="IsCoastal" ColumnName="IsCoastal" />
+          <ScalarProperty Name="RequiredResource" ColumnName="RequiredResource" />
+          <ScalarProperty Name="ResourceRange" ColumnName="ResourceRange" />
+          <ScalarProperty Name="PercentRangedUnits" ColumnName="PercentRangedUnits" />
+          <ScalarProperty Name="TurnsToWarriorSpawn" ColumnName="TurnsToWarriorSpawn" />
+          <ScalarProperty Name="ScoutTag" ColumnName="ScoutTag" />
+          <ScalarProperty Name="MeleeTag" ColumnName="MeleeTag" />
+          <ScalarProperty Name="RangedTag" ColumnName="RangedTag" />
+          <ScalarProperty Name="SiegeTag" ColumnName="SiegeTag" />
+          <ScalarProperty Name="DefenderTag" ColumnName="DefenderTag" />
+          <ScalarProperty Name="SupportTag" ColumnName="SupportTag" />
+          <ScalarProperty Name="ScoutingBehaviorTree" ColumnName="ScoutingBehaviorTree" />
+          <ScalarProperty Name="RaidingBehaviorTree" ColumnName="RaidingBehaviorTree" />
+          <ScalarProperty Name="RaidingBoldness" ColumnName="RaidingBoldness" />
+          <ScalarProperty Name="CityAttackOperation" ColumnName="CityAttackOperation" />
+          <ScalarProperty Name="CityAttackBoldness" ColumnName="CityAttackBoldness" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BehaviorTreeNodes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BehaviorTreeNode">
+        <MappingFragment StoreEntitySet="BehaviorTreeNodes">
+          <ScalarProperty Name="TreeName" ColumnName="TreeName" />
+          <ScalarProperty Name="NodeId" ColumnName="NodeId" />
+          <ScalarProperty Name="JumpTo" ColumnName="JumpTo" />
+          <ScalarProperty Name="NodeType" ColumnName="NodeType" />
+          <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BehaviorTrees">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BehaviorTree">
+        <MappingFragment StoreEntitySet="BehaviorTrees">
+          <ScalarProperty Name="TreeName" ColumnName="TreeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeliefClasses">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BeliefClass">
+        <MappingFragment StoreEntitySet="BeliefClasses">
+          <ScalarProperty Name="BeliefClassType" ColumnName="BeliefClassType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MaxInReligion" ColumnName="MaxInReligion" />
+          <ScalarProperty Name="AdoptionOrder" ColumnName="AdoptionOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeliefModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BeliefModifier">
+        <MappingFragment StoreEntitySet="BeliefModifiers">
+          <ScalarProperty Name="BeliefType" ColumnName="BeliefType" />
+          <ScalarProperty Name="ModifierID" ColumnName="ModifierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Beliefs">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Belief">
+        <MappingFragment StoreEntitySet="Beliefs">
+          <ScalarProperty Name="BeliefType" ColumnName="BeliefType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BeliefClassType" ColumnName="BeliefClassType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BonusMinorStartingUnits">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BonusMinorStartingUnit">
+        <MappingFragment StoreEntitySet="BonusMinorStartingUnits">
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Era" ColumnName="Era" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BoostHandlers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BoostHandler">
+        <MappingFragment StoreEntitySet="BoostHandlers">
+          <ScalarProperty Name="HandlerId" ColumnName="HandlerId" />
+          <ScalarProperty Name="TechBoostType" ColumnName="TechBoostType" />
+          <ScalarProperty Name="BehaviorTree" ColumnName="BehaviorTree" />
+          <ScalarProperty Name="OperationName" ColumnName="OperationName" />
+          <ScalarProperty Name="LuaScript" ColumnName="LuaScript" />
+          <ScalarProperty Name="UniquenessTag" ColumnName="UniquenessTag" />
+          <ScalarProperty Name="WinnowFunction" ColumnName="WinnowFunction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BoostNames">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BoostName">
+        <MappingFragment StoreEntitySet="BoostNames">
+          <ScalarProperty Name="BoostType" ColumnName="BoostType" />
+          <ScalarProperty Name="BoostValue" ColumnName="BoostValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Boosts">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Boost">
+        <MappingFragment StoreEntitySet="Boosts">
+          <ScalarProperty Name="BoostID" ColumnName="BoostID" />
+          <ScalarProperty Name="TechnologyType" ColumnName="TechnologyType" />
+          <ScalarProperty Name="CivicType" ColumnName="CivicType" />
+          <ScalarProperty Name="Boost1" ColumnName="Boost" />
+          <ScalarProperty Name="TriggerId" ColumnName="TriggerId" />
+          <ScalarProperty Name="TriggerDescription" ColumnName="TriggerDescription" />
+          <ScalarProperty Name="TriggerLongDescription" ColumnName="TriggerLongDescription" />
+          <ScalarProperty Name="Unit1Type" ColumnName="Unit1Type" />
+          <ScalarProperty Name="BoostClass" ColumnName="BoostClass" />
+          <ScalarProperty Name="Unit2Type" ColumnName="Unit2Type" />
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="BoostingTechType" ColumnName="BoostingTechType" />
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="NumItems" ColumnName="NumItems" />
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="RequiresResource" ColumnName="RequiresResource" />
+          <ScalarProperty Name="RequirementSetId" ColumnName="RequirementSetId" />
+          <ScalarProperty Name="GovernmentSlotType" ColumnName="GovernmentSlotType" />
+          <ScalarProperty Name="BoostingCivicType" ColumnName="BoostingCivicType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Building_GreatPersonPoints">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Building_GreatPersonPoints">
+        <MappingFragment StoreEntitySet="Building_GreatPersonPoints">
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="GreatPersonClassType" ColumnName="GreatPersonClassType" />
+          <ScalarProperty Name="PointsPerTurn" ColumnName="PointsPerTurn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Building_GreatWorks">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Building_GreatWorks">
+        <MappingFragment StoreEntitySet="Building_GreatWorks">
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="GreatWorkSlotType" ColumnName="GreatWorkSlotType" />
+          <ScalarProperty Name="NumSlots" ColumnName="NumSlots" />
+          <ScalarProperty Name="ThemingUniquePerson" ColumnName="ThemingUniquePerson" />
+          <ScalarProperty Name="ThemingSameObjectType" ColumnName="ThemingSameObjectType" />
+          <ScalarProperty Name="ThemingUniqueCivs" ColumnName="ThemingUniqueCivs" />
+          <ScalarProperty Name="ThemingSameEras" ColumnName="ThemingSameEras" />
+          <ScalarProperty Name="ThemingYieldMultiplier" ColumnName="ThemingYieldMultiplier" />
+          <ScalarProperty Name="ThemingTourismMultiplier" ColumnName="ThemingTourismMultiplier" />
+          <ScalarProperty Name="NonUniquePersonYield" ColumnName="NonUniquePersonYield" />
+          <ScalarProperty Name="NonUniquePersonTourism" ColumnName="NonUniquePersonTourism" />
+          <ScalarProperty Name="ThemingBonusDescription" ColumnName="ThemingBonusDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Building_YieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Building_YieldChanges">
+        <MappingFragment StoreEntitySet="Building_YieldChanges">
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Building_YieldDistrictCopies">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Building_YieldDistrictCopies">
+        <MappingFragment StoreEntitySet="Building_YieldDistrictCopies">
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="OldYieldType" ColumnName="OldYieldType" />
+          <ScalarProperty Name="NewYieldType" ColumnName="NewYieldType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuildingModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.BuildingModifier">
+        <MappingFragment StoreEntitySet="BuildingModifiers">
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Buildings">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Building">
+        <MappingFragment StoreEntitySet="Buildings">
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="MaxPlayerInstances" ColumnName="MaxPlayerInstances" />
+          <ScalarProperty Name="MaxWorldInstances" ColumnName="MaxWorldInstances" />
+          <ScalarProperty Name="Capital" ColumnName="Capital" />
+          <ScalarProperty Name="PrereqDistrict" ColumnName="PrereqDistrict" />
+          <ScalarProperty Name="AdjacentDistrict" ColumnName="AdjacentDistrict" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RequiresPlacement" ColumnName="RequiresPlacement" />
+          <ScalarProperty Name="RequiresRiver" ColumnName="RequiresRiver" />
+          <ScalarProperty Name="OuterDefenseHitPoints" ColumnName="OuterDefenseHitPoints" />
+          <ScalarProperty Name="Housing" ColumnName="Housing" />
+          <ScalarProperty Name="Entertainment" ColumnName="Entertainment" />
+          <ScalarProperty Name="AdjacentResource" ColumnName="AdjacentResource" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="EnabledByReligion" ColumnName="EnabledByReligion" />
+          <ScalarProperty Name="AllowsHolyCity" ColumnName="AllowsHolyCity" />
+          <ScalarProperty Name="PurchaseYield" ColumnName="PurchaseYield" />
+          <ScalarProperty Name="MustPurchase" ColumnName="MustPurchase" />
+          <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+          <ScalarProperty Name="IsWonder" ColumnName="IsWonder" />
+          <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+          <ScalarProperty Name="OuterDefenseStrength" ColumnName="OuterDefenseStrength" />
+          <ScalarProperty Name="CitizenSlots" ColumnName="CitizenSlots" />
+          <ScalarProperty Name="MustBeLake" ColumnName="MustBeLake" />
+          <ScalarProperty Name="MustNotBeLake" ColumnName="MustNotBeLake" />
+          <ScalarProperty Name="RegionalRange" ColumnName="RegionalRange" />
+          <ScalarProperty Name="AdjacentToMountain" ColumnName="AdjacentToMountain" />
+          <ScalarProperty Name="ObsoleteEra" ColumnName="ObsoleteEra" />
+          <ScalarProperty Name="RequiresReligion" ColumnName="RequiresReligion" />
+          <ScalarProperty Name="GrantFortification" ColumnName="GrantFortification" />
+          <ScalarProperty Name="DefenseModifier" ColumnName="DefenseModifier" />
+          <ScalarProperty Name="InternalOnly" ColumnName="InternalOnly" />
+          <ScalarProperty Name="RequiresAdjacentRiver" ColumnName="RequiresAdjacentRiver" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="QuoteAudio" ColumnName="QuoteAudio" />
+          <ScalarProperty Name="MustBeAdjacentLand" ColumnName="MustBeAdjacentLand" />
+          <ScalarProperty Name="AdvisorType" ColumnName="AdvisorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityEvents">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CityEvent">
+        <MappingFragment StoreEntitySet="CityEvents">
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CityNames">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CityName">
+        <MappingFragment StoreEntitySet="CityNames">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+          <ScalarProperty Name="ContinentType" ColumnName="ContinentType" />
+          <ScalarProperty Name="CityName1" ColumnName="CityName" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivicModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivicModifier">
+        <MappingFragment StoreEntitySet="CivicModifiers">
+          <ScalarProperty Name="CivicType" ColumnName="CivicType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivicQuotes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivicQuote">
+        <MappingFragment StoreEntitySet="CivicQuotes">
+          <ScalarProperty Name="CivicType" ColumnName="CivicType" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="QuoteAudio" ColumnName="QuoteAudio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Civics">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Civic">
+        <MappingFragment StoreEntitySet="Civics">
+          <ScalarProperty Name="CivicType" ColumnName="CivicType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Repeatable" ColumnName="Repeatable" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EraType" ColumnName="EraType" />
+          <ScalarProperty Name="BarbarianFree" ColumnName="BarbarianFree" />
+          <ScalarProperty Name="UITreeRow" ColumnName="UITreeRow" />
+          <ScalarProperty Name="AdvisorType" ColumnName="AdvisorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilizationCitizenNames">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilizationCitizenName">
+        <MappingFragment StoreEntitySet="CivilizationCitizenNames">
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="CitizenName" ColumnName="CitizenName" />
+          <ScalarProperty Name="Female" ColumnName="Female" />
+          <ScalarProperty Name="Modern" ColumnName="Modern" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilizationInfoes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilizationInfo">
+        <MappingFragment StoreEntitySet="CivilizationInfo">
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilizationLeaders">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilizationLeader">
+        <MappingFragment StoreEntitySet="CivilizationLeaders">
+          <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="CapitalName" ColumnName="CapitalName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilizationLevels">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilizationLevel">
+        <MappingFragment StoreEntitySet="CivilizationLevels">
+          <ScalarProperty Name="CivilizationLevelType" ColumnName="CivilizationLevelType" />
+          <ScalarProperty Name="CanFoundCities" ColumnName="CanFoundCities" />
+          <ScalarProperty Name="CanAnnexTilesWithCulture" ColumnName="CanAnnexTilesWithCulture" />
+          <ScalarProperty Name="CanAnnexTilesWithGold" ColumnName="CanAnnexTilesWithGold" />
+          <ScalarProperty Name="CanAnnexTilesWithReceivedInfluence" ColumnName="CanAnnexTilesWithReceivedInfluence" />
+          <ScalarProperty Name="CanEarnGreatPeople" ColumnName="CanEarnGreatPeople" />
+          <ScalarProperty Name="CanGiveInfluence" ColumnName="CanGiveInfluence" />
+          <ScalarProperty Name="CanReceiveInfluence" ColumnName="CanReceiveInfluence" />
+          <ScalarProperty Name="StartingTilesForCity" ColumnName="StartingTilesForCity" />
+          <ScalarProperty Name="CanBuildWonders" ColumnName="CanBuildWonders" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Civilizations">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Civilization">
+        <MappingFragment StoreEntitySet="Civilizations">
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Adjective" ColumnName="Adjective" />
+          <ScalarProperty Name="RandomCityNameDepth" ColumnName="RandomCityNameDepth" />
+          <ScalarProperty Name="StartingCivilizationLevelType" ColumnName="StartingCivilizationLevelType" />
+          <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilopediaPageGroupQueries">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilopediaPageGroupQuery">
+        <MappingFragment StoreEntitySet="CivilopediaPageGroupQueries">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="SQL" ColumnName="SQL" />
+          <ScalarProperty Name="PageGroupIdColumn" ColumnName="PageGroupIdColumn" />
+          <ScalarProperty Name="NameColumn" ColumnName="NameColumn" />
+          <ScalarProperty Name="TooltipColumn" ColumnName="TooltipColumn" />
+          <ScalarProperty Name="VisibleIfEmptyColumn" ColumnName="VisibleIfEmptyColumn" />
+          <ScalarProperty Name="SortIndexColumn" ColumnName="SortIndexColumn" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilopediaPageGroups">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilopediaPageGroup">
+        <MappingFragment StoreEntitySet="CivilopediaPageGroups">
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="PageGroupId" ColumnName="PageGroupId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tooltip" ColumnName="Tooltip" />
+          <ScalarProperty Name="VisibleIfEmpty" ColumnName="VisibleIfEmpty" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilopediaPageLayoutChapters">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilopediaPageLayoutChapter">
+        <MappingFragment StoreEntitySet="CivilopediaPageLayoutChapters">
+          <ScalarProperty Name="PageLayoutId" ColumnName="PageLayoutId" />
+          <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilopediaPageLayouts">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilopediaPageLayout">
+        <MappingFragment StoreEntitySet="CivilopediaPageLayouts">
+          <ScalarProperty Name="PageLayoutId" ColumnName="PageLayoutId" />
+          <ScalarProperty Name="ScriptTemplate" ColumnName="ScriptTemplate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilopediaPageQueries">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilopediaPageQuery">
+        <MappingFragment StoreEntitySet="CivilopediaPageQueries">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="SQL" ColumnName="SQL" />
+          <ScalarProperty Name="PageIdColumn" ColumnName="PageIdColumn" />
+          <ScalarProperty Name="PageGroupIdColumn" ColumnName="PageGroupIdColumn" />
+          <ScalarProperty Name="PageLayoutIdColumn" ColumnName="PageLayoutIdColumn" />
+          <ScalarProperty Name="NameColumn" ColumnName="NameColumn" />
+          <ScalarProperty Name="TooltipColumn" ColumnName="TooltipColumn" />
+          <ScalarProperty Name="SortIndexColumn" ColumnName="SortIndexColumn" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilopediaPages">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilopediaPage">
+        <MappingFragment StoreEntitySet="CivilopediaPages">
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="PageGroupId" ColumnName="PageGroupId" />
+          <ScalarProperty Name="PageLayoutId" ColumnName="PageLayoutId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tooltip" ColumnName="Tooltip" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CivilopediaSections">
+      <EntityTypeMapping TypeName="DebugGameplayModel.CivilopediaSection">
+        <MappingFragment StoreEntitySet="CivilopediaSections">
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Color">
+        <MappingFragment StoreEntitySet="Colors">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Red" ColumnName="Red" />
+          <ScalarProperty Name="Green" ColumnName="Green" />
+          <ScalarProperty Name="Blue" ColumnName="Blue" />
+          <ScalarProperty Name="Alpha" ColumnName="Alpha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Continents">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Continent">
+        <MappingFragment StoreEntitySet="Continents">
+          <ScalarProperty Name="ContinentType" ColumnName="ContinentType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.DataType">
+        <MappingFragment StoreEntitySet="DataTypes">
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="DataId" ColumnName="DataId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DealItems">
+      <EntityTypeMapping TypeName="DebugGameplayModel.DealItem">
+        <MappingFragment StoreEntitySet="DealItems">
+          <ScalarProperty Name="DealItemType" ColumnName="DealItemType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Defeats">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Defeat">
+        <MappingFragment StoreEntitySet="Defeats">
+          <ScalarProperty Name="DefeatType" ColumnName="DefeatType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Blurb" ColumnName="Blurb" />
+          <ScalarProperty Name="RequirementSetId" ColumnName="RequirementSetId" />
+          <ScalarProperty Name="EnabledByDefault" ColumnName="EnabledByDefault" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Difficulties">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Difficulty">
+        <MappingFragment StoreEntitySet="Difficulties">
+          <ScalarProperty Name="DifficultyType" ColumnName="DifficultyType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DefaultDifficulty" ColumnName="DefaultDifficulty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District_CitizenGreatPersonPoints">
+      <EntityTypeMapping TypeName="DebugGameplayModel.District_CitizenGreatPersonPoints">
+        <MappingFragment StoreEntitySet="District_CitizenGreatPersonPoints">
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="GreatPersonClassType" ColumnName="GreatPersonClassType" />
+          <ScalarProperty Name="PointsPerTurn" ColumnName="PointsPerTurn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District_CitizenYieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.District_CitizenYieldChanges">
+        <MappingFragment StoreEntitySet="District_CitizenYieldChanges">
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District_GreatPersonPoints">
+      <EntityTypeMapping TypeName="DebugGameplayModel.District_GreatPersonPoints">
+        <MappingFragment StoreEntitySet="District_GreatPersonPoints">
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="GreatPersonClassType" ColumnName="GreatPersonClassType" />
+          <ScalarProperty Name="PointsPerTurn" ColumnName="PointsPerTurn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District_TradeRouteYields">
+      <EntityTypeMapping TypeName="DebugGameplayModel.District_TradeRouteYields">
+        <MappingFragment StoreEntitySet="District_TradeRouteYields">
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChangeAsOrigin" ColumnName="YieldChangeAsOrigin" />
+          <ScalarProperty Name="YieldChangeAsDomesticDestination" ColumnName="YieldChangeAsDomesticDestination" />
+          <ScalarProperty Name="YieldChangeAsInternationalDestination" ColumnName="YieldChangeAsInternationalDestination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistrictModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.DistrictModifier">
+        <MappingFragment StoreEntitySet="DistrictModifiers">
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Districts">
+      <EntityTypeMapping TypeName="DebugGameplayModel.District">
+        <MappingFragment StoreEntitySet="Districts">
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="RequiresPlacement" ColumnName="RequiresPlacement" />
+          <ScalarProperty Name="RequiresPopulation" ColumnName="RequiresPopulation" />
+          <ScalarProperty Name="NoAdjacentCity" ColumnName="NoAdjacentCity" />
+          <ScalarProperty Name="CityCenter" ColumnName="CityCenter" />
+          <ScalarProperty Name="Aqueduct" ColumnName="Aqueduct" />
+          <ScalarProperty Name="InternalOnly" ColumnName="InternalOnly" />
+          <ScalarProperty Name="ZOC" ColumnName="ZOC" />
+          <ScalarProperty Name="FreeEmbark" ColumnName="FreeEmbark" />
+          <ScalarProperty Name="HitPoints" ColumnName="HitPoints" />
+          <ScalarProperty Name="CaptureRemovesBuildings" ColumnName="CaptureRemovesBuildings" />
+          <ScalarProperty Name="CaptureRemovesCityDefenses" ColumnName="CaptureRemovesCityDefenses" />
+          <ScalarProperty Name="PlunderType" ColumnName="PlunderType" />
+          <ScalarProperty Name="PlunderAmount" ColumnName="PlunderAmount" />
+          <ScalarProperty Name="TradeRouteCapacity" ColumnName="TradeRouteCapacity" />
+          <ScalarProperty Name="TradeEmbark" ColumnName="TradeEmbark" />
+          <ScalarProperty Name="MilitaryDomain" ColumnName="MilitaryDomain" />
+          <ScalarProperty Name="CostProgressionModel" ColumnName="CostProgressionModel" />
+          <ScalarProperty Name="CostProgressionParam1" ColumnName="CostProgressionParam1" />
+          <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+          <ScalarProperty Name="Appeal" ColumnName="Appeal" />
+          <ScalarProperty Name="Housing" ColumnName="Housing" />
+          <ScalarProperty Name="Entertainment" ColumnName="Entertainment" />
+          <ScalarProperty Name="OnePerCity" ColumnName="OnePerCity" />
+          <ScalarProperty Name="AllowsHolyCity" ColumnName="AllowsHolyCity" />
+          <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+          <ScalarProperty Name="AirSlots" ColumnName="AirSlots" />
+          <ScalarProperty Name="CitizenSlots" ColumnName="CitizenSlots" />
+          <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
+          <ScalarProperty Name="CityStrengthModifier" ColumnName="CityStrengthModifier" />
+          <ScalarProperty Name="AdjacentToLand" ColumnName="AdjacentToLand" />
+          <ScalarProperty Name="CanAttack" ColumnName="CanAttack" />
+          <ScalarProperty Name="AdvisorType" ColumnName="AdvisorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DynamicModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.DynamicModifier">
+        <MappingFragment StoreEntitySet="DynamicModifiers">
+          <ScalarProperty Name="ModifierType" ColumnName="ModifierType" />
+          <ScalarProperty Name="CollectionType" ColumnName="CollectionType" />
+          <ScalarProperty Name="EffectType" ColumnName="EffectType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Eras">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Era">
+        <MappingFragment StoreEntitySet="Eras">
+          <ScalarProperty Name="EraType" ColumnName="EraType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ChronologyIndex" ColumnName="ChronologyIndex" />
+          <ScalarProperty Name="WarmongerPoints" ColumnName="WarmongerPoints" />
+          <ScalarProperty Name="GreatPersonBaseCost" ColumnName="GreatPersonBaseCost" />
+          <ScalarProperty Name="EraTechBackgroundTexture" ColumnName="EraTechBackgroundTexture" />
+          <ScalarProperty Name="EraCivicBackgroundTexture" ColumnName="EraCivicBackgroundTexture" />
+          <ScalarProperty Name="WarmongerLevelDescription" ColumnName="WarmongerLevelDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FavoredReligions">
+      <EntityTypeMapping TypeName="DebugGameplayModel.FavoredReligion">
+        <MappingFragment StoreEntitySet="FavoredReligions">
+          <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="ReligionType" ColumnName="ReligionType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feature_AdjacentYields">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Feature_AdjacentYields">
+        <MappingFragment StoreEntitySet="Feature_AdjacentYields">
+          <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feature_Removes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Feature_Removes">
+        <MappingFragment StoreEntitySet="Feature_Removes">
+          <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="Yield" ColumnName="Yield" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feature_YieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Feature_YieldChanges">
+        <MappingFragment StoreEntitySet="Feature_YieldChanges">
+          <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Features">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Feature">
+        <MappingFragment StoreEntitySet="Features">
+          <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="NoCoast" ColumnName="NoCoast" />
+          <ScalarProperty Name="NoRiver" ColumnName="NoRiver" />
+          <ScalarProperty Name="NoAdjacentFeatures" ColumnName="NoAdjacentFeatures" />
+          <ScalarProperty Name="RequiresRiver" ColumnName="RequiresRiver" />
+          <ScalarProperty Name="MovementChange" ColumnName="MovementChange" />
+          <ScalarProperty Name="SightThroughModifier" ColumnName="SightThroughModifier" />
+          <ScalarProperty Name="Impassable" ColumnName="Impassable" />
+          <ScalarProperty Name="NaturalWonder" ColumnName="NaturalWonder" />
+          <ScalarProperty Name="RemoveTech" ColumnName="RemoveTech" />
+          <ScalarProperty Name="Removable" ColumnName="Removable" />
+          <ScalarProperty Name="AddCivic" ColumnName="AddCivic" />
+          <ScalarProperty Name="DefenseModifier" ColumnName="DefenseModifier" />
+          <ScalarProperty Name="AddsFreshWater" ColumnName="AddsFreshWater" />
+          <ScalarProperty Name="Appeal" ColumnName="Appeal" />
+          <ScalarProperty Name="MinDistanceLand" ColumnName="MinDistanceLand" />
+          <ScalarProperty Name="MaxDistanceLand" ColumnName="MaxDistanceLand" />
+          <ScalarProperty Name="NotNearFeature" ColumnName="NotNearFeature" />
+          <ScalarProperty Name="Lake" ColumnName="Lake" />
+          <ScalarProperty Name="Tiles" ColumnName="Tiles" />
+          <ScalarProperty Name="Adjacent" ColumnName="Adjacent" />
+          <ScalarProperty Name="NoResource" ColumnName="NoResource" />
+          <ScalarProperty Name="DoubleAdjacentTerrainYield" ColumnName="DoubleAdjacentTerrainYield" />
+          <ScalarProperty Name="NotCliff" ColumnName="NotCliff" />
+          <ScalarProperty Name="MinDistanceNW" ColumnName="MinDistanceNW" />
+          <ScalarProperty Name="CustomPlacement" ColumnName="CustomPlacement" />
+          <ScalarProperty Name="Forest" ColumnName="Forest" />
+          <ScalarProperty Name="AntiquityPriority" ColumnName="AntiquityPriority" />
+          <ScalarProperty Name="QuoteAudio" ColumnName="QuoteAudio" />
+          <ScalarProperty Name="Settlement" ColumnName="Settlement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flavors">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Flavor">
+        <MappingFragment StoreEntitySet="Flavors">
+          <ScalarProperty Name="FlavorType" ColumnName="FlavorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GameModifier">
+        <MappingFragment StoreEntitySet="GameModifiers">
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameSpeed_Turns">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GameSpeed_Turns">
+        <MappingFragment StoreEntitySet="GameSpeed_Turns">
+          <ScalarProperty Name="GameSpeedType" ColumnName="GameSpeedType" />
+          <ScalarProperty Name="MonthIncrement" ColumnName="MonthIncrement" />
+          <ScalarProperty Name="TurnsPerIncrement" ColumnName="TurnsPerIncrement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameSpeeds">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GameSpeed">
+        <MappingFragment StoreEntitySet="GameSpeeds">
+          <ScalarProperty Name="GameSpeedType" ColumnName="GameSpeedType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CostMultiplier" ColumnName="CostMultiplier" />
+          <ScalarProperty Name="CivicUnlockMaxCost" ColumnName="CivicUnlockMaxCost" />
+          <ScalarProperty Name="CivicUnlockPerTurnDrop" ColumnName="CivicUnlockPerTurnDrop" />
+          <ScalarProperty Name="CivicUnlockMinCost" ColumnName="CivicUnlockMinCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GlobalParameters">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GlobalParameter">
+        <MappingFragment StoreEntitySet="GlobalParameters">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodyHuts">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GoodyHut">
+        <MappingFragment StoreEntitySet="GoodyHuts">
+          <ScalarProperty Name="GoodyHutType" ColumnName="GoodyHutType" />
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodyHutSubTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GoodyHutSubType">
+        <MappingFragment StoreEntitySet="GoodyHutSubTypes">
+          <ScalarProperty Name="GoodyHut" ColumnName="GoodyHut" />
+          <ScalarProperty Name="SubTypeGoodyHut" ColumnName="SubTypeGoodyHut" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="ModifierID" ColumnName="ModifierID" />
+          <ScalarProperty Name="UpgradeUnit" ColumnName="UpgradeUnit" />
+          <ScalarProperty Name="Turn" ColumnName="Turn" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="Heal" ColumnName="Heal" />
+          <ScalarProperty Name="Relic" ColumnName="Relic" />
+          <ScalarProperty Name="Trader" ColumnName="Trader" />
+          <ScalarProperty Name="MinOneCity" ColumnName="MinOneCity" />
+          <ScalarProperty Name="RequiresUnit" ColumnName="RequiresUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gossips">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Gossip">
+        <MappingFragment StoreEntitySet="Gossips">
+          <ScalarProperty Name="GossipType" ColumnName="GossipType" />
+          <ScalarProperty Name="VisibilityLevel" ColumnName="VisibilityLevel" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Filter" ColumnName="Filter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Government_SlotCounts">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Government_SlotCounts">
+        <MappingFragment StoreEntitySet="Government_SlotCounts">
+          <ScalarProperty Name="GovernmentType" ColumnName="GovernmentType" />
+          <ScalarProperty Name="GovernmentSlotType" ColumnName="GovernmentSlotType" />
+          <ScalarProperty Name="NumSlots" ColumnName="NumSlots" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GovernmentBonusNames">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GovernmentBonusName">
+        <MappingFragment StoreEntitySet="GovernmentBonusNames">
+          <ScalarProperty Name="GovernmentBonusType" ColumnName="GovernmentBonusType" />
+          <ScalarProperty Name="BonusValue" ColumnName="BonusValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GovernmentModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GovernmentModifier">
+        <MappingFragment StoreEntitySet="GovernmentModifiers">
+          <ScalarProperty Name="GovernmentType" ColumnName="GovernmentType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Governments">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Government">
+        <MappingFragment StoreEntitySet="Governments">
+          <ScalarProperty Name="GovernmentType" ColumnName="GovernmentType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="InherentBonusDesc" ColumnName="InherentBonusDesc" />
+          <ScalarProperty Name="AccumulatedBonusShortDesc" ColumnName="AccumulatedBonusShortDesc" />
+          <ScalarProperty Name="AccumulatedBonusDesc" ColumnName="AccumulatedBonusDesc" />
+          <ScalarProperty Name="OtherGovernmentIntolerance" ColumnName="OtherGovernmentIntolerance" />
+          <ScalarProperty Name="InfluencePointsPerTurn" ColumnName="InfluencePointsPerTurn" />
+          <ScalarProperty Name="InfluencePointsThreshold" ColumnName="InfluencePointsThreshold" />
+          <ScalarProperty Name="InfluenceTokensPerThreshold" ColumnName="InfluenceTokensPerThreshold" />
+          <ScalarProperty Name="BonusType" ColumnName="BonusType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GovernmentSlots">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GovernmentSlot">
+        <MappingFragment StoreEntitySet="GovernmentSlots">
+          <ScalarProperty Name="GovernmentSlotType" ColumnName="GovernmentSlotType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AllowsAnyPolicy" ColumnName="AllowsAnyPolicy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GreatPersonClasses">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GreatPersonClass">
+        <MappingFragment StoreEntitySet="GreatPersonClasses">
+          <ScalarProperty Name="GreatPersonClassType" ColumnName="GreatPersonClassType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+          <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+          <ScalarProperty Name="MaxPlayerInstances" ColumnName="MaxPlayerInstances" />
+          <ScalarProperty Name="PseudoYieldType" ColumnName="PseudoYieldType" />
+          <ScalarProperty Name="IconString" ColumnName="IconString" />
+          <ScalarProperty Name="ActionIcon" ColumnName="ActionIcon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GreatPersonIndividualActionModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GreatPersonIndividualActionModifier">
+        <MappingFragment StoreEntitySet="GreatPersonIndividualActionModifiers">
+          <ScalarProperty Name="GreatPersonIndividualType" ColumnName="GreatPersonIndividualType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+          <ScalarProperty Name="AttachmentTargetType" ColumnName="AttachmentTargetType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GreatPersonIndividualBirthModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GreatPersonIndividualBirthModifier">
+        <MappingFragment StoreEntitySet="GreatPersonIndividualBirthModifiers">
+          <ScalarProperty Name="GreatPersonIndividualType" ColumnName="GreatPersonIndividualType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GreatPersonIndividuals">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GreatPersonIndividual">
+        <MappingFragment StoreEntitySet="GreatPersonIndividuals">
+          <ScalarProperty Name="GreatPersonIndividualType" ColumnName="GreatPersonIndividualType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GreatPersonClassType" ColumnName="GreatPersonClassType" />
+          <ScalarProperty Name="EraType" ColumnName="EraType" />
+          <ScalarProperty Name="ActionCharges" ColumnName="ActionCharges" />
+          <ScalarProperty Name="ActionRequiresOwnedTile" ColumnName="ActionRequiresOwnedTile" />
+          <ScalarProperty Name="ActionRequiresUnownedTile" ColumnName="ActionRequiresUnownedTile" />
+          <ScalarProperty Name="ActionRequiresAdjacentMountain" ColumnName="ActionRequiresAdjacentMountain" />
+          <ScalarProperty Name="ActionRequiresAdjacentOwnedTile" ColumnName="ActionRequiresAdjacentOwnedTile" />
+          <ScalarProperty Name="ActionRequiresAdjacentBarbarianUnit" ColumnName="ActionRequiresAdjacentBarbarianUnit" />
+          <ScalarProperty Name="ActionRequiresOnOrAdjacentNaturalWonder" ColumnName="ActionRequiresOnOrAdjacentNaturalWonder" />
+          <ScalarProperty Name="ActionRequiresOnOrAdjacentFeatureType" ColumnName="ActionRequiresOnOrAdjacentFeatureType" />
+          <ScalarProperty Name="ActionRequiresIncompleteWonder" ColumnName="ActionRequiresIncompleteWonder" />
+          <ScalarProperty Name="ActionRequiresIncompleteSpaceRaceProject" ColumnName="ActionRequiresIncompleteSpaceRaceProject" />
+          <ScalarProperty Name="ActionRequiresVisibleLuxury" ColumnName="ActionRequiresVisibleLuxury" />
+          <ScalarProperty Name="ActionRequiresNoMilitaryUnit" ColumnName="ActionRequiresNoMilitaryUnit" />
+          <ScalarProperty Name="ActionRequiresPlayerRelicSlot" ColumnName="ActionRequiresPlayerRelicSlot" />
+          <ScalarProperty Name="ActionRequiresMilitaryUnitDomain" ColumnName="ActionRequiresMilitaryUnitDomain" />
+          <ScalarProperty Name="ActionRequiresUnitMilitaryFormation" ColumnName="ActionRequiresUnitMilitaryFormation" />
+          <ScalarProperty Name="ActionRequiresCityGreatWorkObjectType" ColumnName="ActionRequiresCityGreatWorkObjectType" />
+          <ScalarProperty Name="ActionRequiresCompletedDistrictType" ColumnName="ActionRequiresCompletedDistrictType" />
+          <ScalarProperty Name="ActionRequiresMissingBuildingType" ColumnName="ActionRequiresMissingBuildingType" />
+          <ScalarProperty Name="ActionRequiresGoldCost" ColumnName="ActionRequiresGoldCost" />
+          <ScalarProperty Name="ActionNameTextOverride" ColumnName="ActionNameTextOverride" />
+          <ScalarProperty Name="ActionEffectTextOverride" ColumnName="ActionEffectTextOverride" />
+          <ScalarProperty Name="ActionEffectTileHighlighting" ColumnName="ActionEffectTileHighlighting" />
+          <ScalarProperty Name="BirthNameTextOverride" ColumnName="BirthNameTextOverride" />
+          <ScalarProperty Name="BirthEffectTextOverride" ColumnName="BirthEffectTextOverride" />
+          <ScalarProperty Name="AreaHighlightRadius" ColumnName="AreaHighlightRadius" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GreatWork_YieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GreatWork_YieldChanges">
+        <MappingFragment StoreEntitySet="GreatWork_YieldChanges">
+          <ScalarProperty Name="GreatWorkType" ColumnName="GreatWorkType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GreatWorkObjectTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GreatWorkObjectType">
+        <MappingFragment StoreEntitySet="GreatWorkObjectTypes">
+          <ScalarProperty Name="GreatWorkObjectType1" ColumnName="GreatWorkObjectType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="PseudoYieldType" ColumnName="PseudoYieldType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IconString" ColumnName="IconString" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GreatWorks">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GreatWork">
+        <MappingFragment StoreEntitySet="GreatWorks">
+          <ScalarProperty Name="GreatWorkType" ColumnName="GreatWorkType" />
+          <ScalarProperty Name="GreatWorkObjectType" ColumnName="GreatWorkObjectType" />
+          <ScalarProperty Name="GreatPersonIndividualType" ColumnName="GreatPersonIndividualType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Audio" ColumnName="Audio" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="Tourism" ColumnName="Tourism" />
+          <ScalarProperty Name="EraType" ColumnName="EraType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GreatWorkSlotTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.GreatWorkSlotType">
+        <MappingFragment StoreEntitySet="GreatWorkSlotTypes">
+          <ScalarProperty Name="GreatWorkSlotType1" ColumnName="GreatWorkSlotType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Happinesses">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Happiness">
+        <MappingFragment StoreEntitySet="Happinesses">
+          <ScalarProperty Name="HappinessType" ColumnName="HappinessType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MinimumAmenityScore" ColumnName="MinimumAmenityScore" />
+          <ScalarProperty Name="MaximumAmenityScore" ColumnName="MaximumAmenityScore" />
+          <ScalarProperty Name="GrowthModifier" ColumnName="GrowthModifier" />
+          <ScalarProperty Name="NonFoodYieldModifier" ColumnName="NonFoodYieldModifier" />
+          <ScalarProperty Name="RebellionPoints" ColumnName="RebellionPoints" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoricRankings">
+      <EntityTypeMapping TypeName="DebugGameplayModel.HistoricRanking">
+        <MappingFragment StoreEntitySet="HistoricRankings">
+          <ScalarProperty Name="HistoricLeader" ColumnName="HistoricLeader" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Improvement_BonusYieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Improvement_BonusYieldChanges">
+        <MappingFragment StoreEntitySet="Improvement_BonusYieldChanges">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="BonusYieldChange" ColumnName="BonusYieldChange" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Improvement_Tourism">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Improvement_Tourism">
+        <MappingFragment StoreEntitySet="Improvement_Tourism">
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="TourismSource" ColumnName="TourismSource" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="ScalingFactor" ColumnName="ScalingFactor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Improvement_ValidResources">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Improvement_ValidResources">
+        <MappingFragment StoreEntitySet="Improvement_ValidResources">
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="MustRemoveFeature" ColumnName="MustRemoveFeature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Improvement_ValidTerrains">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Improvement_ValidTerrains">
+        <MappingFragment StoreEntitySet="Improvement_ValidTerrains">
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Improvement_YieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Improvement_YieldChanges">
+        <MappingFragment StoreEntitySet="Improvement_YieldChanges">
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImprovementModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ImprovementModifier">
+        <MappingFragment StoreEntitySet="ImprovementModifiers">
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="ModifierID" ColumnName="ModifierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Improvements">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Improvement">
+        <MappingFragment StoreEntitySet="Improvements">
+          <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BarbarianCamp" ColumnName="BarbarianCamp" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="Buildable" ColumnName="Buildable" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RemoveOnEntry" ColumnName="RemoveOnEntry" />
+          <ScalarProperty Name="DispersalGold" ColumnName="DispersalGold" />
+          <ScalarProperty Name="PlunderType" ColumnName="PlunderType" />
+          <ScalarProperty Name="PlunderAmount" ColumnName="PlunderAmount" />
+          <ScalarProperty Name="Goody" ColumnName="Goody" />
+          <ScalarProperty Name="TilesPerGoody" ColumnName="TilesPerGoody" />
+          <ScalarProperty Name="GoodyRange" ColumnName="GoodyRange" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+          <ScalarProperty Name="Housing" ColumnName="Housing" />
+          <ScalarProperty Name="TilesRequired" ColumnName="TilesRequired" />
+          <ScalarProperty Name="SameAdjacentValid" ColumnName="SameAdjacentValid" />
+          <ScalarProperty Name="RequiresRiver" ColumnName="RequiresRiver" />
+          <ScalarProperty Name="EnforceTerrain" ColumnName="EnforceTerrain" />
+          <ScalarProperty Name="BuildInLine" ColumnName="BuildInLine" />
+          <ScalarProperty Name="CanBuildOutsideTerritory" ColumnName="CanBuildOutsideTerritory" />
+          <ScalarProperty Name="BuildOnFrontier" ColumnName="BuildOnFrontier" />
+          <ScalarProperty Name="AirSlots" ColumnName="AirSlots" />
+          <ScalarProperty Name="DefenseModifier" ColumnName="DefenseModifier" />
+          <ScalarProperty Name="GrantFortification" ColumnName="GrantFortification" />
+          <ScalarProperty Name="MinimumAppeal" ColumnName="MinimumAppeal" />
+          <ScalarProperty Name="Coast" ColumnName="Coast" />
+          <ScalarProperty Name="YieldFromAppeal" ColumnName="YieldFromAppeal" />
+          <ScalarProperty Name="WeaponSlots" ColumnName="WeaponSlots" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterfaceModes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.InterfaceMode">
+        <MappingFragment StoreEntitySet="InterfaceModes">
+          <ScalarProperty Name="ModeType" ColumnName="ModeType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Help" ColumnName="Help" />
+          <ScalarProperty Name="DisabledHelp" ColumnName="DisabledHelp" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="VisibleInUI" ColumnName="VisibleInUI" />
+          <ScalarProperty Name="CursorType" ColumnName="CursorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kinds">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Kind">
+        <MappingFragment StoreEntitySet="Kinds">
+          <ScalarProperty Name="Kind1" ColumnName="Kind" />
+          <ScalarProperty Name="Hash" ColumnName="Hash" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaderAnimations">
+      <EntityTypeMapping TypeName="DebugGameplayModel.LeaderAnimation">
+        <MappingFragment StoreEntitySet="LeaderAnimations">
+          <ScalarProperty Name="Leader" ColumnName="Leader" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="Initial" ColumnName="Initial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaderInfoes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.LeaderInfo">
+        <MappingFragment StoreEntitySet="LeaderInfo">
+          <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaderQuotes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.LeaderQuote">
+        <MappingFragment StoreEntitySet="LeaderQuotes">
+          <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="QuoteAudio" ColumnName="QuoteAudio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leaders">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Leader">
+        <MappingFragment StoreEntitySet="Leaders">
+          <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OperationList" ColumnName="OperationList" />
+          <ScalarProperty Name="IsBarbarianLeader" ColumnName="IsBarbarianLeader" />
+          <ScalarProperty Name="InheritFrom" ColumnName="InheritFrom" />
+          <ScalarProperty Name="SceneLayers" ColumnName="SceneLayers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MajorStartingUnits">
+      <EntityTypeMapping TypeName="DebugGameplayModel.MajorStartingUnit">
+        <MappingFragment StoreEntitySet="MajorStartingUnits">
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Era" ColumnName="Era" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="NotStartTile" ColumnName="NotStartTile" />
+          <ScalarProperty Name="OnDistrictCreated" ColumnName="OnDistrictCreated" />
+          <ScalarProperty Name="AiOnly" ColumnName="AiOnly" />
+          <ScalarProperty Name="MinDifficulty" ColumnName="MinDifficulty" />
+          <ScalarProperty Name="DifficultyDelta" ColumnName="DifficultyDelta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Map_GreatPersonClasses">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Map_GreatPersonClasses">
+        <MappingFragment StoreEntitySet="Map_GreatPersonClasses">
+          <ScalarProperty Name="MapSizeType" ColumnName="MapSizeType" />
+          <ScalarProperty Name="GreatPersonClassType" ColumnName="GreatPersonClassType" />
+          <ScalarProperty Name="MaxWorldInstances" ColumnName="MaxWorldInstances" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maps">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Map">
+        <MappingFragment StoreEntitySet="Maps">
+          <ScalarProperty Name="MapSizeType" ColumnName="MapSizeType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DefaultPlayers" ColumnName="DefaultPlayers" />
+          <ScalarProperty Name="FogTilesPerBarbarianCamp" ColumnName="FogTilesPerBarbarianCamp" />
+          <ScalarProperty Name="NumNaturalWonders" ColumnName="NumNaturalWonders" />
+          <ScalarProperty Name="UnitNameModifier" ColumnName="UnitNameModifier" />
+          <ScalarProperty Name="TargetNumCities" ColumnName="TargetNumCities" />
+          <ScalarProperty Name="GridWidth" ColumnName="GridWidth" />
+          <ScalarProperty Name="GridHeight" ColumnName="GridHeight" />
+          <ScalarProperty Name="TerrainGrainChange" ColumnName="TerrainGrainChange" />
+          <ScalarProperty Name="FeatureGrainChange" ColumnName="FeatureGrainChange" />
+          <ScalarProperty Name="ResearchPercent" ColumnName="ResearchPercent" />
+          <ScalarProperty Name="NumCitiesUnhealthPercent" ColumnName="NumCitiesUnhealthPercent" />
+          <ScalarProperty Name="NumCitiesPolicyCostMod" ColumnName="NumCitiesPolicyCostMod" />
+          <ScalarProperty Name="NumCitiesTechCostMod" ColumnName="NumCitiesTechCostMod" />
+          <ScalarProperty Name="EstimatedNumCities" ColumnName="EstimatedNumCities" />
+          <ScalarProperty Name="PlateValue" ColumnName="PlateValue" />
+          <ScalarProperty Name="Continents" ColumnName="Continents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModifierArguments">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ModifierArgument">
+        <MappingFragment StoreEntitySet="ModifierArguments">
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Modifier">
+        <MappingFragment StoreEntitySet="Modifiers">
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+          <ScalarProperty Name="ModifierType" ColumnName="ModifierType" />
+          <ScalarProperty Name="RunOnce" ColumnName="RunOnce" />
+          <ScalarProperty Name="Permanent" ColumnName="Permanent" />
+          <ScalarProperty Name="OwnerRequirementSetId" ColumnName="OwnerRequirementSetId" />
+          <ScalarProperty Name="SubjectRequirementSetId" ColumnName="SubjectRequirementSetId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModifierStrings">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ModifierString">
+        <MappingFragment StoreEntitySet="ModifierStrings">
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Months">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Month">
+        <MappingFragment StoreEntitySet="Months">
+          <ScalarProperty Name="MonthType" ColumnName="MonthType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NavigationProperties">
+      <EntityTypeMapping TypeName="DebugGameplayModel.NavigationProperty">
+        <MappingFragment StoreEntitySet="NavigationProperties">
+          <ScalarProperty Name="BaseTable" ColumnName="BaseTable" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="TargetTable" ColumnName="TargetTable" />
+          <ScalarProperty Name="IsCollection" ColumnName="IsCollection" />
+          <ScalarProperty Name="Query" ColumnName="Query" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NodeDataDefinitions">
+      <EntityTypeMapping TypeName="DebugGameplayModel.NodeDataDefinition">
+        <MappingFragment StoreEntitySet="NodeDataDefinitions">
+          <ScalarProperty Name="DataName" ColumnName="DataName" />
+          <ScalarProperty Name="DefnId" ColumnName="DefnId" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+          <ScalarProperty Name="NodeType" ColumnName="NodeType" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+          <ScalarProperty Name="RequiredGroup" ColumnName="RequiredGroup" />
+          <ScalarProperty Name="Output" ColumnName="Output" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="UserData" ColumnName="UserData" />
+          <ScalarProperty Name="Automatic" ColumnName="Automatic" />
+          <ScalarProperty Name="Tagged" ColumnName="Tagged" />
+          <ScalarProperty Name="EnumList" ColumnName="EnumList" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NodeDefinitions">
+      <EntityTypeMapping TypeName="DebugGameplayModel.NodeDefinition">
+        <MappingFragment StoreEntitySet="NodeDefinitions">
+          <ScalarProperty Name="NodeType" ColumnName="NodeType" />
+          <ScalarProperty Name="NodeId" ColumnName="NodeId" />
+          <ScalarProperty Name="ShapeId" ColumnName="ShapeId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Notification">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="SeverityType" ColumnName="SeverityType" />
+          <ScalarProperty Name="ExpiresEndOfTurn" ColumnName="ExpiresEndOfTurn" />
+          <ScalarProperty Name="ExpiresEndOfNextTurn" ColumnName="ExpiresEndOfNextTurn" />
+          <ScalarProperty Name="SubType" ColumnName="SubType" />
+          <ScalarProperty Name="AutoNotify" ColumnName="AutoNotify" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObsoletePolicies">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ObsoletePolicy">
+        <MappingFragment StoreEntitySet="ObsoletePolicies">
+          <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+          <ScalarProperty Name="ObsoletePolicy1" ColumnName="ObsoletePolicy" />
+          <ScalarProperty Name="RequiresAvailableGreatPersonClass" ColumnName="RequiresAvailableGreatPersonClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpTeamRequirements">
+      <EntityTypeMapping TypeName="DebugGameplayModel.OpTeamRequirement">
+        <MappingFragment StoreEntitySet="OpTeamRequirements">
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="AiType" ColumnName="AiType" />
+          <ScalarProperty Name="MinNumber" ColumnName="MinNumber" />
+          <ScalarProperty Name="MaxNumber" ColumnName="MaxNumber" />
+          <ScalarProperty Name="MinPercentage" ColumnName="MinPercentage" />
+          <ScalarProperty Name="MaxPercentage" ColumnName="MaxPercentage" />
+          <ScalarProperty Name="ReconsiderWhilePreparing" ColumnName="ReconsiderWhilePreparing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerColors">
+      <EntityTypeMapping TypeName="DebugGameplayModel.PlayerColor">
+        <MappingFragment StoreEntitySet="PlayerColors">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Usage" ColumnName="Usage" />
+          <ScalarProperty Name="PrimaryColor" ColumnName="PrimaryColor" />
+          <ScalarProperty Name="SecondaryColor" ColumnName="SecondaryColor" />
+          <ScalarProperty Name="TextColor" ColumnName="TextColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlotEvalConditions">
+      <EntityTypeMapping TypeName="DebugGameplayModel.PlotEvalCondition">
+        <MappingFragment StoreEntitySet="PlotEvalConditions">
+          <ScalarProperty Name="ConditionType" ColumnName="ConditionType" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Policies">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Policy">
+        <MappingFragment StoreEntitySet="Policies">
+          <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="GovernmentSlotType" ColumnName="GovernmentSlotType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.PolicyModifier">
+        <MappingFragment StoreEntitySet="PolicyModifiers">
+          <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_GreatPersonPoints">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Project_GreatPersonPoints">
+        <MappingFragment StoreEntitySet="Project_GreatPersonPoints">
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="GreatPersonClassType" ColumnName="GreatPersonClassType" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="PointProgressionModel" ColumnName="PointProgressionModel" />
+          <ScalarProperty Name="PointProgressionParam1" ColumnName="PointProgressionParam1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_YieldConversions">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Project_YieldConversions">
+        <MappingFragment StoreEntitySet="Project_YieldConversions">
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="PercentOfProductionRate" ColumnName="PercentOfProductionRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectCompletionModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ProjectCompletionModifier">
+        <MappingFragment StoreEntitySet="ProjectCompletionModifiers">
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectPrereqs">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ProjectPrereq">
+        <MappingFragment StoreEntitySet="ProjectPrereqs">
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="PrereqProjectType" ColumnName="PrereqProjectType" />
+          <ScalarProperty Name="MinimumPlayerInstances" ColumnName="MinimumPlayerInstances" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PopupText" ColumnName="PopupText" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="CostProgressionModel" ColumnName="CostProgressionModel" />
+          <ScalarProperty Name="CostProgressionParam1" ColumnName="CostProgressionParam1" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="PrereqDistrict" ColumnName="PrereqDistrict" />
+          <ScalarProperty Name="VisualBuildingType" ColumnName="VisualBuildingType" />
+          <ScalarProperty Name="SpaceRace" ColumnName="SpaceRace" />
+          <ScalarProperty Name="OuterDefenseRepair" ColumnName="OuterDefenseRepair" />
+          <ScalarProperty Name="MaxPlayerInstances" ColumnName="MaxPlayerInstances" />
+          <ScalarProperty Name="AmenitiesWhileActive" ColumnName="AmenitiesWhileActive" />
+          <ScalarProperty Name="PrereqResource" ColumnName="PrereqResource" />
+          <ScalarProperty Name="AdvisorType" ColumnName="AdvisorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PseudoYields">
+      <EntityTypeMapping TypeName="DebugGameplayModel.PseudoYield">
+        <MappingFragment StoreEntitySet="PseudoYields">
+          <ScalarProperty Name="PseudoYieldType" ColumnName="PseudoYieldType" />
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quests">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Quest">
+        <MappingFragment StoreEntitySet="Quests">
+          <ScalarProperty Name="QuestType" ColumnName="QuestType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="InstanceDescription" ColumnName="InstanceDescription" />
+          <ScalarProperty Name="Reward" ColumnName="Reward" />
+          <ScalarProperty Name="InstanceReward" ColumnName="InstanceReward" />
+          <ScalarProperty Name="IconString" ColumnName="IconString" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RandomAgendas">
+      <EntityTypeMapping TypeName="DebugGameplayModel.RandomAgenda">
+        <MappingFragment StoreEntitySet="RandomAgendas">
+          <ScalarProperty Name="AgendaType" ColumnName="AgendaType" />
+          <ScalarProperty Name="GameLimit" ColumnName="GameLimit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religions">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Religion">
+        <MappingFragment StoreEntitySet="Religions">
+          <ScalarProperty Name="ReligionType" ColumnName="ReligionType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IconString" ColumnName="IconString" />
+          <ScalarProperty Name="Pantheon" ColumnName="Pantheon" />
+          <ScalarProperty Name="RequiresCustomName" ColumnName="RequiresCustomName" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequirementArguments">
+      <EntityTypeMapping TypeName="DebugGameplayModel.RequirementArgument">
+        <MappingFragment StoreEntitySet="RequirementArguments">
+          <ScalarProperty Name="RequirementId" ColumnName="RequirementId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requirements">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Requirement">
+        <MappingFragment StoreEntitySet="Requirements">
+          <ScalarProperty Name="RequirementId" ColumnName="RequirementId" />
+          <ScalarProperty Name="RequirementType" ColumnName="RequirementType" />
+          <ScalarProperty Name="Likeliness" ColumnName="Likeliness" />
+          <ScalarProperty Name="Inverse" ColumnName="Inverse" />
+          <ScalarProperty Name="Triggered" ColumnName="Triggered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequirementSets">
+      <EntityTypeMapping TypeName="DebugGameplayModel.RequirementSet">
+        <MappingFragment StoreEntitySet="RequirementSets">
+          <ScalarProperty Name="RequirementSetId" ColumnName="RequirementSetId" />
+          <ScalarProperty Name="RequirementSetType" ColumnName="RequirementSetType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequirementStrings">
+      <EntityTypeMapping TypeName="DebugGameplayModel.RequirementString">
+        <MappingFragment StoreEntitySet="RequirementStrings">
+          <ScalarProperty Name="RequirementId" ColumnName="RequirementId" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resource_Distribution">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Resource_Distribution">
+        <MappingFragment StoreEntitySet="Resource_Distribution">
+          <ScalarProperty Name="Continents" ColumnName="Continents" />
+          <ScalarProperty Name="Scarce" ColumnName="Scarce" />
+          <ScalarProperty Name="Average" ColumnName="Average" />
+          <ScalarProperty Name="Plentiful" ColumnName="Plentiful" />
+          <ScalarProperty Name="PercentAdjusted" ColumnName="PercentAdjusted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resource_Harvests">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Resource_Harvests">
+        <MappingFragment StoreEntitySet="Resource_Harvests">
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resource_TradeRouteYields">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Resource_TradeRouteYields">
+        <MappingFragment StoreEntitySet="Resource_TradeRouteYields">
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resource_YieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Resource_YieldChanges">
+        <MappingFragment StoreEntitySet="Resource_YieldChanges">
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resources">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Resource">
+        <MappingFragment StoreEntitySet="Resources">
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ResourceClassType" ColumnName="ResourceClassType" />
+          <ScalarProperty Name="Happiness" ColumnName="Happiness" />
+          <ScalarProperty Name="NoRiver" ColumnName="NoRiver" />
+          <ScalarProperty Name="RequiresRiver" ColumnName="RequiresRiver" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="Clumped" ColumnName="Clumped" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="PeakEra" ColumnName="PeakEra" />
+          <ScalarProperty Name="RevealedEra" ColumnName="RevealedEra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Route">
+        <MappingFragment StoreEntitySet="Routes">
+          <ScalarProperty Name="RouteType" ColumnName="RouteType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MovementCost" ColumnName="MovementCost" />
+          <ScalarProperty Name="SupportsBridges" ColumnName="SupportsBridges" />
+          <ScalarProperty Name="PlacementValue" ColumnName="PlacementValue" />
+          <ScalarProperty Name="PlacementRequiresRoutePresent" ColumnName="PlacementRequiresRoutePresent" />
+          <ScalarProperty Name="PlacementRequiresOwnedTile" ColumnName="PlacementRequiresOwnedTile" />
+          <ScalarProperty Name="PrereqEra" ColumnName="PrereqEra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SavingTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.SavingType">
+        <MappingFragment StoreEntitySet="SavingTypes">
+          <ScalarProperty Name="SavingType1" ColumnName="SavingType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScoringCategories">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ScoringCategory">
+        <MappingFragment StoreEntitySet="ScoringCategories">
+          <ScalarProperty Name="CategoryType" ColumnName="CategoryType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScoringLineItems">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ScoringLineItem">
+        <MappingFragment StoreEntitySet="ScoringLineItems">
+          <ScalarProperty Name="LineItemType" ColumnName="LineItemType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+          <ScalarProperty Name="ScaleByCost" ColumnName="ScaleByCost" />
+          <ScalarProperty Name="Civics" ColumnName="Civics" />
+          <ScalarProperty Name="Cities" ColumnName="Cities" />
+          <ScalarProperty Name="Districts" ColumnName="Districts" />
+          <ScalarProperty Name="Population" ColumnName="Population" />
+          <ScalarProperty Name="GreatPeople" ColumnName="GreatPeople" />
+          <ScalarProperty Name="Techs" ColumnName="Techs" />
+          <ScalarProperty Name="Wonders" ColumnName="Wonders" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Pillage" ColumnName="Pillage" />
+          <ScalarProperty Name="Trade" ColumnName="Trade" />
+          <ScalarProperty Name="TieBreakerPriority" ColumnName="TieBreakerPriority" />
+          <ScalarProperty Name="ScoringScenario1" ColumnName="ScoringScenario1" />
+          <ScalarProperty Name="ScoringScenario2" ColumnName="ScoringScenario2" />
+          <ScalarProperty Name="ScoringScenario3" ColumnName="ScoringScenario3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seasons">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Season">
+        <MappingFragment StoreEntitySet="Seasons">
+          <ScalarProperty Name="SeasonType" ColumnName="SeasonType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettlementPreferences">
+      <EntityTypeMapping TypeName="DebugGameplayModel.SettlementPreference">
+        <MappingFragment StoreEntitySet="SettlementPreferences">
+          <ScalarProperty Name="PreferenceType" ColumnName="PreferenceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShapeDefinitions">
+      <EntityTypeMapping TypeName="DebugGameplayModel.ShapeDefinition">
+        <MappingFragment StoreEntitySet="ShapeDefinitions">
+          <ScalarProperty Name="ShapeName" ColumnName="ShapeName" />
+          <ScalarProperty Name="ShapeId" ColumnName="ShapeId" />
+          <ScalarProperty Name="MinChildren" ColumnName="MinChildren" />
+          <ScalarProperty Name="MaxChildren" ColumnName="MaxChildren" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartBiasFeatures">
+      <EntityTypeMapping TypeName="DebugGameplayModel.StartBiasFeature">
+        <MappingFragment StoreEntitySet="StartBiasFeatures">
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+          <ScalarProperty Name="Tier" ColumnName="Tier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartBiasResources">
+      <EntityTypeMapping TypeName="DebugGameplayModel.StartBiasResource">
+        <MappingFragment StoreEntitySet="StartBiasResources">
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="Tier" ColumnName="Tier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartBiasRivers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.StartBiasRiver">
+        <MappingFragment StoreEntitySet="StartBiasRivers">
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="Tier" ColumnName="Tier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartBiasTerrains">
+      <EntityTypeMapping TypeName="DebugGameplayModel.StartBiasTerrain">
+        <MappingFragment StoreEntitySet="StartBiasTerrains">
+          <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+          <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+          <ScalarProperty Name="Tier" ColumnName="Tier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartEras">
+      <EntityTypeMapping TypeName="DebugGameplayModel.StartEra">
+        <MappingFragment StoreEntitySet="StartEras">
+          <ScalarProperty Name="EraType" ColumnName="EraType" />
+          <ScalarProperty Name="Gold" ColumnName="Gold" />
+          <ScalarProperty Name="Faith" ColumnName="Faith" />
+          <ScalarProperty Name="FirstTurnCivicChange" ColumnName="FirstTurnCivicChange" />
+          <ScalarProperty Name="StartingPopulationCapital" ColumnName="StartingPopulationCapital" />
+          <ScalarProperty Name="StartingPopulationOtherCities" ColumnName="StartingPopulationOtherCities" />
+          <ScalarProperty Name="GrowthRate" ColumnName="GrowthRate" />
+          <ScalarProperty Name="ProductionRate" ColumnName="ProductionRate" />
+          <ScalarProperty Name="DistrictProductionRate" ColumnName="DistrictProductionRate" />
+          <ScalarProperty Name="StartingMeleeStrengthMajor" ColumnName="StartingMeleeStrengthMajor" />
+          <ScalarProperty Name="StartingMeleeStrengthMinor" ColumnName="StartingMeleeStrengthMinor" />
+          <ScalarProperty Name="ObsoleteReligion" ColumnName="ObsoleteReligion" />
+          <ScalarProperty Name="Tiles" ColumnName="Tiles" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="IgnoreGoodyHutTurn" ColumnName="IgnoreGoodyHutTurn" />
+          <ScalarProperty Name="StartingRangedStrengthMajor" ColumnName="StartingRangedStrengthMajor" />
+          <ScalarProperty Name="StartingRangedStrengthMinor" ColumnName="StartingRangedStrengthMinor" />
+          <ScalarProperty Name="StartingAmenitiesCapital" ColumnName="StartingAmenitiesCapital" />
+          <ScalarProperty Name="StartingHousingCapital" ColumnName="StartingHousingCapital" />
+          <ScalarProperty Name="StartingAmenitiesOtherCities" ColumnName="StartingAmenitiesOtherCities" />
+          <ScalarProperty Name="StartingHousingOtherCities" ColumnName="StartingHousingOtherCities" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartingBuildings">
+      <EntityTypeMapping TypeName="DebugGameplayModel.StartingBuilding">
+        <MappingFragment StoreEntitySet="StartingBuildings">
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="Era" ColumnName="Era" />
+          <ScalarProperty Name="District" ColumnName="District" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartingGovernments">
+      <EntityTypeMapping TypeName="DebugGameplayModel.StartingGovernment">
+        <MappingFragment StoreEntitySet="StartingGovernments">
+          <ScalarProperty Name="Government" ColumnName="Government" />
+          <ScalarProperty Name="Era" ColumnName="Era" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Strategies">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Strategy">
+        <MappingFragment StoreEntitySet="Strategies">
+          <ScalarProperty Name="StrategyType" ColumnName="StrategyType" />
+          <ScalarProperty Name="VictoryType" ColumnName="VictoryType" />
+          <ScalarProperty Name="NumConditionsNeeded" ColumnName="NumConditionsNeeded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Strategy_YieldPriorities">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Strategy_YieldPriorities">
+        <MappingFragment StoreEntitySet="Strategy_YieldPriorities">
+          <ScalarProperty Name="StrategyType" ColumnName="StrategyType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="PseudoYieldType" ColumnName="PseudoYieldType" />
+          <ScalarProperty Name="PercentageDelta" ColumnName="PercentageDelta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StrategyConditions">
+      <EntityTypeMapping TypeName="DebugGameplayModel.StrategyCondition">
+        <MappingFragment StoreEntitySet="StrategyConditions">
+          <ScalarProperty Name="StrategyType" ColumnName="StrategyType" />
+          <ScalarProperty Name="ConditionFunction" ColumnName="ConditionFunction" />
+          <ScalarProperty Name="ThresholdValue" ColumnName="ThresholdValue" />
+          <ScalarProperty Name="Disqualifier" ColumnName="Disqualifier" />
+          <ScalarProperty Name="Exclusive" ColumnName="Exclusive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tags">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Tag">
+        <MappingFragment StoreEntitySet="Tags">
+          <ScalarProperty Name="Tag1" ColumnName="Tag" />
+          <ScalarProperty Name="Vocabulary" ColumnName="Vocabulary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TargetTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TargetType">
+        <MappingFragment StoreEntitySet="TargetTypes">
+          <ScalarProperty Name="TargetName" ColumnName="TargetName" />
+          <ScalarProperty Name="TargetValue" ColumnName="TargetValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Technologies">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Technology">
+        <MappingFragment StoreEntitySet="Technologies">
+          <ScalarProperty Name="TechnologyType" ColumnName="TechnologyType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Repeatable" ColumnName="Repeatable" />
+          <ScalarProperty Name="EmbarkUnitType" ColumnName="EmbarkUnitType" />
+          <ScalarProperty Name="EmbarkAll" ColumnName="EmbarkAll" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EraType" ColumnName="EraType" />
+          <ScalarProperty Name="Critical" ColumnName="Critical" />
+          <ScalarProperty Name="BarbarianFree" ColumnName="BarbarianFree" />
+          <ScalarProperty Name="UITreeRow" ColumnName="UITreeRow" />
+          <ScalarProperty Name="AdvisorType" ColumnName="AdvisorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechnologyModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TechnologyModifier">
+        <MappingFragment StoreEntitySet="TechnologyModifiers">
+          <ScalarProperty Name="TechnologyType" ColumnName="TechnologyType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechnologyQuotes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TechnologyQuote">
+        <MappingFragment StoreEntitySet="TechnologyQuotes">
+          <ScalarProperty Name="TechnologyType" ColumnName="TechnologyType" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="QuoteAudio" ColumnName="QuoteAudio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Terrain_YieldChanges">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Terrain_YieldChanges">
+        <MappingFragment StoreEntitySet="Terrain_YieldChanges">
+          <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="YieldChange" ColumnName="YieldChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Terrains">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Terrain">
+        <MappingFragment StoreEntitySet="Terrains">
+          <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mountain" ColumnName="Mountain" />
+          <ScalarProperty Name="Hills" ColumnName="Hills" />
+          <ScalarProperty Name="Water" ColumnName="Water" />
+          <ScalarProperty Name="InfluenceCost" ColumnName="InfluenceCost" />
+          <ScalarProperty Name="MovementCost" ColumnName="MovementCost" />
+          <ScalarProperty Name="ShallowWater" ColumnName="ShallowWater" />
+          <ScalarProperty Name="SightModifier" ColumnName="SightModifier" />
+          <ScalarProperty Name="SightThroughModifier" ColumnName="SightThroughModifier" />
+          <ScalarProperty Name="Impassable" ColumnName="Impassable" />
+          <ScalarProperty Name="DefenseModifier" ColumnName="DefenseModifier" />
+          <ScalarProperty Name="Appeal" ColumnName="Appeal" />
+          <ScalarProperty Name="AntiquityPriority" ColumnName="AntiquityPriority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TraitModifiers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TraitModifier">
+        <MappingFragment StoreEntitySet="TraitModifiers">
+          <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Traits">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Trait">
+        <MappingFragment StoreEntitySet="Traits">
+          <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+          <ScalarProperty Name="InternalOnly" ColumnName="InternalOnly" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreeDatas">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TreeData">
+        <MappingFragment StoreEntitySet="TreeData">
+          <ScalarProperty Name="DefnId" ColumnName="DefnId" />
+          <ScalarProperty Name="NodeId" ColumnName="NodeId" />
+          <ScalarProperty Name="TreeName" ColumnName="TreeName" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="DefaultData" ColumnName="DefaultData" />
+          <ScalarProperty Name="ParentTag" ColumnName="ParentTag" />
+          <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TriggeredBehaviorTrees">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TriggeredBehaviorTree">
+        <MappingFragment StoreEntitySet="TriggeredBehaviorTrees">
+          <ScalarProperty Name="TriggerType" ColumnName="TriggerType" />
+          <ScalarProperty Name="TreeName" ColumnName="TreeName" />
+          <ScalarProperty Name="OperationName" ColumnName="OperationName" />
+          <ScalarProperty Name="AIEvent" ColumnName="AIEvent" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TurnPhases">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TurnPhas">
+        <MappingFragment StoreEntitySet="TurnPhases">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TurnPhaseType" ColumnName="TurnPhaseType" />
+          <ScalarProperty Name="PhaseOrder" ColumnName="PhaseOrder" />
+          <ScalarProperty Name="TurnMode" ColumnName="TurnMode" />
+          <ScalarProperty Name="ActiveSegmentType" ColumnName="ActiveSegmentType" />
+          <ScalarProperty Name="InactiveSegmentType" ColumnName="InactiveSegmentType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TurnSegments">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TurnSegment">
+        <MappingFragment StoreEntitySet="TurnSegments">
+          <ScalarProperty Name="TurnSegmentType" ColumnName="TurnSegmentType" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Sound" ColumnName="Sound" />
+          <ScalarProperty Name="AllowStrategicCommands" ColumnName="AllowStrategicCommands" />
+          <ScalarProperty Name="AllowTacticalCommands" ColumnName="AllowTacticalCommands" />
+          <ScalarProperty Name="TimeLimit_Base" ColumnName="TimeLimit_Base" />
+          <ScalarProperty Name="TimeLimit_PerCity" ColumnName="TimeLimit_PerCity" />
+          <ScalarProperty Name="TimeLimit_PerUnit" ColumnName="TimeLimit_PerUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TurnTimers">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TurnTimer">
+        <MappingFragment StoreEntitySet="TurnTimers">
+          <ScalarProperty Name="TurnTimerType" ColumnName="TurnTimerType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeProperties">
+      <EntityTypeMapping TypeName="DebugGameplayModel.TypeProperty">
+        <MappingFragment StoreEntitySet="TypeProperties">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Types">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Type">
+        <MappingFragment StoreEntitySet="Types">
+          <ScalarProperty Name="Type1" ColumnName="Type" />
+          <ScalarProperty Name="Hash" ColumnName="Hash" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit_BuildingPrereqs">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Unit_BuildingPrereqs">
+        <MappingFragment StoreEntitySet="Unit_BuildingPrereqs">
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="PrereqBuilding" ColumnName="PrereqBuilding" />
+          <ScalarProperty Name="NumSupported" ColumnName="NumSupported" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit_RebellionTags">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Unit_RebellionTags">
+        <MappingFragment StoreEntitySet="Unit_RebellionTags">
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="RebellionLevel" ColumnName="RebellionLevel" />
+          <ScalarProperty Name="NumCreated" ColumnName="NumCreated" />
+          <ScalarProperty Name="ForbiddenTag" ColumnName="ForbiddenTag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitAbilities">
+      <EntityTypeMapping TypeName="DebugGameplayModel.UnitAbility">
+        <MappingFragment StoreEntitySet="UnitAbilities">
+          <ScalarProperty Name="UnitAbilityType" ColumnName="UnitAbilityType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitAiTypes">
+      <EntityTypeMapping TypeName="DebugGameplayModel.UnitAiType">
+        <MappingFragment StoreEntitySet="UnitAiTypes">
+          <ScalarProperty Name="AiType" ColumnName="AiType" />
+          <ScalarProperty Name="TypeValue" ColumnName="TypeValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitCommands">
+      <EntityTypeMapping TypeName="DebugGameplayModel.UnitCommand">
+        <MappingFragment StoreEntitySet="UnitCommands">
+          <ScalarProperty Name="CommandType" ColumnName="CommandType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Help" ColumnName="Help" />
+          <ScalarProperty Name="DisabledHelp" ColumnName="DisabledHelp" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Sound" ColumnName="Sound" />
+          <ScalarProperty Name="VisibleInUI" ColumnName="VisibleInUI" />
+          <ScalarProperty Name="HoldCycling" ColumnName="HoldCycling" />
+          <ScalarProperty Name="CategoryInUI" ColumnName="CategoryInUI" />
+          <ScalarProperty Name="InterfaceMode" ColumnName="InterfaceMode" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="MaxEra" ColumnName="MaxEra" />
+          <ScalarProperty Name="HotkeyId" ColumnName="HotkeyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitFormationClasses">
+      <EntityTypeMapping TypeName="DebugGameplayModel.UnitFormationClass">
+        <MappingFragment StoreEntitySet="UnitFormationClasses">
+          <ScalarProperty Name="FormationClassType" ColumnName="FormationClassType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitNames">
+      <EntityTypeMapping TypeName="DebugGameplayModel.UnitName">
+        <MappingFragment StoreEntitySet="UnitNames">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameType" ColumnName="NameType" />
+          <ScalarProperty Name="TextKey" ColumnName="TextKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitOperations">
+      <EntityTypeMapping TypeName="DebugGameplayModel.UnitOperation">
+        <MappingFragment StoreEntitySet="UnitOperations">
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Help" ColumnName="Help" />
+          <ScalarProperty Name="DisabledHelp" ColumnName="DisabledHelp" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Sound" ColumnName="Sound" />
+          <ScalarProperty Name="VisibleInUI" ColumnName="VisibleInUI" />
+          <ScalarProperty Name="HoldCycling" ColumnName="HoldCycling" />
+          <ScalarProperty Name="CategoryInUI" ColumnName="CategoryInUI" />
+          <ScalarProperty Name="InterfaceMode" ColumnName="InterfaceMode" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="Turns" ColumnName="Turns" />
+          <ScalarProperty Name="BaseProbability" ColumnName="BaseProbability" />
+          <ScalarProperty Name="LevelProbChange" ColumnName="LevelProbChange" />
+          <ScalarProperty Name="EnemyProbChange" ColumnName="EnemyProbChange" />
+          <ScalarProperty Name="EnemyLevelProbChange" ColumnName="EnemyLevelProbChange" />
+          <ScalarProperty Name="TargetDistrict" ColumnName="TargetDistrict" />
+          <ScalarProperty Name="HotkeyId" ColumnName="HotkeyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Units">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Unit">
+        <MappingFragment StoreEntitySet="Units">
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BaseSightRange" ColumnName="BaseSightRange" />
+          <ScalarProperty Name="BaseMoves" ColumnName="BaseMoves" />
+          <ScalarProperty Name="Combat" ColumnName="Combat" />
+          <ScalarProperty Name="RangedCombat" ColumnName="RangedCombat" />
+          <ScalarProperty Name="Range" ColumnName="Range" />
+          <ScalarProperty Name="Bombard" ColumnName="Bombard" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="FormationClass" ColumnName="FormationClass" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="PopulationCost" ColumnName="PopulationCost" />
+          <ScalarProperty Name="FoundCity" ColumnName="FoundCity" />
+          <ScalarProperty Name="FoundReligion" ColumnName="FoundReligion" />
+          <ScalarProperty Name="MakeTradeRoute" ColumnName="MakeTradeRoute" />
+          <ScalarProperty Name="EvangelizeBelief" ColumnName="EvangelizeBelief" />
+          <ScalarProperty Name="LaunchInquisition" ColumnName="LaunchInquisition" />
+          <ScalarProperty Name="RequiresInquisition" ColumnName="RequiresInquisition" />
+          <ScalarProperty Name="BuildCharges" ColumnName="BuildCharges" />
+          <ScalarProperty Name="ReligiousStrength" ColumnName="ReligiousStrength" />
+          <ScalarProperty Name="ReligionEvictPercent" ColumnName="ReligionEvictPercent" />
+          <ScalarProperty Name="SpreadCharges" ColumnName="SpreadCharges" />
+          <ScalarProperty Name="ExtractsArtifacts" ColumnName="ExtractsArtifacts" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Flavor" ColumnName="Flavor" />
+          <ScalarProperty Name="CanCapture" ColumnName="CanCapture" />
+          <ScalarProperty Name="CanRetreatWhenCaptured" ColumnName="CanRetreatWhenCaptured" />
+          <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+          <ScalarProperty Name="AllowBarbarians" ColumnName="AllowBarbarians" />
+          <ScalarProperty Name="CostProgressionModel" ColumnName="CostProgressionModel" />
+          <ScalarProperty Name="CostProgressionParam1" ColumnName="CostProgressionParam1" />
+          <ScalarProperty Name="PromotionClass" ColumnName="PromotionClass" />
+          <ScalarProperty Name="InitialLevel" ColumnName="InitialLevel" />
+          <ScalarProperty Name="NumRandomChoices" ColumnName="NumRandomChoices" />
+          <ScalarProperty Name="PrereqTech" ColumnName="PrereqTech" />
+          <ScalarProperty Name="PrereqCivic" ColumnName="PrereqCivic" />
+          <ScalarProperty Name="PrereqDistrict" ColumnName="PrereqDistrict" />
+          <ScalarProperty Name="PrereqPopulation" ColumnName="PrereqPopulation" />
+          <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+          <ScalarProperty Name="CanTrain" ColumnName="CanTrain" />
+          <ScalarProperty Name="StrategicResource" ColumnName="StrategicResource" />
+          <ScalarProperty Name="PurchaseYield" ColumnName="PurchaseYield" />
+          <ScalarProperty Name="MustPurchase" ColumnName="MustPurchase" />
+          <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+          <ScalarProperty Name="Stackable" ColumnName="Stackable" />
+          <ScalarProperty Name="AirSlots" ColumnName="AirSlots" />
+          <ScalarProperty Name="CanTargetAir" ColumnName="CanTargetAir" />
+          <ScalarProperty Name="PseudoYieldType" ColumnName="PseudoYieldType" />
+          <ScalarProperty Name="ZoneOfControl" ColumnName="ZoneOfControl" />
+          <ScalarProperty Name="AntiAirCombat" ColumnName="AntiAirCombat" />
+          <ScalarProperty Name="Spy" ColumnName="Spy" />
+          <ScalarProperty Name="WMDCapable" ColumnName="WMDCapable" />
+          <ScalarProperty Name="ParkCharges" ColumnName="ParkCharges" />
+          <ScalarProperty Name="IgnoreMoves" ColumnName="IgnoreMoves" />
+          <ScalarProperty Name="TeamVisibility" ColumnName="TeamVisibility" />
+          <ScalarProperty Name="ObsoleteTech" ColumnName="ObsoleteTech" />
+          <ScalarProperty Name="ObsoleteCivic" ColumnName="ObsoleteCivic" />
+          <ScalarProperty Name="MandatoryObsoleteTech" ColumnName="MandatoryObsoleteTech" />
+          <ScalarProperty Name="MandatoryObsoleteCivic" ColumnName="MandatoryObsoleteCivic" />
+          <ScalarProperty Name="AdvisorType" ColumnName="AdvisorType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Victories">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Victory">
+        <MappingFragment StoreEntitySet="Victories">
+          <ScalarProperty Name="VictoryType" ColumnName="VictoryType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Blurb" ColumnName="Blurb" />
+          <ScalarProperty Name="RequirementSetId" ColumnName="RequirementSetId" />
+          <ScalarProperty Name="EnabledByDefault" ColumnName="EnabledByDefault" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visibilities">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Visibility">
+        <MappingFragment StoreEntitySet="Visibilities">
+          <ScalarProperty Name="VisibilityType" ColumnName="VisibilityType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RevealAgendas" ColumnName="RevealAgendas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vocabularies">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Vocabulary">
+        <MappingFragment StoreEntitySet="Vocabularies">
+          <ScalarProperty Name="Vocabulary1" ColumnName="Vocabulary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WMDs">
+      <EntityTypeMapping TypeName="DebugGameplayModel.WMD">
+        <MappingFragment StoreEntitySet="WMDs">
+          <ScalarProperty Name="WeaponType" ColumnName="WeaponType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BlastRadius" ColumnName="BlastRadius" />
+          <ScalarProperty Name="FalloutDuration" ColumnName="FalloutDuration" />
+          <ScalarProperty Name="AffectPopulation" ColumnName="AffectPopulation" />
+          <ScalarProperty Name="AffectImprovements" ColumnName="AffectImprovements" />
+          <ScalarProperty Name="AffectBuildings" ColumnName="AffectBuildings" />
+          <ScalarProperty Name="AffectUnits" ColumnName="AffectUnits" />
+          <ScalarProperty Name="AffectResources" ColumnName="AffectResources" />
+          <ScalarProperty Name="AffectRoutes" ColumnName="AffectRoutes" />
+          <ScalarProperty Name="ICBMStrikeRange" ColumnName="ICBMStrikeRange" />
+          <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yields">
+      <EntityTypeMapping TypeName="DebugGameplayModel.Yield">
+        <MappingFragment StoreEntitySet="Yields">
+          <ScalarProperty Name="YieldType" ColumnName="YieldType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IconString" ColumnName="IconString" />
+          <ScalarProperty Name="OccupiedCityChange" ColumnName="OccupiedCityChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AgendaPreferredLeaders" TypeName="DebugGameplayModel.AgendaPreferredLeaders" StoreEntitySet="AgendaPreferredLeaders">
+      <EndProperty Name="Leaders">
+        <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+      </EndProperty>
+      <EndProperty Name="RandomAgendas">
+        <ScalarProperty Name="AgendaType" ColumnName="AgendaType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AgendaTraits" TypeName="DebugGameplayModel.AgendaTraits" StoreEntitySet="AgendaTraits">
+      <EndProperty Name="Traits">
+        <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+      </EndProperty>
+      <EndProperty Name="Agendas">
+        <ScalarProperty Name="AgendaType" ColumnName="AgendaType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Building_RequiredFeatures" TypeName="DebugGameplayModel.Building_RequiredFeatures" StoreEntitySet="Building_RequiredFeatures">
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+      <EndProperty Name="Buildings">
+        <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Building_ValidFeatures" TypeName="DebugGameplayModel.Building_ValidFeatures" StoreEntitySet="Building_ValidFeatures">
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+      <EndProperty Name="Buildings">
+        <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Building_ValidTerrains" TypeName="DebugGameplayModel.Building_ValidTerrains" StoreEntitySet="Building_ValidTerrains">
+      <EndProperty Name="Terrains">
+        <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+      </EndProperty>
+      <EndProperty Name="Buildings">
+        <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BuildingPrereqs" TypeName="DebugGameplayModel.BuildingPrereqs" StoreEntitySet="BuildingPrereqs">
+      <EndProperty Name="Buildings">
+        <ScalarProperty Name="BuildingType" ColumnName="PrereqBuilding" />
+      </EndProperty>
+      <EndProperty Name="Buildings1">
+        <ScalarProperty Name="BuildingType" ColumnName="Building" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BuildingReplaces" TypeName="DebugGameplayModel.BuildingReplaces" StoreEntitySet="BuildingReplaces">
+      <EndProperty Name="Buildings">
+        <ScalarProperty Name="BuildingType" ColumnName="ReplacesBuildingType" />
+      </EndProperty>
+      <EndProperty Name="Buildings1">
+        <ScalarProperty Name="BuildingType" ColumnName="CivUniqueBuildingType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CivicPrereqs" TypeName="DebugGameplayModel.CivicPrereqs" StoreEntitySet="CivicPrereqs">
+      <EndProperty Name="Civics">
+        <ScalarProperty Name="CivicType" ColumnName="PrereqCivic" />
+      </EndProperty>
+      <EndProperty Name="Civics1">
+        <ScalarProperty Name="CivicType" ColumnName="Civic" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CivilizationTraits" TypeName="DebugGameplayModel.CivilizationTraits" StoreEntitySet="CivilizationTraits">
+      <EndProperty Name="Civilizations">
+        <ScalarProperty Name="CivilizationType" ColumnName="CivilizationType" />
+      </EndProperty>
+      <EndProperty Name="Traits">
+        <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DifficultyTraits" TypeName="DebugGameplayModel.DifficultyTraits" StoreEntitySet="DifficultyTraits">
+      <EndProperty Name="Difficulties">
+        <ScalarProperty Name="DifficultyType" ColumnName="DifficultyType" />
+      </EndProperty>
+      <EndProperty Name="Traits">
+        <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="District_Adjacencies" TypeName="DebugGameplayModel.District_Adjacencies" StoreEntitySet="District_Adjacencies">
+      <EndProperty Name="Districts">
+        <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+      </EndProperty>
+      <EndProperty Name="Adjacency_YieldChanges">
+        <ScalarProperty Name="ID" ColumnName="YieldChangeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="District_RequiredFeatures" TypeName="DebugGameplayModel.District_RequiredFeatures" StoreEntitySet="District_RequiredFeatures">
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+      <EndProperty Name="Districts">
+        <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="District_ValidTerrains" TypeName="DebugGameplayModel.District_ValidTerrains" StoreEntitySet="District_ValidTerrains">
+      <EndProperty Name="Districts">
+        <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+      </EndProperty>
+      <EndProperty Name="Terrains">
+        <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DistrictReplaces" TypeName="DebugGameplayModel.DistrictReplaces" StoreEntitySet="DistrictReplaces">
+      <EndProperty Name="Districts">
+        <ScalarProperty Name="DistrictType" ColumnName="ReplacesDistrictType" />
+      </EndProperty>
+      <EndProperty Name="Districts1">
+        <ScalarProperty Name="DistrictType" ColumnName="CivUniqueDistrictType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExcludedAdjacencies" TypeName="DebugGameplayModel.ExcludedAdjacencies" StoreEntitySet="ExcludedAdjacencies">
+      <EndProperty Name="Adjacency_YieldChanges">
+        <ScalarProperty Name="ID" ColumnName="YieldChangeId" />
+      </EndProperty>
+      <EndProperty Name="Traits">
+        <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExcludedDistricts" TypeName="DebugGameplayModel.ExcludedDistricts" StoreEntitySet="ExcludedDistricts">
+      <EndProperty Name="Traits">
+        <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+      </EndProperty>
+      <EndProperty Name="Districts">
+        <ScalarProperty Name="DistrictType" ColumnName="DistrictType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExcludedGreatPersonClasses" TypeName="DebugGameplayModel.ExcludedGreatPersonClasses" StoreEntitySet="ExcludedGreatPersonClasses">
+      <EndProperty Name="Traits">
+        <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+      </EndProperty>
+      <EndProperty Name="GreatPersonClasses">
+        <ScalarProperty Name="GreatPersonClassType" ColumnName="GreatPersonClassType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ExclusiveAgendas" TypeName="DebugGameplayModel.ExclusiveAgendas" StoreEntitySet="ExclusiveAgendas">
+      <EndProperty Name="Agendas">
+        <ScalarProperty Name="AgendaType" ColumnName="AgendaTwo" />
+      </EndProperty>
+      <EndProperty Name="Agendas1">
+        <ScalarProperty Name="AgendaType" ColumnName="AgendaOne" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Feature_AdjacentFeatures" TypeName="DebugGameplayModel.Feature_AdjacentFeatures" StoreEntitySet="Feature_AdjacentFeatures">
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureTypeAdjacent" />
+      </EndProperty>
+      <EndProperty Name="Features1">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Feature_AdjacentTerrains" TypeName="DebugGameplayModel.Feature_AdjacentTerrains" StoreEntitySet="Feature_AdjacentTerrains">
+      <EndProperty Name="Terrains">
+        <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+      </EndProperty>
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Feature_NotAdjacentTerrains" TypeName="DebugGameplayModel.Feature_NotAdjacentTerrains" StoreEntitySet="Feature_NotAdjacentTerrains">
+      <EndProperty Name="Terrains">
+        <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+      </EndProperty>
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Feature_NotNearFeatures" TypeName="DebugGameplayModel.Feature_NotNearFeatures" StoreEntitySet="Feature_NotNearFeatures">
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureTypeAvoid" />
+      </EndProperty>
+      <EndProperty Name="Features1">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Feature_ValidTerrains" TypeName="DebugGameplayModel.Feature_ValidTerrains" StoreEntitySet="Feature_ValidTerrains">
+      <EndProperty Name="Terrains">
+        <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+      </EndProperty>
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GreatWork_ValidSubTypes" TypeName="DebugGameplayModel.GreatWork_ValidSubTypes" StoreEntitySet="GreatWork_ValidSubTypes">
+      <EndProperty Name="GreatWorkSlotTypes">
+        <ScalarProperty Name="GreatWorkSlotType1" ColumnName="GreatWorkSlotType" />
+      </EndProperty>
+      <EndProperty Name="GreatWorkObjectTypes">
+        <ScalarProperty Name="GreatWorkObjectType1" ColumnName="GreatWorkObjectType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="HistoricalAgendas" TypeName="DebugGameplayModel.HistoricalAgendas" StoreEntitySet="HistoricalAgendas">
+      <EndProperty Name="Leaders">
+        <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+      </EndProperty>
+      <EndProperty Name="Agendas">
+        <ScalarProperty Name="AgendaType" ColumnName="AgendaType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Improvement_Adjacencies" TypeName="DebugGameplayModel.Improvement_Adjacencies" StoreEntitySet="Improvement_Adjacencies">
+      <EndProperty Name="Adjacency_YieldChanges">
+        <ScalarProperty Name="ID" ColumnName="YieldChangeId" />
+      </EndProperty>
+      <EndProperty Name="Improvements">
+        <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Improvement_ValidBuildUnits" TypeName="DebugGameplayModel.Improvement_ValidBuildUnits" StoreEntitySet="Improvement_ValidBuildUnits">
+      <EndProperty Name="Units">
+        <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+      </EndProperty>
+      <EndProperty Name="Improvements">
+        <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Improvement_ValidFeatures" TypeName="DebugGameplayModel.Improvement_ValidFeatures" StoreEntitySet="Improvement_ValidFeatures">
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+      <EndProperty Name="Improvements">
+        <ScalarProperty Name="ImprovementType" ColumnName="ImprovementType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LeaderTraits" TypeName="DebugGameplayModel.LeaderTraits" StoreEntitySet="LeaderTraits">
+      <EndProperty Name="Leaders">
+        <ScalarProperty Name="LeaderType" ColumnName="LeaderType" />
+      </EndProperty>
+      <EndProperty Name="Traits">
+        <ScalarProperty Name="TraitType" ColumnName="TraitType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MutuallyExclusiveBuildings" TypeName="DebugGameplayModel.MutuallyExclusiveBuildings" StoreEntitySet="MutuallyExclusiveBuildings">
+      <EndProperty Name="Buildings">
+        <ScalarProperty Name="BuildingType" ColumnName="MutuallyExclusiveBuilding" />
+      </EndProperty>
+      <EndProperty Name="Buildings1">
+        <ScalarProperty Name="BuildingType" ColumnName="Building" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RequirementSetRequirements" TypeName="DebugGameplayModel.RequirementSetRequirements" StoreEntitySet="RequirementSetRequirements">
+      <EndProperty Name="RequirementSets">
+        <ScalarProperty Name="RequirementSetId" ColumnName="RequirementSetId" />
+      </EndProperty>
+      <EndProperty Name="Requirements">
+        <ScalarProperty Name="RequirementId" ColumnName="RequirementId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Resource_ValidFeatures" TypeName="DebugGameplayModel.Resource_ValidFeatures" StoreEntitySet="Resource_ValidFeatures">
+      <EndProperty Name="Features">
+        <ScalarProperty Name="FeatureType" ColumnName="FeatureType" />
+      </EndProperty>
+      <EndProperty Name="Resources">
+        <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Resource_ValidTerrains" TypeName="DebugGameplayModel.Resource_ValidTerrains" StoreEntitySet="Resource_ValidTerrains">
+      <EndProperty Name="Resources">
+        <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+      </EndProperty>
+      <EndProperty Name="Terrains">
+        <ScalarProperty Name="TerrainType" ColumnName="TerrainType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Route_ValidBuildUnits" TypeName="DebugGameplayModel.Route_ValidBuildUnits" StoreEntitySet="Route_ValidBuildUnits">
+      <EndProperty Name="Units">
+        <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+      </EndProperty>
+      <EndProperty Name="Routes">
+        <ScalarProperty Name="RouteType" ColumnName="RouteType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StartingBoostedCivics" TypeName="DebugGameplayModel.StartingBoostedCivics" StoreEntitySet="StartingBoostedCivics">
+      <EndProperty Name="Civics">
+        <ScalarProperty Name="CivicType" ColumnName="Civic" />
+      </EndProperty>
+      <EndProperty Name="Eras">
+        <ScalarProperty Name="EraType" ColumnName="Era" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StartingBoostedTechnologies" TypeName="DebugGameplayModel.StartingBoostedTechnologies" StoreEntitySet="StartingBoostedTechnologies">
+      <EndProperty Name="Technologies">
+        <ScalarProperty Name="TechnologyType" ColumnName="Technology" />
+      </EndProperty>
+      <EndProperty Name="Eras">
+        <ScalarProperty Name="EraType" ColumnName="Era" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StartingCivics" TypeName="DebugGameplayModel.StartingCivics" StoreEntitySet="StartingCivics">
+      <EndProperty Name="Civics">
+        <ScalarProperty Name="CivicType" ColumnName="Civic" />
+      </EndProperty>
+      <EndProperty Name="Eras">
+        <ScalarProperty Name="EraType" ColumnName="Era" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Strategy_Priorities" TypeName="DebugGameplayModel.Strategy_Priorities" StoreEntitySet="Strategy_Priorities">
+      <EndProperty Name="AiListTypes">
+        <ScalarProperty Name="ListType" ColumnName="ListType" />
+      </EndProperty>
+      <EndProperty Name="Strategies">
+        <ScalarProperty Name="StrategyType" ColumnName="StrategyType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TechnologyPrereqs" TypeName="DebugGameplayModel.TechnologyPrereqs" StoreEntitySet="TechnologyPrereqs">
+      <EndProperty Name="Technologies">
+        <ScalarProperty Name="TechnologyType" ColumnName="PrereqTech" />
+      </EndProperty>
+      <EndProperty Name="Technologies1">
+        <ScalarProperty Name="TechnologyType" ColumnName="Technology" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TypeTags" TypeName="DebugGameplayModel.TypeTags" StoreEntitySet="TypeTags">
+      <EndProperty Name="Tags">
+        <ScalarProperty Name="Tag1" ColumnName="Tag" />
+      </EndProperty>
+      <EndProperty Name="Types">
+        <ScalarProperty Name="Type1" ColumnName="Type" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UnitAbilityModifiers" TypeName="DebugGameplayModel.UnitAbilityModifiers" StoreEntitySet="UnitAbilityModifiers">
+      <EndProperty Name="Modifiers">
+        <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+      </EndProperty>
+      <EndProperty Name="UnitAbilities">
+        <ScalarProperty Name="UnitAbilityType" ColumnName="UnitAbilityType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UnitAiInfos" TypeName="DebugGameplayModel.UnitAiInfos" StoreEntitySet="UnitAiInfos">
+      <EndProperty Name="UnitAiTypes">
+        <ScalarProperty Name="AiType" ColumnName="AiType" />
+      </EndProperty>
+      <EndProperty Name="Units">
+        <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UnitCaptures" TypeName="DebugGameplayModel.UnitCaptures" StoreEntitySet="UnitCaptures">
+      <EndProperty Name="Units">
+        <ScalarProperty Name="UnitType" ColumnName="BecomesUnitType" />
+      </EndProperty>
+      <EndProperty Name="Units1">
+        <ScalarProperty Name="UnitType" ColumnName="CapturedUnitType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UnitReplaces" TypeName="DebugGameplayModel.UnitReplaces" StoreEntitySet="UnitReplaces">
+      <EndProperty Name="Units">
+        <ScalarProperty Name="UnitType" ColumnName="CivUniqueUnitType" />
+      </EndProperty>
+      <EndProperty Name="Units1">
+        <ScalarProperty Name="UnitType" ColumnName="ReplacesUnitType" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UnitUpgrades" TypeName="DebugGameplayModel.UnitUpgrades" StoreEntitySet="UnitUpgrades">
+      <EndProperty Name="Units">
+        <ScalarProperty Name="UnitType" ColumnName="Unit" />
+      </EndProperty>
+      <EndProperty Name="Units1">
+        <ScalarProperty Name="UnitType" ColumnName="UpgradeUnit" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
