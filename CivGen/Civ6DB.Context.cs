@@ -11,15 +11,17 @@ namespace CivGen
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Core.EntityClient;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Data.SQLite;
+
     public partial class GameplayEntities : DbContext
     {
         public GameplayEntities()
             : base("name=GameplayEntities")
         {
         }
-    
+               
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
