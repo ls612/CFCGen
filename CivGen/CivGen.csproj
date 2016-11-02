@@ -210,6 +210,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Civ6DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CivBase.cs" />
     <Compile Include="Civic.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
@@ -298,6 +299,12 @@
     <Compile Include="Era.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Extended Classes\Building_Extended.cs" />
+    <Compile Include="Extended Classes\Civic_Extended.cs" />
+    <Compile Include="Extended Classes\District_Extended.cs" />
+    <Compile Include="Extended Classes\Era_Extended.cs" />
+    <Compile Include="Extended Classes\Resource_Extended.cs" />
+    <Compile Include="Extended Classes\Technology_Extended.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FavoredReligion.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>

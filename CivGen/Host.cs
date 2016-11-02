@@ -234,6 +234,30 @@ namespace CivGen
             {
                 Entities = new GameplayEntities(DataBaseConnectionString);
                 LoadEntityList();
+
+                //GenerateWondersPage();
+                GenerateTechnologyPage();
+                #region playing
+                /*
+                //Get buildings by Era
+                foreach (Era era in eras)
+                {
+                    Debug.WriteLine(era.html_Goto_URL_Link);
+                    List<Technology> eraTechs = technologies.Where(x => x.Era.ERA == era.ERA).ToList();
+                    foreach (Technology tech in eraTechs)
+                    {
+                        Debug.Write(tech.GenerateHTML());
+                        Debug.WriteLine("");
+                    }
+                }
+
+                foreach (Building building in buildings)
+                {
+                    //Debug.WriteLine(building.AnchoredHeaderMarkup(HeaderType.h2) + "\t"  + building.GetAnchorURL) ;
+                    Debug.Write(building.GenerateHTML()) ;
+                }
+                */
+                #endregion
             }
             else
             {
@@ -241,6 +265,190 @@ namespace CivGen
                 Application.Exit();
             }
         }
+
+        #region HTML Generation
+        public void GenerateWondersPage()
+        {
+            //Select a list of World Wonders
+            List<Building> worldWonders = buildings.Where(x => x.IsWonder).ToList();
+
+            string tableTag = "<table border=\"1\" style=\"width:60%\">";
+            string firstColumnTag = "<col style=\"width:80px\">";
+            string secondColumnTag = "<col style=\"width:140px\">";
+
+
+            string WonderPage = "<div id=\"top\">";
+            
+            //Generate the Table Of Contents
+            StringBuilder TOC = new StringBuilder();
+            foreach (Building wonder in worldWonders)
+            {
+                TOC.AppendLine(wonder.html_Goto_URL_Link_Same_Page);
+            }
+            WonderPage += TOC.ToString();
+
+            //Now generate the html:
+            foreach (Building wonder in worldWonders)
+            {
+                StringBuilder wonderTable = new StringBuilder();
+                wonderTable.AppendLine(wonder.html_Header_With_Anchor(HeaderType.h2));
+                wonderTable.AppendLine(tableTag);
+                wonderTable.AppendLine(firstColumnTag);
+                wonderTable.AppendLine(secondColumnTag);
+
+                //Cost 
+                wonderTable.AppendLine("<tr><td>Cost:</td><td>" + wonder.Cost.ToString() + "</td></tr>");
+
+                //Obsolete Ara
+                if (wonder.ObsoleteEra != "NO_ERA")
+                {
+                    wonderTable.AppendLine("<tr><td>Obsolete Era:</td><td>" + FriendlyName(wonder.ObsoleteEra) + "</td></tr>");
+                }
+                
+                //Required Technology
+                if (wonder.Technology != null)
+                {
+                    wonderTable.AppendLine("<tr><td>Required Technology:</td><td>" + wonder.Technology.html_Goto_URL_Link + "</td></tr>");
+                }
+                //Required Civics
+                if (wonder.Civic != null)
+                {
+                    wonderTable.AppendLine("<tr><td>Required Civics:</td><td>" + wonder.Civic.html_Goto_URL_Link + "</td></tr>");
+                }
+                //Required District
+                if (wonder.District != null)
+                {
+                    wonderTable.AppendLine("<tr><td>Required District:</td><td>" + wonder.District.html_Goto_URL_Link + "</td></tr>");
+                }
+                //Required Adjacent District
+                if (wonder.AdjacentDistrict != null)
+                {
+                    wonderTable.AppendLine("<tr><td>Required Adjacent District:</td><td>" + wonder.District1.html_Goto_URL_Link + "</td></tr>");
+                }
+                //Required Resource
+                if (wonder.Resource != null)
+                {
+                    wonderTable.AppendLine("<tr><td>Required Resource:</td><td>" + wonder.Resource.html_Goto_URL_Link + "</td></tr>");
+                }
+                //Restrictions
+                if (wonder.Restrictions.Length != 0)
+                {
+                    wonderTable.AppendLine("<tr><td>Restrictions:</td><td>" + wonder.Restrictions + "</td></tr>");
+                }
+
+
+                wonderTable.AppendLine("</table>");
+                wonderTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                wonderTable.AppendLine("<br />");
+                WonderPage += wonderTable.ToString();
+            }
+            Clipboard.SetText(WonderPage);
+            MessageBox.Show("Page copied to clipboard");
+
+
+        }
+
+
+
+        public void GenerateTechnologyPage()
+        {
+            //Select a list of World Wonders
+           
+            string tableTag = "<table border=\"1\" style=\"width:60%\">";
+            string firstColumnTag = "<col style=\"width:80px\">";
+            string secondColumnTag = "<col style=\"width:140px\">";
+
+
+            string TechPage = "<div id=\"top\">";
+
+
+            //Generate the Table Of Contents
+            StringBuilder TOC = new StringBuilder();
+            foreach (Technology tech in technologies)
+            {
+                TOC.AppendLine(tech.html_Goto_URL_Link_Same_Page);
+            }
+            TechPage += TOC.ToString();
+
+            //Now generate the html:
+            foreach (eERA era in Enum.GetValues(typeof(eERA)))
+            {
+                List<Technology> eraTech = technologies.Where(x => x.Era.ERA == era).ToList();
+
+                //Create a header from the first tech
+                TechPage += Environment.NewLine;
+                TechPage += eraTech[0].Era.html_Header_With_Anchor(HeaderType.h1) + "<h1> Era</h1>";
+
+                //Now techs from this era
+                foreach (Technology tech in eraTech)
+                {
+                    StringBuilder Table = new StringBuilder();
+
+                    Table.AppendLine(tech.html_Header_With_Anchor(HeaderType.h2));
+                    Table.AppendLine(tableTag);
+                    Table.AppendLine(firstColumnTag);
+                    Table.AppendLine(secondColumnTag);
+
+                    //Cost 
+                    Table.AppendLine("<tr><td>Cost:</td><td>" + tech.Cost.ToString() + "</td></tr>");
+
+                    //Pre-Requisites
+                    if (tech.Technologies.Count != 0)
+                    {
+                        string preReq = tech.Technologies.Count == 1 ? "<tr><td>PreRequisite:</td>" : "<tr><td>PreRequisites:</td>";
+                        string techs = "<td>";
+                        foreach (Technology preReqTech in tech.Technologies)
+                        {
+                            techs += preReqTech.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        techs = techs.Substring(0, techs.Length - 3);   //Trim trailing '|'
+                        techs += "</td></tr>";
+                        Table.AppendLine(preReq + techs);
+                    }
+
+                    //Required for
+                    if (tech.Technologies1.Count != 0)
+                    {
+                        string preReq ="<tr><td>Required For:</td>";
+                        string techs = "<td>";
+                        foreach (Technology preReqTech in tech.Technologies1)
+                        {
+                            techs += preReqTech.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        techs = techs.Substring(0, techs.Length - 3);   //Trim trailing '|'
+                        techs += "</td></tr>";
+                        Table.AppendLine(preReq + techs);
+                    }
+
+                    Table.AppendLine("</table>");
+                    Table.AppendLine("<a href=\"#top\">Top</a>");
+
+                    Table.AppendLine("<br />");
+                    TechPage += Table.ToString();
+                }
+            }
+            Clipboard.SetText(TechPage);
+            MessageBox.Show("Page copied to clipboard");
+
+        }
+
+        /// <summary>
+        /// Returns a 'friendly name' for a name in typical firaxis key format
+        /// </summary>
+        public static string FriendlyName(string dataBaseName, int index =1)
+        {
+            //Example:  LOC_ERA_ANCIENT_NAME should return "Ancient"
+            System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("en-US", false).TextInfo;
+            string[] parts = dataBaseName.Split('_');
+            return textInfo.ToTitleCase(parts[index].ToLower());
+        }
+
+
+        
+
+        #endregion
+
 
 
         #region EntityLoader
