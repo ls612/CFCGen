@@ -299,12 +299,20 @@
     <Compile Include="Era.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Extended Classes\Boosts_Extended.cs" />
+    <Compile Include="Extended Classes\BuildingModifier_Extended.cs" />
     <Compile Include="Extended Classes\Building_Extended.cs" />
     <Compile Include="Extended Classes\Civic_Extended.cs" />
     <Compile Include="Extended Classes\District_Extended.cs" />
     <Compile Include="Extended Classes\Era_Extended.cs" />
+    <Compile Include="Extended Classes\Feature_Extended.cs" />
+    <Compile Include="Extended Classes\Improvement_Extended.cs" />
+    <Compile Include="Extended Classes\Modifiers_Extended.cs" />
     <Compile Include="Extended Classes\Resource_Extended.cs" />
+    <Compile Include="Extended Classes\Resource_YieldChanges_Extended.cs" />
     <Compile Include="Extended Classes\Technology_Extended.cs" />
+    <Compile Include="Extended Classes\Terrain_Extended.cs" />
+    <Compile Include="Extended Classes\Terrain_YieldChanges_Extended.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FavoredReligion.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>

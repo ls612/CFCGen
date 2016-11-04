@@ -16,6 +16,7 @@ using CivGen.Controls;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Collections;
+using System.Globalization;
 
 namespace CivGen
 {
@@ -236,7 +237,9 @@ namespace CivGen
                 LoadEntityList();
 
                 //GenerateWondersPage();
-                GenerateTechnologyPage();
+                //GenerateTechnologyPage();
+                //GenerateTerrainPage();
+                GenerateResourcesPage();
                 #region playing
                 /*
                 //Get buildings by Era
@@ -267,83 +270,453 @@ namespace CivGen
         }
 
         #region HTML Generation
+
+        private string GenerateTableOfCOntents(List<CivBase> sourceList, bool separateByEra = true)
+        {
+            StringBuilder TOC = new StringBuilder();
+            TOC.AppendLine("<table>");
+
+            if (separateByEra)
+            {
+                foreach (eERA era in Enum.GetValues(typeof(eERA)))
+                {
+                    List<CivBase> EraList = sourceList.Where(x => x.ReferenceEra == era).ToList();
+                    if (EraList.Count == 0) continue;
+                    TOC.AppendLine("<th>" + html_Goto_URL_Link_Same_Page(era.ToString(), era.ToString() + " Era") + "</th>");
+                    foreach (CivBase item in EraList)
+                    {
+                        TOC.AppendLine("<tr><td>" + item.html_Goto_URL_Link_Same_Page + "</td></tr>");
+                    }
+                }
+            }
+            else
+            {
+                foreach (CivBase item in sourceList)
+                {
+                    TOC.AppendLine("<tr><td>" + item.html_Goto_URL_Link_Same_Page + "</td></tr>");
+                }
+            }
+            TOC.AppendLine("</table>");
+            return TOC.ToString();
+        }
+
+        public void GenerateTerrainPage()
+        {
+            StringBuilder basePage = new StringBuilder();
+            basePage.AppendLine("<div id=\"top\">");
+            basePage.AppendLine("<table style=\"width:80%\">");
+            basePage.AppendLine("<col style=\"width:20%\">");
+            basePage.AppendLine("<col style=\"width:80%\">");
+            basePage.AppendLine("<tr>");
+
+            //Add in the TOC
+            //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
+            List<CivBase> CastList = new List<Terrain>(terrains).Cast<CivBase>().ToList();
+
+            basePage.AppendLine("<td>");
+            basePage.AppendLine(GenerateTableOfCOntents(CastList, false));
+            basePage.AppendLine("</td>");
+
+            //Add in wonder data
+            basePage.AppendLine("<td>");
+
+            //Now generate the html:
+            string tableTag = "<table border=\"1\" style=\"width:80%\">";
+            string firstColumnTag = "<col style=\"width:80px\">";
+            string secondColumnTag = "<col style=\"width:140px\">";
+
+            //Now generate the html:
+            foreach (Terrain terrain in terrains)
+            {
+                StringBuilder terrainTable = new StringBuilder();
+                terrainTable.AppendLine(terrain.html_Header_With_Anchor(HeaderType.h2));
+                terrainTable.AppendLine(tableTag);
+                terrainTable.AppendLine(firstColumnTag);
+                terrainTable.AppendLine(secondColumnTag);
+
+                //Yield
+                terrainTable.AppendLine("<tr><td>Yield:</td><td>" + terrain.YieldString + "</td></tr>");
+
+                //Movement Cost
+                if (terrain.Impassable)
+                {
+                    terrainTable.AppendLine("<tr><td>Movement Cost:</td><td>(--Impassable--)</td></tr>");
+                }
+                else
+                {
+                    terrainTable.AppendLine("<tr><td>Movement Cost:</td><td>" + terrain.MovementCost.ToString() + "</td></tr>");
+                }
+
+                //Influence Cost
+                terrainTable.AppendLine("<tr><td>Influence Cost:</td><td>" + terrain.InfluenceCost.ToString() + "</td></tr>");
+
+                //Sight Modifier
+                terrainTable.AppendLine("<tr><td>Sight Modifier:</td><td>" + terrain.SightModifier.ToString() + "</td></tr>");
+
+                //Sight Modifier
+                terrainTable.AppendLine("<tr><td>Sight Through Modifier:</td><td>" + terrain.SightThroughModifier.ToString() + "</td></tr>");
+
+                //Resources
+                if (terrain.Resources.Count != 0)
+                {
+                    string preReq = "<tr><td>Resources:</td>";
+                    string dataItem = "<td>";
+                    foreach (Resource item in terrain.Resources)
+                    {
+                        dataItem += item.html_Goto_URL_Link + " | ";
+                    }
+                    dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                    dataItem += "</td></tr>";
+                    terrainTable.AppendLine(preReq + dataItem);
+                }
+
+                //Improvements
+                if (terrain.Improvement_ValidTerrains.Count != 0)
+                {
+                    string preReq = "<tr><td>Improvements:</td>";
+                    string dataItem = "<td>";
+                    foreach (Improvement_ValidTerrains item in terrain.Improvement_ValidTerrains)
+                    {
+                        dataItem += item.Improvement.html_Goto_URL_Link + " | ";
+                    }
+                    dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                    dataItem += "</td></tr>";
+                    terrainTable.AppendLine(preReq + dataItem);
+                }
+                
+
+                terrainTable.AppendLine("</table>");
+                terrainTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                basePage.AppendLine(terrainTable.ToString());
+            }
+
+            basePage.AppendLine("</td></tr></table>");
+            Clipboard.SetText(basePage.ToString());
+            MessageBox.Show("Page copied to clipboard");
+
+        }
+
+
+        public void GenerateResourcesPage()
+        {
+            StringBuilder basePage = new StringBuilder();
+            basePage.AppendLine("<div id=\"top\">");
+            basePage.AppendLine("<table style=\"width:80%\">");
+            basePage.AppendLine("<col style=\"width:20%\">");
+            basePage.AppendLine("<col style=\"width:80%\">");
+            basePage.AppendLine("<tr>");
+
+            //Add in the TOC
+            //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
+            List<CivBase> CastList = new List<Resource>(resources).Cast<CivBase>().ToList();
+
+            basePage.AppendLine("<td>");
+            basePage.AppendLine(GenerateTableOfCOntents(CastList, true));
+            basePage.AppendLine("</td>");
+
+            //Add in wonder data
+            basePage.AppendLine("<td>");
+
+            //Now generate the html:
+            string tableTag = "<table border=\"1\" style=\"width:80%\">";
+            string firstColumnTag = "<col style=\"width:80px\">";
+            string secondColumnTag = "<col style=\"width:140px\">";
+
+            //Now generate the html:
+            foreach (eERA era in Enum.GetValues(typeof(eERA)))
+            {
+                List<Resource> eraResources = resources.Where(x => x.ReferenceEra == era).ToList();
+
+                if (eraResources.Count == 0) continue;
+
+                //Create a header from the first era
+                basePage.AppendLine(html_Header_With_Anchor(era.ToString(), era.ToString() + " Era",  HeaderType.h1));
+                
+
+                foreach (Resource resource in eraResources)
+                {
+                    StringBuilder resourceTable = new StringBuilder();
+                    resourceTable.AppendLine(resource.html_Header_With_Anchor(HeaderType.h2));
+                    resourceTable.AppendLine(tableTag);
+                    resourceTable.AppendLine(firstColumnTag);
+                    resourceTable.AppendLine(secondColumnTag);
+
+                    //Yield
+                    resourceTable.AppendLine("<tr><td>Yield Change:</td><td>" + resource.YieldString + "</td></tr>");
+
+                    //Allowable Terrains
+                    if (resource.Terrains.Count != 0)
+                    {
+                        string preReq = "<tr><td>Terrains:</td>";
+                        string dataItem = "<td>";
+                        foreach (Terrain item in resource.Terrains)
+                        {
+                            dataItem += item.html_Goto_URL_Link + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        resourceTable.AppendLine(preReq + dataItem);
+                    }
+
+                    if (resource.Technology == null)
+                    {
+                        resourceTable.AppendLine("<tr><td>Revealed By:</td><td> (Always Visible)</td></tr>");
+                    }
+                    else
+                    {
+                        resourceTable.AppendLine("<tr><td>Revealed By:</td><td>" +  resource.Technology.html_Goto_URL_Link + "</td></tr>");
+                    }
+                                        
+                    resourceTable.AppendLine("</table>");
+                    resourceTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                    basePage.AppendLine(resourceTable.ToString());
+                }
+            }
+            basePage.AppendLine("</td></tr></table>");
+            Clipboard.SetText(basePage.ToString());
+            MessageBox.Show("Page copied to clipboard");
+
+        }
+
+
         public void GenerateWondersPage()
         {
-            //Select a list of World Wonders
-            List<Building> worldWonders = buildings.Where(x => x.IsWonder).ToList();
+            //Filter list of wonders from buildings
+            List<Building> wonders = buildings.Where(x => x.IsWonder).ToList();
 
+            StringBuilder basePage = new StringBuilder();
+            basePage.AppendLine("<div id=\"top\">");
+            basePage.AppendLine("<table>");
+            basePage.AppendLine("<col style=\"width:120px\">");
+            basePage.AppendLine("<col style=\"width:60%\">");
+            basePage.AppendLine("<tr>");
+
+            //Add in the TOC
+            //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
+            List<CivBase> CastList = new List<Building>(buildings.Where(x => x.IsWonder).ToList()).Cast<CivBase>().ToList();
+            
+            basePage.AppendLine("<td>");
+            basePage.AppendLine(GenerateTableOfCOntents(CastList));
+            basePage.AppendLine("</td>");
+
+
+            //Add in wonder data
+            basePage.AppendLine("<td>");
+           
+            //Now generate the html:
             string tableTag = "<table border=\"1\" style=\"width:60%\">";
             string firstColumnTag = "<col style=\"width:80px\">";
             string secondColumnTag = "<col style=\"width:140px\">";
 
-
-            string WonderPage = "<div id=\"top\">";
-            
-            //Generate the Table Of Contents
-            StringBuilder TOC = new StringBuilder();
-            foreach (Building wonder in worldWonders)
+            foreach (eERA era in Enum.GetValues(typeof(eERA)))
             {
-                TOC.AppendLine(wonder.html_Goto_URL_Link_Same_Page);
+                List<Building> eraWonders = wonders.Where(x => x.ReferenceEra == era).ToList();
+
+                if (eraWonders.Count == 0) continue;
+
+                //Create a header from the first era
+                basePage.AppendLine(html_Header_With_Anchor(era.ToString(), era.ToString() + " Era", HeaderType.h1));
+
+                //Now generate the html:
+                foreach (Building wonder in eraWonders)
+                {
+                    
+
+
+
+                    StringBuilder wonderTable = new StringBuilder();
+                    wonderTable.AppendLine(wonder.html_Header_With_Anchor(HeaderType.h2));
+                    wonderTable.AppendLine(tableTag);
+                    wonderTable.AppendLine(firstColumnTag);
+                    wonderTable.AppendLine(secondColumnTag);
+
+                    //Cost 
+                    wonderTable.AppendLine("<tr><td>Cost:</td><td>" + wonder.Cost.ToString() + "</td></tr>");
+
+                    //Obsolete Ara
+                    if (wonder.ObsoleteEra != "NO_ERA")
+                    {
+                        wonderTable.AppendLine("<tr><td>Obsolete Era:</td><td>" + FriendlyName(wonder.ObsoleteEra) + "</td></tr>");
+                    }
+
+                    //Required Technology
+                    if (wonder.Technology != null)
+                    {
+                        wonderTable.AppendLine("<tr><td>Required Technology:</td><td>" + wonder.Technology.html_Goto_URL_Link + "</td></tr>");
+                    }
+                    //Required Civics
+                    if (wonder.Civic != null)
+                    {
+                        wonderTable.AppendLine("<tr><td>Required Civics:</td><td>" + wonder.Civic.html_Goto_URL_Link + "</td></tr>");
+                    }
+                    //Required District
+                    if (wonder.District != null)
+                    {
+                        wonderTable.AppendLine("<tr><td>Required District:</td><td>" + wonder.District.html_Goto_URL_Link + "</td></tr>");
+                    }
+                    //Required Adjacent District
+                    if (wonder.AdjacentDistrict != null)
+                    {
+                        wonderTable.AppendLine("<tr><td>Required Adjacent District:</td><td>" + wonder.District1.html_Goto_URL_Link + "</td></tr>");
+                    }
+                    //Required Resource
+                    if (wonder.Resource != null)
+                    {
+                        wonderTable.AppendLine("<tr><td>Required Resource:</td><td>" + wonder.Resource.html_Goto_URL_Link + "</td></tr>");
+                    }
+                    
+                    //Allowable terrains
+                    if (wonder.Terrains != null && wonder.Terrains.Count != 0)
+                    {
+                        string preReq = "<tr><td>Allowable Terrain:</td>";
+                        string dataItem = "<td>";
+                        foreach (Terrain item in wonder.Terrains)
+                        {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+                    //Required features
+                    if (wonder.RequiredFeatures != null && wonder.RequiredFeatures.Count != 0)
+                    {
+                        string preReq = "<tr><td>Required Features:</td>";
+                        string dataItem = "<td>";
+                        foreach (Feature item in wonder.RequiredFeatures)
+                        {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+
+                    //Allowable features
+                    if (wonder.AllowedFeatures != null && wonder.AllowedFeatures.Count != 0)
+                    {
+                        string preReq = "<tr><td>Allowable Features:</td>";
+                        string dataItem = "<td>";
+                        foreach (Feature item in wonder.AllowedFeatures)
+                            {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+
+                    //Pre-Requisite Buildings
+                    if (wonder.PreRequisiteBuilding != null && wonder.PreRequisiteBuilding.Count != 0)
+                    {
+                        string preReq = "<tr><td>Required Buildings:</td>";
+                        string dataItem = "<td>";
+                        foreach (Building item in wonder.PreRequisiteBuilding)
+                        {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+                    //Allows building
+                    if (wonder.AllowsBuilding != null && wonder.AllowsBuilding.Count != 0)
+                    {
+                        string preReq = "<tr><td>Allows:</td>";
+                        string dataItem = "<td>";
+                        foreach (Building item in wonder.AllowsBuilding)
+                        {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+                    //Replaces building
+                    if (wonder.ReplacesBuilding != null)
+                    {
+                        string preReq = "<tr><td>Replaces:</td>";
+                        string dataItem = "<td>" + wonder.ReplacesBuilding.html_Goto_URL_Link_Same_Page;
+                        
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+                    //Replaced by building
+                    if (wonder.ReplacedByBuilding != null && wonder.ReplacedByBuilding.Count != 0)
+                    {
+                        string preReq = "<tr><td>Replaced by:</td>";
+                        string dataItem = "<td>";
+                        foreach (Building item in wonder.ReplacedByBuilding)
+                        {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+                    //Mutually Exclusive building
+                    if (wonder.MutuallyExclusiveFor != null && wonder.MutuallyExclusiveFor.Count != 0)
+                    {
+                        string preReq = "<tr><td>Mutually Exclusive for:</td>";
+                        string dataItem = "<td>";
+                        foreach (Building item in wonder.MutuallyExclusiveFor)
+                        {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+                    //Mutually Exclusive WIth
+                    if (wonder.MutuallyExclusiveWith != null && wonder.MutuallyExclusiveWith.Count != 0)
+                    {
+                        string preReq = "<tr><td>Mutually Exclusive with:</td>";
+                        string dataItem = "<td>";
+                        foreach (Building item in wonder.MutuallyExclusiveWith)
+                        {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+                    //Boosts
+                    if (wonder.Boosts != null && wonder.Boosts.Count != 0)
+                    {
+                        string preReq = "<tr><td>Boosts:</td>";
+                        string dataItem = "<td>";
+                        foreach (Boost item in wonder.Boosts)
+                        {
+                            dataItem += item.html_Goto_URL_Link_Same_Page + " | ";
+                        }
+                        dataItem = dataItem.Substring(0, dataItem.Length - 3);   //Trim trailing '|'
+                        dataItem += "</td></tr>";
+                        wonderTable.AppendLine(preReq + dataItem);
+                    }
+
+                    //Restrictions
+                    string effects = wonder.Effects(modifiers, modifierarguments);
+                    if (effects.Length != 0)
+                    {
+                        wonderTable.AppendLine("<tr><td>Effects:</td><td>" + effects + "</td></tr>");
+                    }
+
+                    //Restrictions
+                    if (wonder.Restrictions.Length != 0)
+                    {
+                        wonderTable.AppendLine("<tr><td>Restrictions:</td><td>" + wonder.Restrictions + "</td></tr>");
+                    }
+                    
+                    wonderTable.AppendLine("</table>");
+                    wonderTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                    basePage.AppendLine(wonderTable.ToString());
+                }
+                basePage.AppendLine("</td></tr></table>");
             }
-            WonderPage += TOC.ToString();
-
-            //Now generate the html:
-            foreach (Building wonder in worldWonders)
-            {
-                StringBuilder wonderTable = new StringBuilder();
-                wonderTable.AppendLine(wonder.html_Header_With_Anchor(HeaderType.h2));
-                wonderTable.AppendLine(tableTag);
-                wonderTable.AppendLine(firstColumnTag);
-                wonderTable.AppendLine(secondColumnTag);
-
-                //Cost 
-                wonderTable.AppendLine("<tr><td>Cost:</td><td>" + wonder.Cost.ToString() + "</td></tr>");
-
-                //Obsolete Ara
-                if (wonder.ObsoleteEra != "NO_ERA")
-                {
-                    wonderTable.AppendLine("<tr><td>Obsolete Era:</td><td>" + FriendlyName(wonder.ObsoleteEra) + "</td></tr>");
-                }
-                
-                //Required Technology
-                if (wonder.Technology != null)
-                {
-                    wonderTable.AppendLine("<tr><td>Required Technology:</td><td>" + wonder.Technology.html_Goto_URL_Link + "</td></tr>");
-                }
-                //Required Civics
-                if (wonder.Civic != null)
-                {
-                    wonderTable.AppendLine("<tr><td>Required Civics:</td><td>" + wonder.Civic.html_Goto_URL_Link + "</td></tr>");
-                }
-                //Required District
-                if (wonder.District != null)
-                {
-                    wonderTable.AppendLine("<tr><td>Required District:</td><td>" + wonder.District.html_Goto_URL_Link + "</td></tr>");
-                }
-                //Required Adjacent District
-                if (wonder.AdjacentDistrict != null)
-                {
-                    wonderTable.AppendLine("<tr><td>Required Adjacent District:</td><td>" + wonder.District1.html_Goto_URL_Link + "</td></tr>");
-                }
-                //Required Resource
-                if (wonder.Resource != null)
-                {
-                    wonderTable.AppendLine("<tr><td>Required Resource:</td><td>" + wonder.Resource.html_Goto_URL_Link + "</td></tr>");
-                }
-                //Restrictions
-                if (wonder.Restrictions.Length != 0)
-                {
-                    wonderTable.AppendLine("<tr><td>Restrictions:</td><td>" + wonder.Restrictions + "</td></tr>");
-                }
-
-
-                wonderTable.AppendLine("</table>");
-                wonderTable.AppendLine("<a href=\"#top\">Top</a>");
-
-                wonderTable.AppendLine("<br />");
-                WonderPage += wonderTable.ToString();
-            }
-            Clipboard.SetText(WonderPage);
+            Clipboard.SetText(basePage.ToString());
             MessageBox.Show("Page copied to clipboard");
 
 
@@ -353,8 +726,6 @@ namespace CivGen
 
         public void GenerateTechnologyPage()
         {
-            //Select a list of World Wonders
-           
             string tableTag = "<table border=\"1\" style=\"width:60%\">";
             string firstColumnTag = "<col style=\"width:80px\">";
             string secondColumnTag = "<col style=\"width:140px\">";
@@ -376,9 +747,10 @@ namespace CivGen
             {
                 List<Technology> eraTech = technologies.Where(x => x.Era.ERA == era).ToList();
 
-                //Create a header from the first tech
-                TechPage += Environment.NewLine;
-                TechPage += eraTech[0].Era.html_Header_With_Anchor(HeaderType.h1) + "<h1> Era</h1>";
+                if (eraTech.Count == 0) continue;
+
+                //Create a header from the first era
+                TechPage += (html_Header_With_Anchor(era.ToString(), era.ToString() + " Era", HeaderType.h1));
 
                 //Now techs from this era
                 foreach (Technology tech in eraTech)
@@ -441,11 +813,48 @@ namespace CivGen
             //Example:  LOC_ERA_ANCIENT_NAME should return "Ancient"
             System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("en-US", false).TextInfo;
             string[] parts = dataBaseName.Split('_');
+            if (index > parts.Length - 1) return textInfo.ToTitleCase(parts[parts.Length - 1].ToLower());
             return textInfo.ToTitleCase(parts[index].ToLower());
         }
 
+        /// <summary>
+        /// Returns the full html that can be embedded to create an anchor pointing to the appropriate location. 
+        /// </summary>
+        /// <param name="headerType">html header type.</param>
+        /// <returns></returns>
+        public static string html_Header_With_Anchor(string reference, HeaderType headerType)
+        {
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+            string FriendlyName = textInfo.ToTitleCase(reference.ToLower());
+            return "<" + headerType.ToString() + " id=\"" + reference + "\">" + FriendlyName + "</" + headerType.ToString() + ">";
+        }
 
-        
+        /// <summary>
+        /// Returns the full html that can be embedded to create an anchor pointing to the appropriate location. 
+        /// </summary>
+        /// <param name="headerType">html header type.</param>
+        /// <returns></returns>
+        public static string html_Header_With_Anchor(string reference, string displayName, HeaderType headerType)
+        {
+            return "<" + headerType.ToString() + " id=\"" + reference + "\">" + displayName + "</" + headerType.ToString() + ">";
+        }
+
+        /// <summary>
+        /// Returns the URL that is used by another class to reference this URL and anchor point.
+        /// </summary>
+        public static string html_Goto_URL_Link_Same_Page(string referenceName)
+        {
+            
+                return "<a href=\"#" + referenceName + "\">" + FriendlyName(referenceName) + "</a>";
+            
+        }
+
+        public static string html_Goto_URL_Link_Same_Page(string referenceName, string displayText)
+        {
+
+            return "<a href=\"#" + referenceName + "\">" + displayText + "</a>";
+
+        }
 
         #endregion
 

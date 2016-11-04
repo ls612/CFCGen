@@ -23,5 +23,17 @@ namespace CivGen
                 return Name.Replace(NamePrefix, "").Replace(NameSuffix, "");
             }
         }
+
+        public override eERA ReferenceEra
+        {
+            get
+            {
+                if (Technology != null) return Technology.ReferenceEra;
+                if (Civic != null) return Civic.ReferenceEra;
+                return eERA.ANCIENT; //Starting conditions.
+
+            }
+        }
+
     }
 }

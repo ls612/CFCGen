@@ -46,6 +46,13 @@ namespace CivGen
         public abstract string ReferenceName { get; }
 
 
+
+        /// <summary>
+        /// This must be implemented in the derived class.  It must point to whichever field / property is going to 
+        /// be used to extraxt the Era.  Eg. for 'Buildings' it may be Techology.Era.  
+        /// </summary>
+        public abstract eERA ReferenceEra { get; }
+
         public virtual string FriendlyName
         {
             get

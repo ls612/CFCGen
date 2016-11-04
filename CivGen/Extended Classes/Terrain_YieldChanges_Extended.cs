@@ -6,31 +6,29 @@ using System.Threading.Tasks;
 
 namespace CivGen
 {
-    public partial class Civic : CivBase
+    public partial class Terrain_YieldChanges : CivBase
     {
         //Constants used to correct / convert the 'Name' to the friendly display name.
-        private const string NamePrefix = "LOC_CIVIC_";
-        private const string NameSuffix = "_NAME";
+        private const string NamePrefix = "YIELD_";
+        private const string NameSuffix = "";
 
 
-        /// <summary>
-        /// ABSTRACT - MUST BE IMPLEMENTED:  Friendly name for the class instance in the html output.
-        /// </summary>
         public override string ReferenceName
         {
             get
             {
-                return Name.Replace(NamePrefix, "").Replace(NameSuffix, "");
+                return YieldType.Replace(NamePrefix, "");
             }
+
         }
 
         public override eERA ReferenceEra
         {
             get
             {
-                return Era.ERA;
+                return eERA.ANCIENT;
             }
         }
-
+                
     }
 }

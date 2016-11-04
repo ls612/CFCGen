@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CivGen
 {
-    public partial class Civic : CivBase
+    public partial class Improvement : CivBase
     {
         //Constants used to correct / convert the 'Name' to the friendly display name.
-        private const string NamePrefix = "LOC_CIVIC_";
+        private const string NamePrefix = "LOC_IMPROVEMENT_";
         private const string NameSuffix = "_NAME";
 
 
@@ -24,13 +24,18 @@ namespace CivGen
             }
         }
 
+        /// <summary>
+        /// ABSTRACT - MUST BE IMPLEMENTED:  Access to the Era.
+        /// </summary>
         public override eERA ReferenceEra
         {
             get
             {
-                return Era.ERA;
+                if (this.Technology != null) return Technology.Era.ERA;
+                if (this.Civic != null) return Civic.Era.ERA;
+                return eERA.ANCIENT;
+
             }
         }
-
     }
 }

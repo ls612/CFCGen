@@ -24,6 +24,13 @@ namespace CivGen
             }
         }
 
+        public override eERA ReferenceEra
+        {
+            get
+            {
+                return this.Era.ReferenceEra;
+            }
+        }
 
         public string GenerateHTML()
         {

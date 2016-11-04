@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace CivGen
         ATOMIC,
         INFORMATION,
     }
+
+   
 
 
     public partial class Era : CivBase
@@ -43,5 +46,12 @@ namespace CivGen
             get { return (eERA)Enum.Parse(typeof(eERA), ReferenceName, true); }
         }
 
+        public override eERA ReferenceEra
+        {
+            get
+            {
+                return ERA ;
+            }
+        }
     }
 }

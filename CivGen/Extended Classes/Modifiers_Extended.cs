@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CivGen
 {
-    public partial class Civic : CivBase
+    public partial class Modifier : CivBase
     {
         //Constants used to correct / convert the 'Name' to the friendly display name.
-        private const string NamePrefix = "LOC_CIVIC_";
-        private const string NameSuffix = "_NAME";
+        private const string NamePrefix = "";
+        private const string NameSuffix = "";
 
 
         /// <summary>
@@ -20,17 +20,17 @@ namespace CivGen
         {
             get
             {
-                return Name.Replace(NamePrefix, "").Replace(NameSuffix, "");
+                return this.ModifierId; //Name.Replace(NamePrefix, "").Replace(NameSuffix, "");
             }
         }
 
+       
         public override eERA ReferenceEra
         {
             get
             {
-                return Era.ERA;
+                return eERA.ANCIENT;
             }
         }
-
     }
 }
