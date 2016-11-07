@@ -1,0 +1,25 @@
+How to:
+
+1.) Extend a class:
+
+a.) Create a new class in the "Extended" folder, and give it the name of the class that you want to extend, with the _Extended suffix.
+	e.g. 	"Buildings" becomes "Building_Extended"
+		"Improvement_YieldChanges" becomes "Improvement_YieldChanges_Extended"
+
+b.) Open the new class, and change the NameSpace from "CivGen.Extended_Classes" to "CivGen".
+
+c.) Change the class declaration to be a public partial class, inheriting from CivBase, removing the _Extended suffix
+	e.g. 	"class Difficulty_Extended" becomes "public partial class Difficulty : CivBase"
+
+d.) Implement the two abstract routines that are required, along with the two name constants.  Adjust the methods as required.  The "ReferenceName" property will be the name of anchor / #ID that refers to an instance in the webpage that is created for this class (if any).  The NamePrefix and NameSuffix are best determined as follows:
+	i.) Look at the corresponding table in the database, and find an appropriate column name ("Name" or similar) that holds an apropriate name.
+	e.g. For "Difficulty", the "Name" column is appropriate.  To get the names "Settler", "Warlord" etc, the corresponding NamePrefix and NameSuffix 	are "LOC_DIFFICULTY_" and "_NAME".
+	ii.) Adjust the ReferenceName method to return the appropriate reference name, by ensuring that it refers to the column name used in the step above.  i.e. "return Name.Replace(NamePrefix, "").Replace(NameSuffix, "");".  If the Prefix or Suffix is an empty string (can happen), then ensure that the function is modified such that there is not a zero-length error in replace (eg. if NameSuffix is "", the function should be ":return Name.Replace(NamePrefix, "")"
+
+e.) Ensure that the Era returns an appropriate value.  If the class has it's own Era member, return that.  If it does not, but has something related (eg. a technology), return the Era associated with that.  If an Era really isn't approprate, return eEra.Ancient.
+
+f.) The className is used to automatically derive the path the the webpage for any hyperlinks to class instances.  In most cases this is fine, and the CivBase methods get this from GetType().  However, some classes do not work this way, for example Improvement_ValidResources should hyperlink to "Improvement".  In such a case, override the "OpenURL" property:
+	e.g. for "Improvement_ValidResources", it becomes:
+        public override string OpenURL { get { return BaseURL + "Improvement"; } } 
+
+
