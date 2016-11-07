@@ -48,5 +48,10 @@ namespace CivGen
                 return yield.Replace('x','-').Replace('y','-').Replace('z','-');
             }
         }
+
+        public ICollection<Feature> FeatureAdjacentTerrains { get { return Features; } }
+        public ICollection<Feature> FeatureNotAdjacentTerrains { get { return Features1; } }
+        public ICollection<Feature> FeatureValidTerrains { get { return Features2; } }
+
     }
 }

@@ -20,7 +20,7 @@ namespace CivGen
     /// </summary>
     public abstract class CivBase
     {
-        private const string BaseURL = @"http://www.civfanatics.com/Civ6/";
+        public const string BaseURL = @"http://www.civfanatics.com/Civ6/info/";
 
         public virtual string URL
         {
@@ -90,7 +90,7 @@ namespace CivGen
         /// </summary>
         public virtual string html_AnchorURL()
         {
-                return OpenURL + "#" + ReferenceName;
+                return OpenURL + @"/#" + ReferenceName;
         }
 
 
@@ -100,7 +100,7 @@ namespace CivGen
         /// </summary>
         public virtual string html_AnchorURL(string pageName)
         {
-            return BaseURL + pageName + "#" + ReferenceName;
+            return BaseURL + pageName + @"/#" + ReferenceName;
         }
 
         /// <summary>

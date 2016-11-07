@@ -37,5 +37,36 @@ namespace CivGen
 
             }
         }
+
+        Yield_Helper helper = new Yield_Helper();
+
+        public string YieldString
+        {
+            get
+            {
+                foreach (Improvement_YieldChanges change in this.Improvement_YieldChanges)
+                {
+                    helper.SetInitial(change.YieldType, change.YieldChange);
+                }
+                return helper.BaseYieldString;
+            }
+        }
+
+        public string ImprovementYieldString
+        {
+            get
+            {
+                StringBuilder improvementEffect = new StringBuilder();
+                foreach (Improvement_ValidResources improvement in this.Improvement_ValidResources)
+                {
+                    foreach (Improvement_YieldChanges change in improvement.Improvement.Improvement_YieldChanges)
+                    {
+                        helper.ModifyYields(improvement.Improvement.FriendlyName, change.YieldType, change.YieldChange);
+                    }
+                    improvementEffect.AppendLine(improvement.Improvement.html_Goto_URL_Link + ": " + helper.ModifiedYieldString);
+                }
+                return improvementEffect.ToString();
+            }
+        }
     }
 }

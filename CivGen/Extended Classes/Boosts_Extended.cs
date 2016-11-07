@@ -17,7 +17,8 @@ namespace CivGen
         {
             get
             {
-                return TriggerDescription.Replace(NamePrefix, "").Replace(NameSuffix, "");
+
+                return TriggerDescription.Replace(NamePrefix, "");
             }
 
         }
@@ -31,5 +32,10 @@ namespace CivGen
                 return eERA.ANCIENT;
             }
         }
+
+        
     }
+
+    
+
 }

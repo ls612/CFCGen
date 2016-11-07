@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace CivGen
 {
-    public partial class Resource_YieldChanges :CivBase
+    public partial class Difficulty : CivBase
     {
         //Constants used to correct / convert the 'Name' to the friendly display name.
-        private const string NamePrefix = "YIELD_";
-        private const string NameSuffix = "";
+        private const string NamePrefix = "LOC_DIFFICULTY_";
+        private const string NameSuffix = "_NAME";
 
 
         public override string ReferenceName
         {
             get
             {
-                return YieldType.Replace(NamePrefix, "");
+                return Name.Replace(NamePrefix, "").Replace(NameSuffix, "");
             }
 
         }
@@ -27,15 +27,6 @@ namespace CivGen
             get
             {
                 return eERA.ANCIENT;
-            }
-        }
-
-        //Want this to point to "improvement", not "Improvement_ValidResources"
-        public override string OpenURL
-        {
-            get
-            {
-                return BaseURL + "Resource";
             }
         }
     }

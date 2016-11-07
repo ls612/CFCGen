@@ -299,20 +299,29 @@
     <Compile Include="Era.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Extended Classes\BarbarianTribe_Extended.cs" />
     <Compile Include="Extended Classes\Boosts_Extended.cs" />
     <Compile Include="Extended Classes\BuildingModifier_Extended.cs" />
     <Compile Include="Extended Classes\Building_Extended.cs" />
     <Compile Include="Extended Classes\Civic_Extended.cs" />
+    <Compile Include="Extended Classes\Difficulty_Extended.cs" />
     <Compile Include="Extended Classes\District_Extended.cs" />
     <Compile Include="Extended Classes\Era_Extended.cs" />
     <Compile Include="Extended Classes\Feature_Extended.cs" />
+    <Compile Include="Extended Classes\GreatPersonIndividual_Extended.cs" />
     <Compile Include="Extended Classes\Improvement_Extended.cs" />
+    <Compile Include="Extended Classes\Improvement_ValidResource_Extended.cs" />
+    <Compile Include="Extended Classes\Improvement_ValidTerrain_Extended.cs" />
+    <Compile Include="Extended Classes\Improvement_YieldChanges_Extended.cs" />
     <Compile Include="Extended Classes\Modifiers_Extended.cs" />
+    <Compile Include="Extended Classes\Projects_Extended.cs" />
     <Compile Include="Extended Classes\Resource_Extended.cs" />
+    <Compile Include="Extended Classes\Resource_Harvests_Extended.cs" />
     <Compile Include="Extended Classes\Resource_YieldChanges_Extended.cs" />
     <Compile Include="Extended Classes\Technology_Extended.cs" />
     <Compile Include="Extended Classes\Terrain_Extended.cs" />
     <Compile Include="Extended Classes\Terrain_YieldChanges_Extended.cs" />
+    <Compile Include="Extended Classes\Units_Extended.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FavoredReligion.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
@@ -459,6 +468,7 @@
     <Compile Include="ModifierArgument.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModifierHelper.cs" />
     <Compile Include="ModifierString.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
@@ -598,6 +608,7 @@
     <Compile Include="StartingGovernment.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="StaticFunctions.cs" />
     <Compile Include="Strategy.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
@@ -697,6 +708,7 @@
     <Compile Include="Yield.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Yield_Helper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

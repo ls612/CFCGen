@@ -51,5 +51,16 @@ namespace CivGen
             return output.ToString();
         }
 
+        public ICollection<Technology> PreRequisites { get { return Technologies; } }
+        public ICollection<Technology> RequiredFor { get { return Technologies1; } }
+
+        public ICollection<Unit> AllowsUnits { get { return this.Units2; } }
+        public ICollection<Unit> MakesUnitsObsolete { get { return this.Units1; } }
+
+        public ICollection<Boost> IsBoostedBy { get { return this.Boosts1; } }
+        public ICollection<Boost> AllowsBoosts { get { return this.Boosts; } }
+
+        public Unit AllowsEmbarkationOf { get { return Unit; } }
+
     }
 }

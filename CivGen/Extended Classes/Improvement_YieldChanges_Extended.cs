@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CivGen
 {
-    public partial class Resource_YieldChanges :CivBase
+    public partial class Improvement_YieldChanges : CivBase
     {
         //Constants used to correct / convert the 'Name' to the friendly display name.
         private const string NamePrefix = "YIELD_";
@@ -30,12 +30,14 @@ namespace CivGen
             }
         }
 
-        //Want this to point to "improvement", not "Improvement_ValidResources"
+
+
+        //Want this to point to "improvement", not "Improvement_YieldChanges"
         public override string OpenURL
         {
             get
             {
-                return BaseURL + "Resource";
+                return BaseURL + "Improvement";
             }
         }
     }

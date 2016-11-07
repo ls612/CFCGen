@@ -6,27 +6,32 @@ using System.Threading.Tasks;
 
 namespace CivGen
 {
-    public partial class Resource_YieldChanges :CivBase
+    public partial class Resource_Harvests : CivBase
     {
         //Constants used to correct / convert the 'Name' to the friendly display name.
-        private const string NamePrefix = "YIELD_";
+        private const string NamePrefix = "";
         private const string NameSuffix = "";
 
 
+        /// <summary>
+        /// ABSTRACT - MUST BE IMPLEMENTED:  Friendly name for the class instance in the html output.
+        /// </summary>
         public override string ReferenceName
         {
             get
             {
-                return YieldType.Replace(NamePrefix, "");
+                return ResourceType;
             }
-
         }
 
+        /// <summary>
+        /// ABSTRACT - MUST BE IMPLEMENTED:  Access to the Era.
+        /// </summary>
         public override eERA ReferenceEra
         {
             get
             {
-                return eERA.ANCIENT;
+                return Technology.Era.ERA;
             }
         }
 

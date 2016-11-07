@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -10,6 +11,14 @@ namespace CivGen
 {
     public static class ExtensionMethods
     {
+
+        public static string ToTitleCase(this string input)
+        {
+            input = input.Replace('_', ' ');
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+            return textInfo.ToTitleCase(input.ToLower());
+        }
+
 
         /// <summary>
         /// Extension method for a string that removes variants of line breaks.

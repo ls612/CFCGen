@@ -30,27 +30,68 @@ namespace CivGen
             {
                 if (Technology != null) return Technology.ReferenceEra;
                 if (Civic != null) return Civic.ReferenceEra;
+                if (GrantedByGreatPerson.Count != 0)
+                {
+                    return GrantedByGreatPerson[0].Era.ERA;
+                }
+                if (MadeVisibleByGreatPerson.Count != 0)
+                {
+                    return MadeVisibleByGreatPerson[0].Era.ERA;
+                }
+                if (MadeVisibleByCivic.Count != 0)
+                {
+                    return MadeVisibleByCivic[0].Era.ERA;
+                }
                 return eERA.ANCIENT; //Starting conditions.
             }
         }
+
+        Yield_Helper helper = new Yield_Helper();
 
         public string YieldString
         {
             get
             {
-                string yield = "Food: v  |  Gold: w  |  Production: x   |  Faith: y   |  Culture: z ";
-                if (Resource_YieldChanges.Count == 0) return "Food: -  |  Gold: -  |  Production: -   |  Faith: -   |  Culture: - "; ;
                 foreach (Resource_YieldChanges change in this.Resource_YieldChanges)
                 {
-                    if (change.FriendlyName == "Food") yield = yield.Replace("Food","<b>Food</b>").Replace("v", "<b>" + change.YieldChange.ToString() + "</b>");
-                    if (change.FriendlyName == "Gold") yield = yield.Replace("Gold", "<b>Gold</b>").Replace("w", "<b>" + change.YieldChange.ToString() + "</b>");
-                    if (change.FriendlyName == "Production") yield = yield.Replace("Production", "<b>Production</b>").Replace("x", "<b>" + change.YieldChange.ToString() + "</b>");
-                    if (change.FriendlyName == "Faith") yield = yield.Replace("Faith", "<b>Faith</b>").Replace("y", "<b>" + change.YieldChange.ToString() + "</b>");
-                    if (change.FriendlyName == "Culture") yield = yield.Replace("Culture", "<b>Culture</b>").Replace("z", "<b>" + change.YieldChange.ToString() + "</b>");
+                    helper.SetInitial(change.YieldType, change.YieldChange);
                 }
-
-                return yield.Replace('v', '-').Replace('w', '-').Replace('x', '-').Replace('y', '-').Replace('z', '-');
+                return helper.BaseYieldString;
             }
         }
+
+        public string ImprovementYieldString
+        {
+            get
+            {
+                StringBuilder improvementEffect = new StringBuilder();
+                foreach (Improvement_ValidResources improvement in this.Improvement_ValidResources)
+                {
+                    foreach (Improvement_YieldChanges change in improvement.Improvement.Improvement_YieldChanges)
+                    {
+                        helper.ModifyYields(improvement.Improvement.FriendlyName, change.YieldType, change.YieldChange);
+                    }
+                    improvementEffect.AppendLine(improvement.Improvement.html_Goto_URL_Link + ": " + helper.ModifiedYieldString); 
+                }
+                return improvementEffect.ToString();
+            }
+        }
+
+
+
+        public string Type
+        {
+            get
+            {
+                return this.ResourceClassType.Replace("RESOURCECLASS_", "").ToTitleCase();
+            }
+        }
+
+        /*-- Populated in 'ModiferHelper --*/
+        public List<GreatPersonIndividual> GrantedByGreatPerson { get; set; } = new List<GreatPersonIndividual>();
+        public List<GreatPersonIndividual> MadeVisibleByGreatPerson { get; set; } = new List<GreatPersonIndividual>();
+        public List<GreatPersonIndividual> GrantFreeResourceFromUnitPlotByGreatPerson { get; set; } = new List<GreatPersonIndividual>();
+        public List<Civic> MadeVisibleByCivic { get; set; } = new List<Civic>();
+        public List<Civic> AllowsExtractionByCivic { get; set; } = new List<Civic>();
     }
 }

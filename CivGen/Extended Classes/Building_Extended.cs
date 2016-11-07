@@ -62,8 +62,9 @@ namespace CivGen
         {
             get
             {
-                if (Technology == null) return eERA.ANCIENT;
-                return Technology.Era.ERA;
+                if (Technology != null) return Technology.Era.ERA;
+                if (Civic != null) return Civic.Era.ERA;
+                return eERA.ANCIENT;
             }
         }
 
@@ -118,9 +119,40 @@ namespace CivGen
             }
             return effects.ToString();
            
-        }       
+        }
 
 
+        public override string URL
+        {
+            get
+            {
+                try
+                {
+                    //return BaseURL + this.GetType().BaseType.Name + @"/";
+                    if (IsWonder) return BaseURL + "Wonder" + @"/";
+                }
+                catch
+                { }
+                return base.URL;
+            }
+        }
+
+        public override string OpenURL
+        {
+            get
+            {
+                try
+                {
+                    //return BaseURL + this.GetType().BaseType.Name;
+                    if (IsWonder) return BaseURL + "Wonder";
+                }
+                catch { }
+                return base.OpenURL;
+            }
+        }
+
+        public District RequiredDistrict { get { return District; } }
+        public District RequiredAdjacentDistrict { get { return District1; } }
     }
    
 }
