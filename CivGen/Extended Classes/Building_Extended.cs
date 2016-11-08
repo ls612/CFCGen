@@ -64,6 +64,7 @@ namespace CivGen
             {
                 if (Technology != null) return Technology.Era.ERA;
                 if (Civic != null) return Civic.Era.ERA;
+                if (RequiredDistrict != null) return RequiredDistrict.ReferenceEra;
                 return eERA.ANCIENT;
             }
         }
@@ -134,6 +135,18 @@ namespace CivGen
             }
         }
 
+        public string GreatPersonPointsText
+        {
+            get
+            {
+                string output = "";
+                foreach (Building_GreatPersonPoints greatPersonType in Building_GreatPersonPoints)
+                {
+                    output += greatPersonType.GreatPersonClass.FriendlyName + ": +" + greatPersonType.PointsPerTurn.ToString() + " | ";
+                }
+                return (output.Length > 3) ? output.Substring(0, output.Length - 3) : output;
+            }
+        }
 
         public override string URL
         {

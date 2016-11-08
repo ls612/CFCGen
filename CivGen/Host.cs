@@ -239,11 +239,13 @@ namespace CivGen
                 Entities = new GameplayEntities(DataBaseConnectionString);
                 LoadEntityList();       //NOTE:  This also Creates the instance of the "ModifierHelper".
 
-                GenerateWondersPage();            //Under review - fixing "Modifiers"
+                //GenerateWondersPage();            //Under review - fixing "Modifiers"
+                //GenerateBuildingsPage();    
                 //GenerateTerrainPage();            //Published
                 //GenerateResourcesPage();          //Published
                 //GenerateTechPage();               //Published
                 //GenerateImprovementsPage();       //published
+                GenerateUnitsPage();
                 #region playing
                 /*
                 //Get buildings by Era
@@ -841,111 +843,7 @@ namespace CivGen
             //Add in the TOC
             //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
             List<CivBase> CastList = new List<Building>(buildings.Where(x=>x.IsWonder == true).ToList()).Cast<CivBase>().ToList();
-            #region Building field helper
-            //Helper to work-out what collections are....
-            foreach (Building building in CastList)
-            {
-                if (building.BuildingModifiers.Count != 0)
-                {
-                    Debug.WriteLine("BuildingModifiers for " + building.FriendlyName);
-                    List<Modifier> modifiers = modifierHelper.GetModifiers(building.BuildingModifiers.Select(x => x.ModifierId).ToList());
-                    int modifierIndex = 0;
-                    foreach (Modifier item in modifiers)
-                    {
-                        Debug.WriteLine("----" + item.ModifierId);
-                    }
-                    /*
-                        foreach (Modifier item in modifiers)
-                    {
-                        Debug.WriteLine("----" + modifierIndex.ToString() + " Type " + item.ModifierType);
-                        int argumentIndex = 0;
-                        foreach (ModifierArgument argument in item.ModifierArguments)
-                        {
-                            Debug.WriteLine("----Argument " + argumentIndex.ToString() + " Type:" + argument.Type);
-                            Debug.WriteLine("----Argument " + argumentIndex.ToString() + " Value:" + argument.Value);
-                            Debug.WriteLine("----Argument " + argumentIndex.ToString() + " Extra:" + argument.Extra);
-                            argumentIndex++;
-                        }
-                        modifierIndex++;
-
-                    }*/
-                }
-
-                /*
-                foreach (BuildingModifier modifier in building.BuildingModifiers)
-                {
-                    Debug.WriteLine("----ID: " + modifier.ModifierId);
-                }
-                */
-                /*
-                if (building.District!= null)
-                {
-                    Debug.WriteLine(building.ReferenceName + " has District " + building.District.ReferenceName);
-                }
-                */
-                /*
-                if (building.District1 != null)
-                {
-                    Debug.WriteLine(building.ReferenceName + " has District1 " + building.District1.ReferenceName);
-                }
-                /*
-                if (tech.Units.Count != 0)
-                {
-                    Debug.WriteLine(tech.ReferenceName + " has Units: ");
-                    foreach (Unit unit in tech.Units)
-                    {
-                        Debug.WriteLine("----" + unit.ReferenceName);
-                    }
-                }
-                */
-                /*
-                if (tech.Units1.Count != 0)
-                {
-                    Debug.WriteLine(tech.ReferenceName + " has Units1: ");
-                    foreach (Unit unit in tech.Units1)
-                    {
-                        Debug.WriteLine("----" + unit.ReferenceName);
-                    }
-                }
-                */
-                /*
-                if (tech.Units2.Count != 0)
-                {
-                    Debug.WriteLine(tech.ReferenceName + " has Units2: ");
-                    foreach (Unit unit in tech.Units2)
-                    {
-                        Debug.WriteLine("----" + unit.ReferenceName);
-                    }
-                }*/
-                /*
-                if (tech.Boosts.Count != 0)
-                {
-                    Debug.WriteLine(tech.ReferenceName + " has Boosts: ");
-                    foreach (Boost boost     in tech.Boosts)
-                    {
-                        Debug.WriteLine("----" + boost.ReferenceName);
-                    }
-                */
-                /*
-                if (tech.Boosts1.Count != 0)
-                {
-                    Debug.WriteLine(tech.ReferenceName + " has Boosts1: ");
-                    foreach (Boost boost in tech.Boosts1)
-                    {
-                        Debug.WriteLine("----" + boost.ReferenceName);
-                    }
-                }
-                */
-            }
-            #endregion
-
-            //Run helper converter - populates things like GrantedByGreatPerson, which helps set the era.
-            /*
-            foreach (Resource resource in CastList)
-            {
-                string result = modifierHelper.ResourcesFromModifiers(resource);
-            }
-            */
+          
 
             basePage.AppendLine("<td>");
             basePage.AppendLine(GenerateTableOfContents(CastList, 2, true));
@@ -1003,10 +901,12 @@ namespace CivGen
 
                     GenerateTableItem<string>("Great Works Slots", detailTable, item.GreatWorkSlotText);
                     GenerateTableItem<GreatPersonIndividual>("Great Person Modifiers", detailTable, item.GreatPersonIndividuals);
+                    GenerateTableItem<string>("Great Person Points", detailTable, item.GreatPersonPointsText);
 
+                    /*
                     string effects = item.Effects(modifiers, modifierarguments);
                     GenerateTableItem<string>("Effects", detailTable, effects);                     
-
+                    */
                     
 
                     /*
@@ -1029,9 +929,225 @@ namespace CivGen
 
         #endregion
 
-        
+
+        #region GenerateBuildingsPage
+        public void GenerateBuildingsPage()
+        {
+            StringBuilder basePage = new StringBuilder();
+            basePage.AppendLine(GenerateHeaders());
+
+            //Add in the TOC
+            //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
+            List<CivBase> CastList = new List<Building>(buildings.Where(x => x.IsWonder == false).ToList()).Cast<CivBase>().ToList();
+
+
+            basePage.AppendLine("<td>");
+            basePage.AppendLine(GenerateTableOfContents(CastList, 2, true));
+            basePage.AppendLine("</td>");
+
+            //Now item details column
+            basePage.AppendLine("<td>");
+
+            //Now generate the html:  //Tags for each sub table.
+            string tableTag = "<table border=\"1\" style=\"width:100%\">";
+            string firstColumnTag = "<col style=\"width:180px\">";
+            string secondColumnTag = "<col style=\"width:400px\">";
+
+            //Now generate the html:
+            List<Building> Wonders = buildings.Where(x => x.IsWonder == false).ToList();
+
+            foreach (eERA era in Enum.GetValues(typeof(eERA)))
+            {
+                List<Building> eraItems = Wonders.Where(x => x.ReferenceEra == era).ToList();
+
+                if (eraItems.Count == 0) continue;
+
+                //Create a header from the first era
+                basePage.AppendLine(html_Header_With_Anchor(era.ToString(), era.ToString() + " Era", HeaderType.h1));
+
+                foreach (Building item in eraItems)
+                {
+                    StringBuilder detailTable = new StringBuilder();
+                    detailTable.AppendLine(item.html_Header_With_Anchor(HeaderType.h2));
+                    detailTable.AppendLine(tableTag);
+                    detailTable.AppendLine(firstColumnTag);
+                    detailTable.AppendLine(secondColumnTag);
+
+
+                    GenerateTableItem<long>("Cost", detailTable, item.Cost);
+                    if (item.ObsoleteEra != "NO_ERA") GenerateTableItem<string>("Obsolete Era", detailTable, FriendlyName(item.ObsoleteEra));
+                    GenerateTableItem<Technology>("Required Technology", detailTable, item.Technology);
+                    GenerateTableItem<Civic>("Required Civic", detailTable, item.Civic);
+                    GenerateTableItem<District>("Required District", detailTable, item.RequiredDistrict);
+                    GenerateTableItem<District>("Required Adjacent District", detailTable, item.RequiredAdjacentDistrict);
+                    GenerateTableItem<Resource>("Required Resource", detailTable, item.Resource);
+                    GenerateTableItem<Terrain>("Allowable Terrains", detailTable, item.Terrains);
+                    GenerateTableItem<Feature>("Allowable Features", detailTable, item.AllowedFeatures);
+                    GenerateTableItem<Feature>("Required Features", detailTable, item.RequiredFeatures);
+                    GenerateTableItem<Building>("Required Buildings", detailTable, item.PreRequisiteBuilding);
+                    GenerateTableItem<Building>("Allows Buildings", detailTable, item.AllowsBuilding);
+                    GenerateTableItem<Building>("Replaces Building", detailTable, item.ReplacesBuilding);
+                    GenerateTableItem<Building>("Replaced By Building", detailTable, item.ReplacedByBuilding);
+                    GenerateTableItem<Project>("Allows Projects", detailTable, item.Projects);
+                    GenerateTableItem<Building>("Mutually Exclusive For", detailTable, item.MutuallyExclusiveFor);
+                    GenerateTableItem<Building>("Mutually Exclusive With", detailTable, item.MutuallyExclusiveWith);
+                    GenerateTableItem<Boost>("Boosts", detailTable, item.Boosts);
+                    
+                    Yield_Helper buildingYield = new Yield_Helper(item.Building_YieldChanges);
+                    GenerateTableItem<string>("Building Yield Changes", detailTable, buildingYield.YieldChangesString);
+
+                    GenerateTableItem<string>("Great Works Slots", detailTable, item.GreatWorkSlotText);
+                    GenerateTableItem<GreatPersonIndividual>("Great Person Modifiers", detailTable, item.GreatPersonIndividuals);
+                    GenerateTableItem<string>("Great Person Points", detailTable, item.GreatPersonPointsText);
+
+                    /*
+                    string effects = item.Effects(modifiers, modifierarguments);
+                    GenerateTableItem<string>("Effects", detailTable, effects);                     
+                    */
+
+
+                    /*
+                    GenerateTableItem<Project>("Required for Projects", detailTable, resource.Projects);                          //Projects
+                    GenerateTableItem<Boost>("Boosts", detailTable, resource.Boosts);                                             //Boosts
+                    GenerateTableItem<Building>("Required for Buildings", detailTable, resource.Buildings);                       //Buildings
+                    GenerateTableItem<Unit>("Required for Units", detailTable, resource.Units);                                   //Units
+                    */
+                    detailTable.AppendLine("</table>");
+                    detailTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                    basePage.AppendLine(detailTable.ToString());
+                }
+            }
+            basePage.AppendLine("</td></tr></table>");
+            Clipboard.SetText(basePage.ToString());
+            MessageBox.Show("Page copied to clipboard");
+
+        }
+
+        #endregion
+
+
+        #region GenerateUnitsPage
+        public void GenerateUnitsPage()
+        {
+            StringBuilder basePage = new StringBuilder();
+            basePage.AppendLine(GenerateHeaders());
+
+            //Add in the TOC
+            //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
+            List<CivBase> CastList = new List<Unit>( units.ToList()).Cast<CivBase>().ToList();
+
+            
+            basePage.AppendLine("<td>");
+            basePage.AppendLine(GenerateTableOfContents(CastList, 2, true));
+            basePage.AppendLine("</td>");
+
+            //Now item details column
+            basePage.AppendLine("<td>");
+
+            //Now generate the html:  //Tags for each sub table.
+            string tableTag = "<table border=\"1\" style=\"width:100%\">";
+            string firstColumnTag = "<col style=\"width:180px\">";
+            string secondColumnTag = "<col style=\"width:400px\">";
+
+            //Now generate the html:
+            //List<Unit> units = units.ToList();
+
+            foreach (eERA era in Enum.GetValues(typeof(eERA)))
+            {
+                List<Unit> eraItems = units.Where(x => x.ReferenceEra == era).ToList();
+
+                if (eraItems.Count == 0) continue;
+
+                //Create a header from the first era
+                basePage.AppendLine(html_Header_With_Anchor(era.ToString(), era.ToString() + " Era", HeaderType.h1));
+
+                foreach (Unit item in eraItems)
+                {
+                    StringBuilder detailTable = new StringBuilder();
+                    detailTable.AppendLine(item.html_Header_With_Anchor(HeaderType.h2));
+                    detailTable.AppendLine(tableTag);
+                    detailTable.AppendLine(firstColumnTag);
+                    detailTable.AppendLine(secondColumnTag);
+
+
+                    GenerateTableItem<string>("Domain", detailTable, FriendlyName(item.Domain,1));
+                    GenerateTableItem<long>("Cost", detailTable, item.Cost);
+                    GenerateTableItem<long>("Moves", detailTable, item.BaseMoves);
+                    GenerateTableItem<long>("Sight", detailTable, item.BaseSightRange);
+                    if (item.Combat != 0) GenerateTableItem<long>("Combat strength", detailTable, item.Combat);
+                    if (item.Range != 0) GenerateTableItem<long>("Range", detailTable, item.Range);
+                    if (item.RangedCombat!= 0) GenerateTableItem<long>("Ranged Combat strength", detailTable, item.RangedCombat);
+                    if (item.Bombard!= 0) GenerateTableItem<long>("Bombard strength", detailTable, item.Bombard);
+                    GenerateTableItem<string>("Unit Type", detailTable, FriendlyName(item.PromotionClass,2));
+
+                    GenerateTableItem<Unit>("Upgrades To", detailTable, item.Unit_UpgradesTo, true);
+                    GenerateTableItem<Unit>("Upgrades From", detailTable, item.Unit_UpgradesFrom, true);
+                    GenerateTableItem<Unit>("Replaced By UU", detailTable, item.Unit_ReplacedBy_UniqueUnit, true);
+                    GenerateTableItem<Unit>("Replaces", detailTable, item.Unit_UniqueUnit_Replaces_Unit, true);
+                    GenerateTableItem<Unit>("On Capture Becomes", detailTable, item.Unit_CaptureUnitBecomes, true);
+                    
+                    GenerateTableItem<Technology>("Required Technology", detailTable, item.Tech_PreRequisite);
+                    GenerateTableItem<Technology>("Obsolete Technology", detailTable, item.Tech_MandatoryObsoleteTech);
+
+                    GenerateTableItem<Civic>("Required Civic", detailTable, item.Civic_PreRequisite);
+                    GenerateTableItem<Civic>("Obsolete Civic", detailTable, item.Civic_ObsoleteCivic);
+                    GenerateTableItem<Resource>("Required Resource", detailTable, item.Resource);
+                    GenerateTableItem<string>("Required Building", detailTable, item.Building_PreRequisite);
+                    /*
+
+                    GenerateTableItem<Civic>("Required Civic", detailTable, item.Civic);
+                    GenerateTableItem<District>("Required District", detailTable, item.RequiredDistrict);
+                    GenerateTableItem<District>("Required Adjacent District", detailTable, item.RequiredAdjacentDistrict);
+                    GenerateTableItem<Terrain>("Allowable Terrains", detailTable, item.Terrains);
+                    GenerateTableItem<Feature>("Allowable Features", detailTable, item.AllowedFeatures);
+                    GenerateTableItem<Feature>("Required Features", detailTable, item.RequiredFeatures);
+                    GenerateTableItem<Building>("Required Buildings", detailTable, item.PreRequisiteBuilding);
+                    GenerateTableItem<Building>("Allows Buildings", detailTable, item.AllowsBuilding);
+                    GenerateTableItem<Building>("Replaces Building", detailTable, item.ReplacesBuilding);
+                    GenerateTableItem<Building>("Replaced By Building", detailTable, item.ReplacedByBuilding);
+                    GenerateTableItem<Project>("Allows Projects", detailTable, item.Projects);
+                    GenerateTableItem<Building>("Mutually Exclusive For", detailTable, item.MutuallyExclusiveFor);
+                    GenerateTableItem<Building>("Mutually Exclusive With", detailTable, item.MutuallyExclusiveWith);
+                    GenerateTableItem<Boost>("Boosts", detailTable, item.Boosts);
+
+                    Yield_Helper buildingYield = new Yield_Helper(item.Building_YieldChanges);
+                    GenerateTableItem<string>("Building Yield Changes", detailTable, buildingYield.YieldChangesString);
+
+                    GenerateTableItem<string>("Great Works Slots", detailTable, item.GreatWorkSlotText);
+                    GenerateTableItem<GreatPersonIndividual>("Great Person Modifiers", detailTable, item.GreatPersonIndividuals);
+                    GenerateTableItem<string>("Great Person Points", detailTable, item.GreatPersonPointsText);
+                    */
+                    /*
+                    string effects = item.Effects(modifiers, modifierarguments);
+                    GenerateTableItem<string>("Effects", detailTable, effects);                     
+                    */
+
+
+                    /*
+                    GenerateTableItem<Project>("Required for Projects", detailTable, resource.Projects);                          //Projects
+                    GenerateTableItem<Boost>("Boosts", detailTable, resource.Boosts);                                             //Boosts
+                    GenerateTableItem<Building>("Required for Buildings", detailTable, resource.Buildings);                       //Buildings
+                    GenerateTableItem<Unit>("Required for Units", detailTable, resource.Units);                                   //Units
+                    */
+                    detailTable.AppendLine("</table>");
+                    detailTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                    basePage.AppendLine(detailTable.ToString());
+                }
+            }
+            basePage.AppendLine("</td></tr></table>");
+            Clipboard.SetText(basePage.ToString());
+            MessageBox.Show("Page copied to clipboard");
+
+        }
+
+        #endregion
+
+
+
         #region GenerateTechnologyPage
-        
+
         public void GenerateTechPage()
         {
             StringBuilder basePage = new StringBuilder();
@@ -1194,6 +1310,7 @@ namespace CivGen
         /// </summary>
         public static string FriendlyName(string dataBaseName, int index =1)
         {
+            if (dataBaseName == null) return "";
             //Example:  LOC_ERA_ANCIENT_NAME should return "Ancient"
             System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("en-US", false).TextInfo;
             string[] parts = dataBaseName.Split('_');

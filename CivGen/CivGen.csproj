@@ -303,6 +303,7 @@
     <Compile Include="Extended Classes\Boosts_Extended.cs" />
     <Compile Include="Extended Classes\BuildingModifier_Extended.cs" />
     <Compile Include="Extended Classes\Building_Extended.cs" />
+    <Compile Include="Extended Classes\Building_GreatPersonPoints_Extended.cs" />
     <Compile Include="Extended Classes\Building_GreatWorks_Extended.cs" />
     <Compile Include="Extended Classes\Building_YieldChanges_Extended.cs" />
     <Compile Include="Extended Classes\Civic_Extended.cs" />
@@ -310,6 +311,7 @@
     <Compile Include="Extended Classes\District_Extended.cs" />
     <Compile Include="Extended Classes\Era_Extended.cs" />
     <Compile Include="Extended Classes\Feature_Extended.cs" />
+    <Compile Include="Extended Classes\GreatPersonClass_Extended.cs" />
     <Compile Include="Extended Classes\GreatPersonIndividual_Extended.cs" />
     <Compile Include="Extended Classes\GreatWorkSlotType_Extended.cs" />
     <Compile Include="Extended Classes\Improvement_Extended.cs" />
@@ -325,6 +327,7 @@
     <Compile Include="Extended Classes\Terrain_Extended.cs" />
     <Compile Include="Extended Classes\Terrain_YieldChanges_Extended.cs" />
     <Compile Include="Extended Classes\Units_Extended.cs" />
+    <Compile Include="Extended Classes\Unit_BuildingPrereqs_Extended.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FavoredReligion.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
