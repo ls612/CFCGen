@@ -237,9 +237,9 @@ namespace CivGen
             if (CheckDataBasePath())
             {
                 Entities = new GameplayEntities(DataBaseConnectionString);
-                LoadEntityList();
+                LoadEntityList();       //NOTE:  This also Creates the instance of the "ModifierHelper".
 
-                //GenerateWondersPage();            //Published
+                GenerateWondersPage();            //Under review - fixing "Modifiers"
                 //GenerateTerrainPage();            //Published
                 //GenerateResourcesPage();          //Published
                 //GenerateTechPage();               //Published
@@ -427,8 +427,13 @@ namespace CivGen
                         dataItem += ((CivBase)(object)item).html_Goto_URL_Link;         //Restrcition needs a double-cast
                     }
                 }
-                         //Restriction needs a double-cast
-                if (item is string) dataItem += item;
+                //Restriction needs a double-cast
+                if (item is string)
+                {
+                    string text =(string)(object)item;
+                    if (text.Length == 0) return;   //Ignore an empty string
+                    dataItem += item;
+                }
                 if (item is bool) dataItem += ((bool)(object)item == true) ? "Yes" : "No";
                 if (item is long) dataItem += item.ToString();
             }
@@ -840,12 +845,45 @@ namespace CivGen
             //Helper to work-out what collections are....
             foreach (Building building in CastList)
             {
-                
+                if (building.BuildingModifiers.Count != 0)
+                {
+                    Debug.WriteLine("BuildingModifiers for " + building.FriendlyName);
+                    List<Modifier> modifiers = modifierHelper.GetModifiers(building.BuildingModifiers.Select(x => x.ModifierId).ToList());
+                    int modifierIndex = 0;
+                    foreach (Modifier item in modifiers)
+                    {
+                        Debug.WriteLine("----" + item.ModifierId);
+                    }
+                    /*
+                        foreach (Modifier item in modifiers)
+                    {
+                        Debug.WriteLine("----" + modifierIndex.ToString() + " Type " + item.ModifierType);
+                        int argumentIndex = 0;
+                        foreach (ModifierArgument argument in item.ModifierArguments)
+                        {
+                            Debug.WriteLine("----Argument " + argumentIndex.ToString() + " Type:" + argument.Type);
+                            Debug.WriteLine("----Argument " + argumentIndex.ToString() + " Value:" + argument.Value);
+                            Debug.WriteLine("----Argument " + argumentIndex.ToString() + " Extra:" + argument.Extra);
+                            argumentIndex++;
+                        }
+                        modifierIndex++;
+
+                    }*/
+                }
+
+                /*
+                foreach (BuildingModifier modifier in building.BuildingModifiers)
+                {
+                    Debug.WriteLine("----ID: " + modifier.ModifierId);
+                }
+                */
+                /*
                 if (building.District!= null)
                 {
                     Debug.WriteLine(building.ReferenceName + " has District " + building.District.ReferenceName);
                 }
-
+                */
+                /*
                 if (building.District1 != null)
                 {
                     Debug.WriteLine(building.ReferenceName + " has District1 " + building.District1.ReferenceName);
@@ -959,6 +997,8 @@ namespace CivGen
                     GenerateTableItem<Building>("Mutually Exclusive For", detailTable, item.MutuallyExclusiveFor);                      //Allowable improvements
                     GenerateTableItem<Building>("Mutually Exclusive With", detailTable, item.MutuallyExclusiveWith);                      //Allowable improvements
                     GenerateTableItem<Boost>("Boosts", detailTable, item.Boosts);                      //Allowable improvements
+                    Yield_Helper buildingYield = new Yield_Helper(item.Building_YieldChanges);
+                    GenerateTableItem<string>("Building Yield Changes", detailTable, buildingYield.YieldChangesString);                      //Allowable improvements
 
                     string effects = item.Effects(modifiers, modifierarguments);
                     GenerateTableItem<string>("Effects", detailTable, effects);                      //Allowable improvements

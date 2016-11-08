@@ -27,6 +27,11 @@ namespace CivGen
             CivicModifiers = civicModifiers;
         }
 
+        public List<Modifier> GetModifiers(List<string> modifierIDList)
+        {
+            return ModifierList.Where(x => modifierIDList.Contains(x.ModifierId)).ToList();
+        }
+
         public string GetModifierTextForTechnology(Technology tech)
         {
             List<string> output = new List<string>();

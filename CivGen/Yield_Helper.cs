@@ -25,6 +25,32 @@ namespace CivGen
 
         public string Modifier { get; set; } = "";
 
+
+        public Yield_Helper(ICollection<Building_YieldChanges> buildingChanges)
+        {
+            foreach (Building_YieldChanges change in buildingChanges)
+            {
+                ModifyYields(change.YieldType, change.YieldChange);
+            }
+        }
+
+        public Yield_Helper(ICollection<Improvement_YieldChanges> improvementChanges)
+        {
+            foreach (Improvement_YieldChanges change in improvementChanges)
+            {
+                ModifyYields(change.YieldType, change.YieldChange);
+            }
+        }
+
+        public Yield_Helper(ICollection<Resource_YieldChanges> resourceChanges)
+        {
+            foreach (Resource_YieldChanges change in resourceChanges)
+            {
+                ModifyYields(change.YieldType, change.YieldChange);
+            }
+        }
+
+
         public void SetInitial(string yield, long value)
         {
             switch (yield)
@@ -50,6 +76,10 @@ namespace CivGen
             }
         }
 
+        public void ModifyYields(string yield, long value)
+        {
+            ModifyYields("", yield, value);
+        }
         public void ModifyYields(string modifier, string yield, long value)
         {
             Modifier = modifier;
@@ -91,6 +121,21 @@ namespace CivGen
             {
                 string yield = "Food:  " + ModifiedFood.ToString() + "  |  Gold:  " + ModifiedGold.ToString() + "  |  Production:  " + ModifiedProduction.ToString() + "  |  Faith:  " + ModifiedFaith.ToString() + "  |  Culture:  " + ModifiedCulture.ToString() + "  |  Science:  " + ModifiedScience.ToString() + " ";
                 return yield.Replace(" 0 ", " - ");
+            }
+        }
+
+        public string YieldChangesString
+        {
+            get
+            {
+                string yield = "";
+                if (ModifiedFood != 0) yield += "Food: +" + (ModifiedFood - Food).ToString() + " | ";
+                if (ModifiedGold != 0) yield += "Gold: +" + (ModifiedGold - Gold).ToString() + " | ";
+                if (ModifiedProduction != 0) yield += "Production: +" + (ModifiedProduction - Production).ToString() + " | ";
+                if (ModifiedFaith != 0) yield += "Faith: +" + (ModifiedFaith - Faith).ToString() + " | ";
+                if (ModifiedCulture != 0) yield += "Culture: +" + (ModifiedCulture - Culture).ToString() + " | ";
+                if (ModifiedScience != 0) yield += "Science: +" + (ModifiedScience - Science).ToString() + " | ";
+                return (yield.Length > 3) ? yield.Substring(0, yield.Length - 3) : yield;
             }
         }
 

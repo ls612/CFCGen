@@ -303,6 +303,7 @@
     <Compile Include="Extended Classes\Boosts_Extended.cs" />
     <Compile Include="Extended Classes\BuildingModifier_Extended.cs" />
     <Compile Include="Extended Classes\Building_Extended.cs" />
+    <Compile Include="Extended Classes\Building_YieldChanges_Extended.cs" />
     <Compile Include="Extended Classes\Civic_Extended.cs" />
     <Compile Include="Extended Classes\Difficulty_Extended.cs" />
     <Compile Include="Extended Classes\District_Extended.cs" />

@@ -46,17 +46,14 @@ namespace CivGen
             }
         }
 
-        Yield_Helper helper = new Yield_Helper();
+        Yield_Helper helper;
 
         public string YieldString
         {
             get
             {
-                foreach (Resource_YieldChanges change in this.Resource_YieldChanges)
-                {
-                    helper.SetInitial(change.YieldType, change.YieldChange);
-                }
-                return helper.BaseYieldString;
+                helper = new Yield_Helper(this.Resource_YieldChanges);
+                return helper.YieldChangesString;
             }
         }
 
