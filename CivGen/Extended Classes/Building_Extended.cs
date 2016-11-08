@@ -121,6 +121,19 @@ namespace CivGen
            
         }
 
+        public string GreatWorkSlotText
+        {
+            get
+            {
+                string output = "";
+                foreach (Building_GreatWorks greatWork in Building_GreatWorks)
+                {
+                    output += greatWork.GreatWorkSlotType1.FriendlyName + ": " + greatWork.NumSlots.ToString() + " | ";
+                }
+                return (output.Length > 3) ? output.Substring(0, output.Length - 3) : output;
+            }
+        }
+
 
         public override string URL
         {

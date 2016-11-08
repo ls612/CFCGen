@@ -303,6 +303,7 @@
     <Compile Include="Extended Classes\Boosts_Extended.cs" />
     <Compile Include="Extended Classes\BuildingModifier_Extended.cs" />
     <Compile Include="Extended Classes\Building_Extended.cs" />
+    <Compile Include="Extended Classes\Building_GreatWorks_Extended.cs" />
     <Compile Include="Extended Classes\Building_YieldChanges_Extended.cs" />
     <Compile Include="Extended Classes\Civic_Extended.cs" />
     <Compile Include="Extended Classes\Difficulty_Extended.cs" />
@@ -310,6 +311,7 @@
     <Compile Include="Extended Classes\Era_Extended.cs" />
     <Compile Include="Extended Classes\Feature_Extended.cs" />
     <Compile Include="Extended Classes\GreatPersonIndividual_Extended.cs" />
+    <Compile Include="Extended Classes\GreatWorkSlotType_Extended.cs" />
     <Compile Include="Extended Classes\Improvement_Extended.cs" />
     <Compile Include="Extended Classes\Improvement_ValidResource_Extended.cs" />
     <Compile Include="Extended Classes\Improvement_ValidTerrain_Extended.cs" />

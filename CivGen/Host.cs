@@ -980,28 +980,32 @@ namespace CivGen
                     detailTable.AppendLine(secondColumnTag);
 
 
-                    GenerateTableItem<long>("Cost", detailTable, item.Cost);                                                    //Cost
-                    if (item.ObsoleteEra != "NO_ERA") GenerateTableItem<string>("Obsolete Era", detailTable, FriendlyName(item.ObsoleteEra));                               //Allows
-                    GenerateTableItem<Technology>("Required Technology", detailTable, item.Technology);                            //Pre-Requisites
-                    GenerateTableItem<Civic>("Required Civic", detailTable, item.Civic);                               //Allowable Resources
-                    GenerateTableItem<District>("Required District", detailTable, item.RequiredDistrict);                      //Allowable improvements
-                    GenerateTableItem<District>("Required Adjacent District", detailTable, item.RequiredAdjacentDistrict);                      //Allowable improvements
-                    GenerateTableItem<Resource>("Required Resource", detailTable, item.Resource);                      //Allowable improvements
-                    GenerateTableItem<Terrain>("Allowable Terrains", detailTable, item.Terrains);                      //Allowable improvements
-                    GenerateTableItem<Feature>("Allowable Features", detailTable, item.AllowedFeatures);                      //Allowable improvements
-                    GenerateTableItem<Feature>("Required Features", detailTable, item.RequiredFeatures);                      //Allowable improvements
-                    GenerateTableItem<Building>("Required Buildings", detailTable, item.PreRequisiteBuilding);                      //Allowable improvements
-                    GenerateTableItem<Building>("Allows Buildings", detailTable, item.AllowsBuilding);                      //Allowable improvements
-                    GenerateTableItem<Building>("Replaces Building", detailTable, item.ReplacesBuilding);                      //Allowable improvements
-                    GenerateTableItem<Building>("Replaced By Building", detailTable, item.ReplacedByBuilding);                      //Allowable improvements
-                    GenerateTableItem<Building>("Mutually Exclusive For", detailTable, item.MutuallyExclusiveFor);                      //Allowable improvements
-                    GenerateTableItem<Building>("Mutually Exclusive With", detailTable, item.MutuallyExclusiveWith);                      //Allowable improvements
-                    GenerateTableItem<Boost>("Boosts", detailTable, item.Boosts);                      //Allowable improvements
+                    GenerateTableItem<long>("Cost", detailTable, item.Cost);                                                   
+                    if (item.ObsoleteEra != "NO_ERA") GenerateTableItem<string>("Obsolete Era", detailTable, FriendlyName(item.ObsoleteEra));                             
+                    GenerateTableItem<Technology>("Required Technology", detailTable, item.Technology);                            
+                    GenerateTableItem<Civic>("Required Civic", detailTable, item.Civic);                             
+                    GenerateTableItem<District>("Required District", detailTable, item.RequiredDistrict);                     
+                    GenerateTableItem<District>("Required Adjacent District", detailTable, item.RequiredAdjacentDistrict);              
+                    GenerateTableItem<Resource>("Required Resource", detailTable, item.Resource);                   
+                    GenerateTableItem<Terrain>("Allowable Terrains", detailTable, item.Terrains);                   
+                    GenerateTableItem<Feature>("Allowable Features", detailTable, item.AllowedFeatures);            
+                    GenerateTableItem<Feature>("Required Features", detailTable, item.RequiredFeatures);                 
+                    GenerateTableItem<Building>("Required Buildings", detailTable, item.PreRequisiteBuilding);         
+                    GenerateTableItem<Building>("Allows Buildings", detailTable, item.AllowsBuilding);                  
+                    GenerateTableItem<Building>("Replaces Building", detailTable, item.ReplacesBuilding);           
+                    GenerateTableItem<Building>("Replaced By Building", detailTable, item.ReplacedByBuilding);                   
+                    GenerateTableItem<Building>("Mutually Exclusive For", detailTable, item.MutuallyExclusiveFor);                     
+                    GenerateTableItem<Building>("Mutually Exclusive With", detailTable, item.MutuallyExclusiveWith);                  
+                    GenerateTableItem<Boost>("Boosts", detailTable, item.Boosts);                      
+
                     Yield_Helper buildingYield = new Yield_Helper(item.Building_YieldChanges);
-                    GenerateTableItem<string>("Building Yield Changes", detailTable, buildingYield.YieldChangesString);                      //Allowable improvements
+                    GenerateTableItem<string>("Building Yield Changes", detailTable, buildingYield.YieldChangesString);                     
+
+                    GenerateTableItem<string>("Great Works Slots", detailTable, item.GreatWorkSlotText);
+                    GenerateTableItem<GreatPersonIndividual>("Great Person Modifiers", detailTable, item.GreatPersonIndividuals);
 
                     string effects = item.Effects(modifiers, modifierarguments);
-                    GenerateTableItem<string>("Effects", detailTable, effects);                      //Allowable improvements
+                    GenerateTableItem<string>("Effects", detailTable, effects);                     
 
                     
 
