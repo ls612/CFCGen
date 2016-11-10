@@ -243,9 +243,9 @@ namespace CivGen
                 //GenerateBuildingsPage();    
                 //GenerateTerrainPage();            //Published
                 //GenerateResourcesPage();          //Published
-                //GenerateTechPage();               //Published
+                GenerateTechPage();               //Published
                 //GenerateImprovementsPage();       //published
-                GenerateUnitsPage();
+                //GenerateUnitsPage();
                 #region playing
                 /*
                 //Get buildings by Era
@@ -1275,7 +1275,7 @@ namespace CivGen
                     GenerateTableItem<Feature>("Allows removal of", detailTable, item.Features);
                     GenerateTableItem<Boost>("Is Boosted By", detailTable, item.IsBoostedBy);                            //Allowable buildings
                     GenerateTableItem<Boost>("Allows Boosts", detailTable, item.AllowsBoosts);
-
+                    
                     foreach (TechnologyModifier modifier in item.TechnologyModifiers)
                     {
                         string effect = modifierHelper.GetModifierTextForTechnology(item);

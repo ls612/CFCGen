@@ -168,6 +168,7 @@
     <Compile Include="BoostHandler.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="BoostHelper.cs" />
     <Compile Include="BoostName.cs">
       <DependentUpon>Civ6DB.tt</DependentUpon>
     </Compile>
