@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace CivGen
 {
+
+    public enum BoostDirection
+    {
+        TextForCivicOrTech,
+        TextForOtherThatBoostsCivicOrTech,
+    }
+
     public class BoostHelper
     {
         public Boost ThisBoost { get; set; }
@@ -14,27 +21,34 @@ namespace CivGen
 
         public string BoostDetails(Technology owner)
         {
-
+            return "";
         }
 
-        private string BoostText()
+        public string BoostText(BoostDirection direction)
         {
+            string techOrCivic = (ThisBoost.Technology != null) ? ThisBoost.Technology.html_Goto_URL_Link : ThisBoost.Civic.html_Goto_URL_Link;
+            string boostValue = ThisBoost.Boost1.ToString() + @"%";
+            string itemCount = ThisBoost.NumItems.ToString();
             if (ThisBoost == null) return "";
+            #region Switch Cases
             switch (ThisBoost.BoostClass)
             {
-                case "BOOST_TRIGGER_NUM_IMPROVED_TILES": return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString() + " " + ThisBoost.Improvement.html_Goto_URL_Link;
+                case "BOOST_TRIGGER_NUM_IMPROVED_TILES":
+                    {
+                        return "Boosts of " + boostValue + " when player has " + itemCount + " improved tiles.";
+                    }
                 case "BOOST_TRIGGER_DISCOVER_CONTINENT":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by discovering another continent.";
+                    return "Boost of " + boostValue + ", triggered by discovering another continent.";
                 case "BOOST_TRIGGER_CLEAR_CAMP":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by discovering another continent."; 
+                    return "Boost of " + boostValue + ", triggered by clearing a barbarian camp.";
                 case "BOOST_TRIGGER_HAVE_X_UNIQUE_SPECIALTY_DISTRICTS":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    return "Boost of " + boostValue + ", triggered by having " + itemCount + " unique specialty districts.";
                 case "BOOST_TRIGGER_EMPIRE_POPULATION":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    return "Boost of " + boostValue + ", triggered by having " + itemCount + " citizens.";
                 case "BOOST_TRIGGER_CREATE_PANTHEON":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    return "Boost of " + boostValue + ", triggered by founding a Pantheon";
                 case "BOOST_TRIGGER_RESEARCH_TECH":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    return "Boost of " + boostValue + ", triggered by researching the technology " + ThisBoost.Technology1.html_Goto_URL_Link;
                 case "BOOST_TRIGGER_MEET_X_CITY_STATES":
                     return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
                 case "BOOST_TRIGGER_HAVE_X_WONDERS":
@@ -48,17 +62,41 @@ namespace CivGen
                 case "BOOST_TRIGGER_KILL_WITH":
                     return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
                 case "BOOST_TRIGGER_HAVE_X_IMPROVEMENTS":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    {
+                        if (direction == BoostDirection.TextForCivicOrTech)
+                        {
+                            return boostValue + " boost, triggered by having " + itemCount + " " + ThisBoost.Improvement.html_Goto_URL_Link;
+                        }
+                        else
+                        {
+                            return "Boosts " + techOrCivic + " by " + ThisBoost.Boost1.ToString() + " when player has " + ThisBoost.NumItems.ToString() + " " + ThisBoost.Improvement.FriendlyName;
+                        }
+                    }
                 case "BOOST_TRIGGER_CITY_POPULATION":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    return "Boost of " + boostValue + ", triggered by having " + itemCount + " citizens in a single city.";
                 case "BOOST_TRIGGER_HAVE_X_LAND_UNITS":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    return "Boost of " + boostValue + ", triggered by having " + itemCount + " Land Units.";
                 case "BOOST_TRIGGER_MAINTAIN_X_TRADE_ROUTES":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    return "Boost of " + boostValue + ", triggered by having " + itemCount + " Trade Routes.";
                 case "BOOST_TRIGGER_HAVE_X_BUILDINGS":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    if (direction == BoostDirection.TextForCivicOrTech)
+                    {
+                        return "Boost of " + boostValue + ", triggered by having " + itemCount + " " + ThisBoost.Building.html_Goto_URL_Link;
+                    }
+                    else
+                    {
+                        return "Boosts " + techOrCivic + " by " + boostValue + " when player has " + itemCount + " of this Building.";
+                    }
+                    
                 case "BOOST_TRIGGER_OWN_X_UNITS_OF_TYPE":
-                    return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
+                    if (direction == BoostDirection.TextForCivicOrTech)
+                    {
+                        return "Boost of " + boostValue + ", triggered by having " + itemCount + " " + ThisBoost.Unit.html_Goto_URL_Link;
+                    }
+                    else
+                    {
+                        return "Boosts " + techOrCivic + " by " + boostValue + " when player has " + itemCount + " of this Unit.";
+                    }
                 case "BOOST_TRIGGER_TRAIN_UNIT":
                     return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
                 case "BOOST_TRIGGER_HAVE_AN_ALLIANCE":
@@ -109,7 +147,8 @@ namespace CivGen
                     return "Boost of " + ThisBoost.Boost1.ToString() + ", triggered by having " + ThisBoost.NumItems.ToString();
 
             }
-
+            #endregion
+            return "Boost Text not defined.";
         }
 
 

@@ -1273,8 +1273,21 @@ namespace CivGen
                     GenerateTableItem<Unit>("Allows Units", detailTable, item.AllowsUnits);                                     //Allowable buildings
                     GenerateTableItem<Unit>("Makes Obsolete", detailTable, item.MakesUnitsObsolete);                            //Allowable buildings
                     GenerateTableItem<Feature>("Allows removal of", detailTable, item.Features);
-                    GenerateTableItem<Boost>("Is Boosted By", detailTable, item.IsBoostedBy);                            //Allowable buildings
-                    GenerateTableItem<Boost>("Allows Boosts", detailTable, item.AllowsBoosts);
+
+                    BoostHelper handler = new BoostHelper();
+                    foreach (Boost boost in item.Boosts)
+                    {
+                        handler.ThisBoost = boost;
+                        GenerateTableItem<string>("Boosts:", detailTable, handler.BoostText(BoostDirection.TextForCivicOrTech));
+                    }
+
+                    foreach (Boost boost in item.Boosts1)
+                    {
+                        handler.ThisBoost = boost;
+                        GenerateTableItem<string>("Boosts:", detailTable, handler.BoostText(BoostDirection.TextForOtherThatBoostsCivicOrTech));
+                    }
+                    //GenerateTableItem<Boost>("Is Boosted By", detailTable, item.IsBoostedBy);                            //Allowable buildings
+                    //GenerateTableItem<Boost>("Allows Boosts", detailTable, item.AllowsBoosts);
                     
                     foreach (TechnologyModifier modifier in item.TechnologyModifiers)
                     {
