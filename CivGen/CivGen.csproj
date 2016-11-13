@@ -312,6 +312,10 @@
     <Compile Include="Extended Classes\District_Extended.cs" />
     <Compile Include="Extended Classes\Era_Extended.cs" />
     <Compile Include="Extended Classes\Feature_Extended.cs" />
+    <Compile Include="Extended Classes\GovernmentSlotType_Extended.cs" />
+    <Compile Include="Extended Classes\GovernmentSlot_Extended.cs" />
+    <Compile Include="Extended Classes\Government_Extended.cs" />
+    <Compile Include="Extended Classes\Government_SlotCount_Extended.cs" />
     <Compile Include="Extended Classes\GreatPersonClass_Extended.cs" />
     <Compile Include="Extended Classes\GreatPersonIndividual_Extended.cs" />
     <Compile Include="Extended Classes\GreatWorkSlotType_Extended.cs" />
@@ -320,6 +324,7 @@
     <Compile Include="Extended Classes\Improvement_ValidTerrain_Extended.cs" />
     <Compile Include="Extended Classes\Improvement_YieldChanges_Extended.cs" />
     <Compile Include="Extended Classes\Modifiers_Extended.cs" />
+    <Compile Include="Extended Classes\Policies_Extended.cs" />
     <Compile Include="Extended Classes\Projects_Extended.cs" />
     <Compile Include="Extended Classes\Resource_Extended.cs" />
     <Compile Include="Extended Classes\Resource_Harvests_Extended.cs" />

@@ -243,9 +243,12 @@ namespace CivGen
                 //GenerateBuildingsPage();    
                 //GenerateTerrainPage();            //Published
                 //GenerateResourcesPage();          //Published
-                GenerateTechPage();               //Published
+                //GenerateTechPage();               //Published
                 //GenerateImprovementsPage();       //published
                 //GenerateUnitsPage();
+                //GenerateCivicsPage();
+                //GeneratePoliciesPage();
+                GenerateGovernmentsPage();
                 #region playing
                 /*
                 //Get buildings by Era
@@ -1144,6 +1147,211 @@ namespace CivGen
 
         #endregion
 
+        #region GenerateCivicsPage
+        public void GenerateCivicsPage()
+        {
+            StringBuilder basePage = new StringBuilder();
+            basePage.AppendLine(GenerateHeaders());
+
+            //Add in the TOC
+            //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
+            List<CivBase> CastList = new List<Civic>(civics.ToList()).Cast<CivBase>().ToList();
+
+
+            basePage.AppendLine("<td>");
+            basePage.AppendLine(GenerateTableOfContents(CastList, 2, true));
+            basePage.AppendLine("</td>");
+
+            //Now item details column
+            basePage.AppendLine("<td>");
+
+            //Now generate the html:  //Tags for each sub table.
+            string tableTag = "<table border=\"1\" style=\"width:100%\">";
+            string firstColumnTag = "<col style=\"width:180px\">";
+            string secondColumnTag = "<col style=\"width:400px\">";
+
+            //Now generate the html:
+            //List<Unit> units = units.ToList();
+
+            foreach (eERA era in Enum.GetValues(typeof(eERA)))
+            {
+                List<Civic> eraItems = civics.Where(x => x.ReferenceEra == era).ToList();
+
+                if (eraItems.Count == 0) continue;
+
+                //Create a header from the first era
+                basePage.AppendLine(html_Header_With_Anchor(era.ToString(), era.ToString() + " Era", HeaderType.h1));
+
+                foreach (Civic item in eraItems)
+                {
+                    StringBuilder detailTable = new StringBuilder();
+                    detailTable.AppendLine(item.html_Header_With_Anchor(HeaderType.h2));
+                    detailTable.AppendLine(tableTag);
+                    detailTable.AppendLine(firstColumnTag);
+                    detailTable.AppendLine(secondColumnTag);
+
+
+                    GenerateTableItem<long>("Cost", detailTable, item.Cost);
+                    GenerateTableItem<Civic>("Pre-Requisites", detailTable, item.Civics, true);
+                    GenerateTableItem<Civic>("Allows", detailTable, item.Civics1, true);
+                    GenerateTableItem<Government>("Allows Governments", detailTable, item.Governments);
+                    GenerateTableItem<Policy>("Allows Policies", detailTable, item.Policies);
+                    GenerateTableItem<District>("Allows Districs", detailTable, item.Districts);
+                    GenerateTableItem<Building>("Allows Buildings", detailTable, item.Buildings);
+                    GenerateTableItem<Project>("Allows Projects", detailTable, item.Projects);
+                    GenerateTableItem<Resource>("Allows Resources", detailTable, item.Resources);
+                    GenerateTableItem<Improvement>("Allows Improvements", detailTable, item.Improvements);
+                    GenerateTableItem<Unit>("Allows Units", detailTable, item.Units);
+
+                    BoostHelper handler = new BoostHelper();
+                    foreach (Boost boost in item.Boosts1)
+                    {
+                        handler.ThisBoost = boost;
+                        GenerateTableItem<string>("Boosts", detailTable, handler.BoostText(BoostDirection.TextForCivicOrTech));
+                    }
+
+                    detailTable.AppendLine("</table>");
+                    detailTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                    basePage.AppendLine(detailTable.ToString());
+                }
+            }
+            basePage.AppendLine("</td></tr></table>");
+            Clipboard.SetText(basePage.ToString());
+            MessageBox.Show("Page copied to clipboard");
+
+        }
+
+        #endregion
+
+        #region GeneratePoliciesPage
+        public void GeneratePoliciesPage()
+        {
+            StringBuilder basePage = new StringBuilder();
+            basePage.AppendLine(GenerateHeaders());
+
+            //Add in the TOC
+            //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
+            List<CivBase> CastList = new List<Policy>(policies.ToList()).Cast<CivBase>().ToList();
+
+
+            basePage.AppendLine("<td>");
+            basePage.AppendLine(GenerateTableOfContents(CastList, 2, true));
+            basePage.AppendLine("</td>");
+
+            //Now item details column
+            basePage.AppendLine("<td>");
+
+            //Now generate the html:  //Tags for each sub table.
+            string tableTag = "<table border=\"1\" style=\"width:100%\">";
+            string firstColumnTag = "<col style=\"width:180px\">";
+            string secondColumnTag = "<col style=\"width:400px\">";
+
+            //Now generate the html:
+            //List<Unit> units = units.ToList();
+
+            foreach (eERA era in Enum.GetValues(typeof(eERA)))
+            {
+                List<Policy> eraItems = policies.Where(x => x.ReferenceEra == era).ToList();
+
+                if (eraItems.Count == 0) continue;
+
+                //Create a header from the first era
+                basePage.AppendLine(html_Header_With_Anchor(era.ToString(), era.ToString() + " Era", HeaderType.h1));
+
+                foreach (Policy item in eraItems)
+                {
+                    StringBuilder detailTable = new StringBuilder();
+                    detailTable.AppendLine(item.html_Header_With_Anchor(HeaderType.h2));
+                    detailTable.AppendLine(tableTag);
+                    detailTable.AppendLine(firstColumnTag);
+                    detailTable.AppendLine(secondColumnTag);
+
+
+                    GenerateTableItem<Civic>("Required Civic", detailTable, item.Civic, true);
+                    GenerateTableItem<string>("Government Slot Type", detailTable, FriendlyName((item.GovernmentSlot.GovernmentSlotType).Replace("SLOT_","")));
+                    
+
+                    detailTable.AppendLine("</table>");
+                    detailTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                    basePage.AppendLine(detailTable.ToString());
+                }
+            }
+            basePage.AppendLine("</td></tr></table>");
+            Clipboard.SetText(basePage.ToString());
+            MessageBox.Show("Page copied to clipboard");
+
+        }
+
+        #endregion
+
+        #region GenerateGovernmentsPage
+        public void GenerateGovernmentsPage()
+        {
+            StringBuilder basePage = new StringBuilder();
+            basePage.AppendLine(GenerateHeaders());
+
+            //Add in the TOC
+            //  ----    WARNING:  We are casting a list to its base class - use derived list with caution.
+            List<CivBase> CastList = new List<Government>(governments.ToList()).Cast<CivBase>().ToList();
+
+
+            basePage.AppendLine("<td>");
+            basePage.AppendLine(GenerateTableOfContents(CastList, 1, true));
+            basePage.AppendLine("</td>");
+
+            //Now item details column
+            basePage.AppendLine("<td>");
+
+            //Now generate the html:  //Tags for each sub table.
+            string tableTag = "<table border=\"1\" style=\"width:100%\">";
+            string firstColumnTag = "<col style=\"width:180px\">";
+            string secondColumnTag = "<col style=\"width:400px\">";
+
+            //Now generate the html:
+            //List<Unit> units = units.ToList();
+
+            foreach (eERA era in Enum.GetValues(typeof(eERA)))
+            {
+                List<Government> eraItems = governments.Where(x => x.ReferenceEra == era).ToList();
+
+                if (eraItems.Count == 0) continue;
+
+                //Create a header from the first era
+                basePage.AppendLine(html_Header_With_Anchor(era.ToString(), era.ToString() + " Era", HeaderType.h1));
+
+                foreach (Government item in eraItems)
+                {
+                    StringBuilder detailTable = new StringBuilder();
+                    detailTable.AppendLine(item.html_Header_With_Anchor(HeaderType.h2));
+                    detailTable.AppendLine(tableTag);
+                    detailTable.AppendLine(firstColumnTag);
+                    detailTable.AppendLine(secondColumnTag);
+
+
+                    GenerateTableItem<Civic>("Required Civic", detailTable, item.Civic, true);
+                    foreach (Government_SlotCounts slot in item.Government_SlotCounts)
+                    {
+                        GenerateTableItem<long>(slot.SlotTypeFriendlyName + " slots", detailTable, slot.NumSlots);
+                    }
+                    GenerateTableItem<string>("Bonus Type", detailTable, item.BonusType);
+
+
+
+                    detailTable.AppendLine("</table>");
+                    detailTable.AppendLine("<a href=\"#top\">Top</a>");
+
+                    basePage.AppendLine(detailTable.ToString());
+                }
+            }
+            basePage.AppendLine("</td></tr></table>");
+            Clipboard.SetText(basePage.ToString());
+            MessageBox.Show("Page copied to clipboard");
+
+        }
+
+        #endregion
 
 
         #region GenerateTechnologyPage
@@ -1278,7 +1486,7 @@ namespace CivGen
                     foreach (Boost boost in item.Boosts)
                     {
                         handler.ThisBoost = boost;
-                        GenerateTableItem<string>("Boosts:", detailTable, handler.BoostText(BoostDirection.TextForCivicOrTech));
+                        GenerateTableItem<string>("Boosts", detailTable, handler.BoostText(BoostDirection.TextForCivicOrTech));
                     }
 
                     foreach (Boost boost in item.Boosts1)
